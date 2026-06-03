@@ -74,8 +74,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-white/10 pt-4 flex justify-between items-center">
-          <span className="text-xs text-teal-400/60">© 2026 eijex</span>
-          <span className="text-xs text-teal-400/60">MIT / AGPL-3.0</span>
+          <span className="text-xs text-teal-400/60">© 2026 eijex · FactorForge is AGPL-3.0</span>
         </div>
       </div>
     </footer>
