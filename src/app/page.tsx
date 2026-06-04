@@ -10,11 +10,11 @@ export default function Home() {
   return (
     <main>
       <Nav />
-      <AboutStrip />
       <Hero />
       <AccessOptions />
       <StatsBar />
       <Products />
+      <AboutStrip />
       <Footer />
     </main>
   );
