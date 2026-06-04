@@ -7,7 +7,7 @@ const products = [
       "Constraint-based CDS optimization for plant expression. Maximize CAI, control GC%, eliminate PolyA signals. MoClo/Golden Gate-ready output.",
     code: "pip install factorforge-cds",
     codeColor: "text-teal-700",
-    primary: { label: "Docs ↗", href: "https://factorforge.eijex.com/docs" },
+    primary: { label: "Docs ↗", href: "https://eijex.github.io/factorforge-cds/" },
     secondary: { label: "GitHub", href: "https://github.com/eijex/factorforge-cds" },
     primaryBg: "bg-teal-600 hover:bg-teal-700",
   },
