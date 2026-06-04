@@ -20,9 +20,9 @@ const options = [
 
 export default function AccessOptions() {
   return (
-    <div className="bg-white border-t border-b border-slate-200 py-5 px-6">
+    <div className="bg-white dark:bg-slate-900 border-t border-b border-slate-200 dark:border-slate-700 py-5 px-6">
       <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-3">
-        <span className="text-sm font-semibold text-slate-400 uppercase tracking-widest">
+        <span className="text-sm font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-widest">
           Available via
         </span>
         {options.map((opt) => (
@@ -31,11 +31,11 @@ export default function AccessOptions() {
             href={opt.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 hover:border-slate-300 transition-colors"
+            className="flex items-center gap-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-2.5 hover:border-slate-300 dark:hover:border-slate-500 transition-colors"
           >
-            <code className="text-sm text-slate-800">{opt.label}</code>
+            <code className="text-sm text-slate-800 dark:text-slate-200">{opt.label}</code>
             {opt.soon && (
-              <span className="bg-amber-100 text-amber-800 text-xs font-semibold px-1.5 py-0.5 rounded">
+              <span className="bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-400 text-xs font-semibold px-1.5 py-0.5 rounded">
                 soon
               </span>
             )}
@@ -45,9 +45,9 @@ export default function AccessOptions() {
           href="https://factorforge.eijex.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 bg-teal-50 border border-teal-200 rounded-lg px-4 py-2.5 hover:border-teal-300 transition-colors"
+          className="flex items-center gap-2 bg-teal-50 dark:bg-teal-900/20 border border-teal-200 dark:border-teal-800 rounded-lg px-4 py-2.5 hover:border-teal-300 dark:hover:border-teal-600 transition-colors"
         >
-          <span className="text-sm font-semibold text-teal-700">Web App ↗</span>
+          <span className="text-sm font-semibold text-teal-700 dark:text-teal-400">Web App ↗</span>
         </a>
       </div>
     </div>
