@@ -17,7 +17,7 @@ export default function Footer() {
       style={{ background: "linear-gradient(90deg, #134e4a, #14532d)" }}
     >
       <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
           <div className="sm:col-span-1">
             <div className="font-extrabold text-lg text-teal-300 mb-2">eijex</div>
             <p className="text-xs text-teal-200/70 leading-relaxed mb-3">
@@ -67,16 +67,6 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-          <div>
-            <p className="text-xs font-bold text-teal-400 uppercase tracking-widest mb-3">
-              Citation
-            </p>
-            <code className="block bg-black/20 rounded-lg px-3 py-3 text-xs text-teal-200/80 leading-relaxed font-mono">
-              factorforge-cds v3.1.9{"\n"}
-              DOI: 10.5281/zenodo.{"\n"}
-              20407331
-            </code>
           </div>
         </div>
         <div className="border-t border-white/10 pt-4 flex justify-between items-center">
