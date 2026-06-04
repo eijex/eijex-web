@@ -20,9 +20,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-8 mb-8">
           <div className="sm:col-span-1">
             <div className="font-extrabold text-lg text-teal-300 mb-2">eijex</div>
-            <p className="text-xs text-teal-200/70 leading-relaxed">
+            <p className="text-xs text-teal-200/70 leading-relaxed mb-3">
               Open-source computational tools<br />for plant synthetic biology.
             </p>
+            <a
+              href="mailto:eijex.lab@gmail.com"
+              className="text-xs text-teal-300/80 hover:text-teal-300 transition-colors"
+            >
+              eijex.lab@gmail.com
+            </a>
           </div>
           <div>
             <p className="text-xs font-bold text-teal-400 uppercase tracking-widest mb-3">
