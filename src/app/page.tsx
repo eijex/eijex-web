@@ -13,8 +13,8 @@ export default function Home() {
       <Hero />
       <AccessOptions />
       <StatsBar />
-      <Products />
       <AboutStrip />
+      <Products />
       <Footer />
     </main>
   );
