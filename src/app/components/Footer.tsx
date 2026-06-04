@@ -67,7 +67,7 @@ export default function Footer() {
               Citation
             </p>
             <code className="block bg-black/20 rounded-lg px-3 py-3 text-xs text-teal-200/80 leading-relaxed font-mono">
-              factorforge-cds v3.1.8{"\n"}
+              factorforge-cds v3.1.9{"\n"}
               DOI: 10.5281/zenodo.{"\n"}
               20407331
             </code>

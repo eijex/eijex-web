@@ -2,7 +2,7 @@ const stats = [
   { value: "0.76", label: "mean CAI" },
   { value: "100%", label: "AA identity" },
   { value: "3,876", label: "CDS benchmarked" },
-  { value: "v3.1.8", label: "latest release" },
+  { value: "v3.1.9", label: "latest release" },
 ];
 
 export default function StatsBar() {
