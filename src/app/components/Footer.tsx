@@ -5,7 +5,7 @@ const productLinks = [
 
 const resourceLinks = [
   { label: "Documentation", href: "https://eijex.github.io/factorforge-cds/" },
-  { label: "GitHub", href: "https://github.com/eijex/factorforge-cds" },
+  { label: "GitHub", href: "https://github.com/eijex" },
   { label: "PyPI", href: "https://pypi.org/project/factorforge-cds/" },
   { label: "Zenodo / DOI", href: "https://doi.org/10.5281/zenodo.20407331" },
 ];
