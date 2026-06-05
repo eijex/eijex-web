@@ -55,14 +55,7 @@ export default function AccessOptions() {
             </div>
           )
         )}
-        <a
-          href="https://factorforge.eijex.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 bg-teal-50 dark:bg-teal-900/20 border border-teal-200 dark:border-teal-800 rounded-lg px-4 py-2.5 hover:border-teal-300 dark:hover:border-teal-600 transition-colors"
-        >
-          <span className="text-sm font-semibold text-teal-700 dark:text-teal-400">Web App ↗</span>
-        </a>
+
       </div>
     </div>
   );
