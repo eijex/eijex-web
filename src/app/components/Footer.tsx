@@ -7,7 +7,7 @@ const resourceLinks = [
   { label: "Documentation", href: "https://eijex.github.io/factorforge-cds/" },
   { label: "GitHub", href: "https://github.com/eijex" },
   { label: "PyPI", href: "https://pypi.org/project/factorforge-cds/" },
-  { label: "Zenodo / DOI", href: "https://doi.org/10.5281/zenodo.20407331" },
+  { label: "DOI: 10.5281/zenodo.20407331", href: "https://doi.org/10.5281/zenodo.20407331" },
 ];
 
 export default function Footer() {

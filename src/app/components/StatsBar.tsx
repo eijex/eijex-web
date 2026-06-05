@@ -21,6 +21,9 @@ export default function StatsBar() {
           </div>
         ))}
       </div>
+      <p className="text-center text-xs text-teal-200/40 mt-4">
+        Benchmark: v3.1.4 balanced profile · N. benthamiana SGN CDS · N=3,876
+      </p>
     </div>
   );
 }

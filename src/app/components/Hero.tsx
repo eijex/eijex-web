@@ -12,7 +12,7 @@ export default function Hero() {
         </h1>
         <p className="text-lg text-slate-500 dark:text-slate-400 mb-10 leading-relaxed">
           From sequence to expression — reproducibly.<br />
-          Open-source, citable, and benchmarked.
+          Open-source, reproducible, benchmarked, and citable.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-3">
           <a

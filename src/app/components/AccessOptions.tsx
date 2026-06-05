@@ -8,12 +8,12 @@ const options = [
   },
   {
     label: "conda install factorforge-cds",
-    href: "https://anaconda.org/bioconda/factorforge-cds",
+    href: null, // Bioconda pending — 링크 없음
     soon: biocondaSoon,
   },
   {
-    label: "docker pull eijex/factorforge",
-    href: "https://hub.docker.com/r/eijex/factorforge",
+    label: "docker pull ghcr.io/eijex/factorforge-cds:latest",
+    href: "https://github.com/eijex/factorforge-cds/pkgs/container/factorforge-cds",
     soon: false,
   },
 ];
@@ -25,22 +25,36 @@ export default function AccessOptions() {
         <span className="text-sm font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-widest">
           Available via
         </span>
-        {options.map((opt) => (
-          <a
-            key={opt.label}
-            href={opt.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-2.5 hover:border-slate-300 dark:hover:border-slate-500 transition-colors"
-          >
-            <code className="text-sm text-slate-800 dark:text-slate-200">{opt.label}</code>
-            {opt.soon && (
-              <span className="bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-400 text-xs font-semibold px-1.5 py-0.5 rounded">
-                soon
-              </span>
-            )}
-          </a>
-        ))}
+        {options.map((opt) =>
+          opt.href ? (
+            <a
+              key={opt.label}
+              href={opt.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-2.5 hover:border-slate-300 dark:hover:border-slate-500 transition-colors"
+            >
+              <code className="text-sm text-slate-800 dark:text-slate-200">{opt.label}</code>
+              {opt.soon && (
+                <span className="bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-400 text-xs font-semibold px-1.5 py-0.5 rounded">
+                  soon
+                </span>
+              )}
+            </a>
+          ) : (
+            <div
+              key={opt.label}
+              className="flex items-center gap-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-2.5 cursor-default"
+            >
+              <code className="text-sm text-slate-400 dark:text-slate-500">{opt.label}</code>
+              {opt.soon && (
+                <span className="bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-400 text-xs font-semibold px-1.5 py-0.5 rounded">
+                  soon
+                </span>
+              )}
+            </div>
+          )
+        )}
         <a
           href="https://factorforge.eijex.com"
           target="_blank"
