@@ -8,10 +8,10 @@ export default function Hero() {
           OPEN SOURCE · PLANT SYNTHETIC BIOLOGY
         </span>
         <h1 className="text-5xl sm:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight tracking-tight mb-5">
-          Open tools for<br />plant synthetic biology.
+          Open tools for<br />reproducible CDS design.
         </h1>
         <p className="text-lg text-slate-500 dark:text-slate-400 mb-10 leading-relaxed">
-          From sequence to expression — reproducibly.<br />
+          From protein sequence to reviewable CDS candidates — reproducibly.<br />
           Open-source, reproducible, benchmarked, and citable.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-3">
