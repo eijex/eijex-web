@@ -52,7 +52,7 @@ export default function OGImage() {
         </div>
 
         <div style={{ fontSize: 28, color: "#64748b", marginBottom: 48, display: "flex" }}>
-          From sequence to expression — reproducibly.
+          From protein sequence to reviewable CDS candidates.
         </div>
 
         <div style={{ display: "flex", gap: 48 }}>

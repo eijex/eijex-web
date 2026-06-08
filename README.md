@@ -1,6 +1,6 @@
 # eijex-web
 
-Company landing page for [eijex](https://www.eijex.com) — open-source computational tools for plant synthetic biology.
+Company landing page for [eijex](https://www.eijex.com) — open-source computational tools for reproducible plant CDS design and sequence review.
 
 **Live:** [www.eijex.com](https://www.eijex.com)
 
@@ -34,6 +34,6 @@ Naked domain (`eijex.com`) redirects to `www.eijex.com` via Cloudflare Redirect 
 
 ## Related
 
-- [FactorForge](https://factorforge.eijex.com) — CDS optimization engine
-- [Eijex MCP](https://mcp.eijex.com) — MCP server for AI agent access
+- [FactorForge](https://factorforge.eijex.com) — CDS design engine
+- [Eijex MCP](https://mcp.eijex.com) — MCP-compatible public tool access
 - [eijex GitHub](https://github.com/eijex)

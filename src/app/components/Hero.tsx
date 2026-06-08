@@ -12,7 +12,7 @@ export default function Hero() {
         </h1>
         <p className="text-lg text-slate-500 dark:text-slate-400 mb-10 leading-relaxed">
           From protein sequence to reviewable CDS candidates — reproducibly.<br />
-          Open-source, reproducible, benchmarked, and citable.
+          Open-source, reproducible, and citable.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-3">
           <a

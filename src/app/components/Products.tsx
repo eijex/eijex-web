@@ -4,7 +4,7 @@ const products = [
     tag: "CDS Design Engine",
     tagColor: "text-teal-600 dark:text-teal-400",
     description:
-      "Constraint-based CDS optimization for plant expression. Maximize CAI, control GC%, eliminate PolyA signals. MoClo/Golden Gate-ready output.",
+      "Constraint-aware synonymous CDS design for plant workflows. Reviews CAI, GC%, PolyA motifs, and assembly-site conflicts with reproducible outputs.",
     code: "pip install factorforge-cds",
     codeColor: "text-teal-700 dark:text-teal-400",
     primary: { label: "Docs ↗", href: "https://eijex.github.io/factorforge-cds/" },
@@ -13,10 +13,10 @@ const products = [
   },
   {
     name: "Eijex MCP",
-    tag: "AI Agent Access",
+    tag: "MCP Access",
     tagColor: "text-teal-900 dark:text-teal-300",
     description:
-      "Use FactorForge through Claude Code, Cursor, and any MCP-compatible AI agent. No installation required.",
+      "Use FactorForge through MCP-compatible clients with explicit public-tool boundaries. No installation required.",
     code: "mcp.eijex.com",
     codeColor: "text-teal-900 dark:text-teal-300",
     primary: { label: "Connect ↗", href: "https://mcp.eijex.com" },

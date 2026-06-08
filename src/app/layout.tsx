@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.eijex.com"),
   title: "eijex — Open tools for plant synthetic biology",
   description:
-    "eijex builds open-source computational tools for plant synthetic biology — peer-reviewed, reproducible, and freely available to the research community.",
+    "eijex builds open-source computational tools for reproducible plant CDS design and sequence review.",
   openGraph: {
     title: "eijex",
-    description: "Open tools for plant synthetic biology.",
+    description: "Open tools for reproducible plant CDS design.",
     url: "https://www.eijex.com",
     siteName: "eijex",
   },
