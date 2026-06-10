@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.eijex.com"),
-  title: "eijex — Open tools for plant synthetic biology",
+  title: "eijex — Open tools for reproducible CDS design",
   description:
     "eijex builds open-source computational tools for reproducible plant CDS design and sequence review.",
   openGraph: {

@@ -48,7 +48,7 @@ export default function OGImage() {
           }}
         >
           <span>Open tools for</span>
-          <span>plant synthetic biology.</span>
+          <span>reproducible CDS design.</span>
         </div>
 
         <div style={{ fontSize: 28, color: "#64748b", marginBottom: 48, display: "flex" }}>
