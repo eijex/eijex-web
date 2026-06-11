@@ -1,7 +1,7 @@
 const stats = [
-  { value: "0.76", label: "mean CAI" },
+  { value: "0.94", label: "mean CAI" },
   { value: "100%", label: "AA identity" },
-  { value: "3,876", label: "CDS benchmarked" },
+  { value: "49,257", label: "CDS benchmarked" },
   { value: "v3.1.9", label: "latest release" },
 ];
 
@@ -22,7 +22,7 @@ export default function StatsBar() {
         ))}
       </div>
       <p className="text-center text-xs text-teal-200/40 mt-4">
-        Benchmark: v3.1.4 balanced profile · N. benthamiana SGN CDS · N=3,876
+        Benchmark: v3.2.0 balanced profile · N. benthamiana SGN CDS · N=49,257
       </p>
     </div>
   );
