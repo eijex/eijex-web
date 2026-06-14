@@ -11,9 +11,6 @@ export default function Nav() {
           <a href="#products" className="hover:text-slate-900 dark:hover:text-white transition-colors hidden sm:block">
             Products
           </a>
-          <a href="#about" className="hover:text-slate-900 dark:hover:text-white transition-colors hidden sm:block">
-            About
-          </a>
           <a
             href="https://github.com/eijex"
             target="_blank"
