@@ -20,7 +20,7 @@ const products = [
     code: "mcp.eijex.com",
     codeColor: "text-teal-900 dark:text-teal-300",
     primary: { label: "Connect ↗", href: "https://mcp.eijex.com" },
-    secondary: { label: "Docs", href: "https://github.com/eijex/eijex-mcp" },
+    secondary: { label: "GitHub", href: "https://github.com/eijex/eijex-mcp" },
     primaryBg: "bg-teal-900 hover:bg-teal-800",
   },
 ];
