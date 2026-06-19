@@ -8,7 +8,8 @@ const resourceLinks = [
   { label: "Share Wet-lab Results (Form)", href: "https://docs.google.com/forms/d/e/1FAIpQLSeSx-wYvF6YwHhSPdLMl-L44frCugdm25X_eDz50OaqTD66qA/viewform" },
   { label: "GitHub", href: "https://github.com/eijex" },
   { label: "PyPI", href: "https://pypi.org/project/factorforge-cds/" },
-  { label: "DOI: 10.5281/zenodo.20407331", href: "https://doi.org/10.5281/zenodo.20407331" },
+  { label: "Software DOI: 10.5281/zenodo.20407330", href: "https://doi.org/10.5281/zenodo.20407330" },
+  { label: "Benchmark Data DOI: 10.5281/zenodo.20676276", href: "https://doi.org/10.5281/zenodo.20676276" },
 ];
 
 export default function Footer() {
