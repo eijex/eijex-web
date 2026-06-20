@@ -1,7 +1,7 @@
 const roadmap = [
   "Reproducible CDS design and reviewable validation artifacts",
   "Benchmark governance with explicit evidence boundaries",
-  "Design package schemas for downstream review and traceability",
+  "Pre-synthesis review harnesses for synthesis, cloning, and experimental planning",
   "Validation-data capture, audit trails, and documented research decisions",
   "Human-supervised AI-assisted Design-Build-Test-Learn workflows",
 ];
@@ -21,7 +21,7 @@ export default function Objective() {
             Eijex develops evidence-linked research software for plant molecular
             expression research. We start with open-source, constraint-aware CDS
             design through FactorForge and build toward reviewable design packages,
-            validation-data capture, and documented research decisions.
+            validation-data capture, and pre-synthesis review artifacts.
           </p>
           <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
             Our public work is intentionally evidence-bounded: computational CDS

@@ -11,7 +11,7 @@ export default function Hero() {
           Open tools for<br />reproducible CDS design.
         </h1>
         <p className="text-lg text-slate-500 dark:text-slate-400 mb-10 leading-relaxed">
-          From protein sequence to reviewable CDS candidates — reproducibly.<br />
+          From protein sequence to reviewable CDS candidates and pre-synthesis sequence review.<br />
           Open-source, reproducible, and citable.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-3">

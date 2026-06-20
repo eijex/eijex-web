@@ -4,7 +4,7 @@ const products = [
     tag: "CDS Design Engine",
     tagColor: "text-teal-600 dark:text-teal-400",
     description:
-      "Constraint-aware synonymous CDS design for plant workflows. Reviews CAI, GC%, PolyA motifs, and assembly-site conflicts with reproducible outputs.",
+      "Pre-synthesis sequence review for plant CDS workflows. Generates reproducible candidates and reviews CAI, GC%, PolyA motifs, and assembly-site conflicts.",
     code: "pip install factorforge-cds",
     codeColor: "text-teal-700 dark:text-teal-400",
     primary: { label: "Docs ↗", href: "https://eijex.github.io/factorforge-cds/" },

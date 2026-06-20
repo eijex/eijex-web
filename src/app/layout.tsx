@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.eijex.com"),
   title: "eijex — Reproducible infrastructure for plant molecular expression",
   description:
-    "eijex builds evidence-linked research software for plant molecular expression, starting with open-source, constraint-aware CDS design through FactorForge.",
+    "eijex builds evidence-linked research software for plant molecular expression, starting with open-source CDS design and pre-synthesis sequence review through FactorForge.",
   openGraph: {
     title: "eijex",
     description:
