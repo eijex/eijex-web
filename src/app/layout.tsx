@@ -7,12 +7,13 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.eijex.com"),
-  title: "eijex — Open tools for reproducible CDS design",
+  title: "eijex — Reproducible infrastructure for plant molecular expression",
   description:
-    "eijex builds open-source computational tools for reproducible plant CDS design and sequence review.",
+    "eijex builds evidence-linked research software for plant molecular expression, starting with open-source, constraint-aware CDS design through FactorForge.",
   openGraph: {
     title: "eijex",
-    description: "Open tools for reproducible plant CDS design.",
+    description:
+      "Reproducible, evidence-linked research software for plant molecular expression.",
     url: "https://www.eijex.com",
     siteName: "eijex",
   },

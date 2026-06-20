@@ -8,6 +8,9 @@ export default function Nav() {
           eijex
         </span>
         <div className="flex items-center gap-6 text-sm text-slate-500 dark:text-slate-400">
+          <a href="#objective" className="hover:text-slate-900 dark:hover:text-white transition-colors hidden sm:block">
+            Objective
+          </a>
           <a href="#products" className="hover:text-slate-900 dark:hover:text-white transition-colors hidden sm:block">
             Products
           </a>
