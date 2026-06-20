@@ -1,6 +1,6 @@
 # eijex-web
 
-Company landing page for [eijex](https://www.eijex.com) — open-source computational tools for reproducible plant CDS design and sequence review.
+Company landing page for [eijex](https://www.eijex.com) — evidence-linked research software for plant molecular expression, starting with reproducible plant CDS design and sequence review.
 
 **Live:** [www.eijex.com](https://www.eijex.com)
 

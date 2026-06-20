@@ -23,7 +23,7 @@ export default function Footer() {
           <div className="sm:col-span-1">
             <div className="font-extrabold text-lg text-teal-300 mb-2">eijex</div>
             <p className="text-xs text-teal-200/70 leading-relaxed mb-3">
-              Open-source computational tools<br />for plant synthetic biology.
+              Evidence-linked research software<br />for plant molecular expression.
             </p>
             <a
               href="mailto:eijex.lab@gmail.com"
@@ -72,7 +72,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-white/10 pt-4 flex justify-between items-center">
-          <span className="text-xs text-teal-400/60">© 2026 eijex · FactorForge is AGPL-3.0</span>
+          <span className="text-xs text-teal-400/60">© 2026 eijex · Research software · FactorForge is AGPL-3.0</span>
         </div>
       </div>
     </footer>

@@ -5,7 +5,7 @@ export default function Hero() {
     >
       <div className="max-w-2xl mx-auto">
         <span className="inline-block bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-400 text-sm font-bold px-4 py-1.5 rounded-full tracking-widest mb-6">
-          OPEN SOURCE · PLANT SYNTHETIC BIOLOGY
+          OPEN SOURCE · PLANT MOLECULAR EXPRESSION
         </span>
         <h1 className="text-5xl sm:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight tracking-tight mb-5">
           Open tools for<br />reproducible CDS design.
