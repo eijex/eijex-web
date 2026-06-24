@@ -1,4 +1,4 @@
-const biocondaSoon = true; // Bioconda PR #65834 머지 후 false로 변경
+const biocondaSoon = true; // set to false once the upstream Bioconda recipe PR merges
 
 const options = [
   {
@@ -8,7 +8,7 @@ const options = [
   },
   {
     label: "conda install factorforge-cds",
-    href: null, // Bioconda pending — 링크 없음
+    href: null, // no link yet -- Bioconda recipe not merged
     soon: biocondaSoon,
   },
   {
