@@ -2,7 +2,7 @@ const stats = [
   { value: "0.94", label: "mean CAI" },
   { value: "100%", label: "AA identity" },
   { value: "49,257", label: "CDS benchmarked" },
-  { value: "v3.2.8", label: "latest release" },
+  { value: "v3.3.0", label: "live app" },
 ];
 
 export default function StatsBar() {
@@ -22,7 +22,7 @@ export default function StatsBar() {
         ))}
       </div>
       <p className="text-center text-xs text-teal-200/40 mt-4">
-        Benchmark: v3.2.0 balanced profile · N. benthamiana SGN CDS · N=49,257
+        Benchmark: v3.2.0 balanced profile · N. benthamiana SGN CDS · N=49,257 · current app default: NbeV1.1 HC CDS-derived
       </p>
     </div>
   );

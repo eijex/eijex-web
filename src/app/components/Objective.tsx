@@ -26,8 +26,9 @@ export default function Objective() {
           <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
             Our public work is intentionally evidence-bounded: computational CDS
             design outputs support expert review before synthesis, cloning,
-            expression testing, or wet-lab validation. They do not by themselves
-            claim expression yield, regulatory readiness, or experimental success.
+            experimental testing, or wet-lab validation. They are design-review
+            artifacts, not experimental validation, regulatory advice, or
+            comparative biological-performance evidence.
           </p>
         </div>
 
