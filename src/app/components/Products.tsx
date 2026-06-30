@@ -1,7 +1,7 @@
 const products = [
   {
     name: "FactorForge",
-    tag: "CDS Design Engine",
+    tag: "CDS Design Review",
     tagColor: "text-teal-600 dark:text-teal-400",
     description:
       "Pre-synthesis sequence review for plant CDS workflows. Generates reproducible candidates and reviews CAI, GC%, PolyA motifs, and assembly-site conflicts.",
