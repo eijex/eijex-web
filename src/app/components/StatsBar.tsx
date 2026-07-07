@@ -1,8 +1,16 @@
+import {
+  MEAN_CAI,
+  AA_IDENTITY,
+  CDS_BENCHMARKED,
+  LIVE_APP_VERSION,
+  BENCHMARK_CAPTION,
+} from "../lib/site-stats";
+
 const stats = [
-  { value: "0.94", label: "mean CAI" },
-  { value: "100%", label: "AA identity" },
-  { value: "49,257", label: "CDS benchmarked" },
-  { value: "v3.3.1", label: "live app" },
+  { value: MEAN_CAI, label: "mean CAI" },
+  { value: AA_IDENTITY, label: "AA identity" },
+  { value: CDS_BENCHMARKED, label: "CDS benchmarked" },
+  { value: LIVE_APP_VERSION, label: "live app" },
 ];
 
 export default function StatsBar() {
@@ -22,7 +30,7 @@ export default function StatsBar() {
         ))}
       </div>
       <p className="text-center text-xs text-teal-200/40 mt-4">
-        Benchmark: v3.2.0 balanced profile · N. benthamiana SGN CDS · N=49,257 · current app default: NbeV1.1 HC CDS-derived
+        {BENCHMARK_CAPTION}
       </p>
     </div>
   );
