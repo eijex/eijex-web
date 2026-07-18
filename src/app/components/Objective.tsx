@@ -1,5 +1,5 @@
 const roadmap = [
-  "Reproducible CDS design and reviewable validation artifacts",
+  "Reproducible CDS design and reviewable sequence-analysis artifacts",
   "Benchmark governance with explicit evidence boundaries",
   "Pre-synthesis review harnesses for synthesis, cloning, and experimental planning",
   "Validation-data capture, audit trails, and documented research decisions",

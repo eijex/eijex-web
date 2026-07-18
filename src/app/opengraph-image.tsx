@@ -1,5 +1,9 @@
 import { ImageResponse } from "next/og";
-import { MEAN_CAI, AA_IDENTITY, CDS_BENCHMARKED } from "./lib/site-stats";
+import {
+  HISTORICAL_MEAN_CAI,
+  HISTORICAL_AA_IDENTITY,
+  HISTORICAL_CDS_COUNT,
+} from "./lib/site-stats";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -58,16 +62,16 @@ export default function OGImage() {
 
         <div style={{ display: "flex", gap: 48 }}>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <span style={{ fontSize: 32, fontWeight: 800, color: "#0d9488", display: "flex" }}>{MEAN_CAI}</span>
-            <span style={{ fontSize: 16, color: "#94a3b8", display: "flex" }}>mean CAI</span>
+            <span style={{ fontSize: 32, fontWeight: 800, color: "#0d9488", display: "flex" }}>{HISTORICAL_MEAN_CAI}</span>
+            <span style={{ fontSize: 16, color: "#94a3b8", display: "flex" }}>Historical mean CAI</span>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <span style={{ fontSize: 32, fontWeight: 800, color: "#0d9488", display: "flex" }}>{AA_IDENTITY}</span>
-            <span style={{ fontSize: 16, color: "#94a3b8", display: "flex" }}>AA identity</span>
+            <span style={{ fontSize: 32, fontWeight: 800, color: "#0d9488", display: "flex" }}>{HISTORICAL_AA_IDENTITY}</span>
+            <span style={{ fontSize: 16, color: "#94a3b8", display: "flex" }}>Historical AA identity</span>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <span style={{ fontSize: 32, fontWeight: 800, color: "#0d9488", display: "flex" }}>{CDS_BENCHMARKED}</span>
-            <span style={{ fontSize: 16, color: "#94a3b8", display: "flex" }}>CDS benchmarked</span>
+            <span style={{ fontSize: 32, fontWeight: 800, color: "#0d9488", display: "flex" }}>{HISTORICAL_CDS_COUNT}</span>
+            <span style={{ fontSize: 16, color: "#94a3b8", display: "flex" }}>QLD183 records</span>
           </div>
         </div>
 
