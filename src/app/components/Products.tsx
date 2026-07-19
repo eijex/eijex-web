@@ -4,7 +4,7 @@ const products = [
     tag: "CDS Design Review",
     tagColor: "text-teal-600 dark:text-teal-400",
     description:
-      "Pre-synthesis sequence review for plant CDS workflows. Generates reproducible candidates and reviews CAI, GC%, PolyA motifs, and assembly-site conflicts.",
+      "Pre-synthesis sequence review for plant CDS workflows. Generates reproducible CDS candidates and reviews CAI, GC%, configured sequence motifs, and assembly-relevant restriction-site conflicts.",
     code: "pip install factorforge-cds",
     codeColor: "text-teal-700 dark:text-teal-400",
     primary: { label: "Docs ↗", href: "https://eijex.github.io/factorforge-cds/" },
