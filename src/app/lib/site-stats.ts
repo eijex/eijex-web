@@ -6,7 +6,7 @@ export const HISTORICAL_CAPTION =
   "FactorForge v3.2.0 · balanced profile · SGN QLD183 v103 corpus · historical packaged codon reference · scoring_contract v1.1";
 
 // Current software — live application configuration, independent of the historical benchmark above.
-export const CURRENT_APP_VERSION = "v3.4.2";
+export const CURRENT_APP_VERSION = "v3.4.3";
 export const CURRENT_CODON_REFERENCE = "NbeV1.1 HC";
 export const CURRENT_CODON_REFERENCE_ID = "nbenthamiana_nbev11_hc_v2";
 export const CURRENT_GC_POLICY = "40–47%";
