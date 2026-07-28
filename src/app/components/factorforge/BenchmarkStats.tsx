@@ -1,15 +1,22 @@
+import {
+  HISTORICAL_MEAN_CAI,
+  HISTORICAL_CDS_COUNT,
+  NATIVE_REFERENCE_MEAN_CAI,
+  NATIVE_REFERENCE_CDS_COUNT,
+} from "../../lib/site-stats";
+
 const benchmarks = [
   {
     name: "FactorForge",
-    value: "0.94",
-    sample: "n=49,257 CDS",
+    value: HISTORICAL_MEAN_CAI,
+    sample: `n=${HISTORICAL_CDS_COUNT} CDS`,
     tone: "border-teal-300 bg-teal-50 dark:border-teal-700 dark:bg-teal-950/40",
     valueTone: "text-teal-700 dark:text-teal-300",
   },
   {
-    name: "Baseline",
-    value: "0.76",
-    sample: "n=3,876 CDS",
+    name: "Native reference (unoptimized)",
+    value: NATIVE_REFERENCE_MEAN_CAI,
+    sample: `n=${NATIVE_REFERENCE_CDS_COUNT} CDS`,
     tone: "border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-800",
     valueTone: "text-slate-700 dark:text-slate-200",
   },
