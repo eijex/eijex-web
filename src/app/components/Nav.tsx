@@ -1,12 +1,16 @@
+import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Nav() {
   return (
     <nav className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 sticky top-0 z-50">
       <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-        <span className="font-extrabold text-lg bg-gradient-to-r from-teal-400 to-green-900 bg-clip-text text-transparent">
+        <Link
+          href="/"
+          className="font-extrabold text-lg bg-gradient-to-r from-teal-400 to-green-900 bg-clip-text text-transparent"
+        >
           eijex
-        </span>
+        </Link>
         <div className="flex items-center gap-6 text-sm text-slate-500 dark:text-slate-400">
           <a href="#objective" className="hover:text-slate-900 dark:hover:text-white transition-colors hidden sm:block">
             Objective
