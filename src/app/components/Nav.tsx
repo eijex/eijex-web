@@ -11,6 +11,12 @@ export default function Nav() {
           <a href="#objective" className="hover:text-slate-900 dark:hover:text-white transition-colors hidden sm:block">
             Objective
           </a>
+          <a
+            href="/factorforge"
+            className="font-semibold text-teal-600 hover:text-teal-800 dark:text-teal-400 dark:hover:text-teal-200 transition-colors hidden sm:block"
+          >
+            FactorForge
+          </a>
           <a href="#products" className="hover:text-slate-900 dark:hover:text-white transition-colors hidden sm:block">
             Products
           </a>

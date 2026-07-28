@@ -7,7 +7,7 @@ const products = [
       "Pre-synthesis sequence review for plant CDS workflows. Generates reproducible CDS candidates and reviews CAI, GC%, configured sequence motifs, and assembly-relevant restriction-site conflicts.",
     code: "pip install factorforge-cds",
     codeColor: "text-teal-700 dark:text-teal-400",
-    primary: { label: "Docs ↗", href: "https://eijex.github.io/factorforge-cds/" },
+    primary: { label: "Learn More", href: "/factorforge" },
     secondary: { label: "GitHub", href: "https://github.com/eijex/factorforge-cds" },
     primaryBg: "bg-teal-600 hover:bg-teal-700",
   },
@@ -54,8 +54,8 @@ export default function Products() {
               <div className="flex gap-2">
                 <a
                   href={p.primary.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={p.primary.href.startsWith("/") ? undefined : "_blank"}
+                  rel={p.primary.href.startsWith("/") ? undefined : "noopener noreferrer"}
                   className={`flex-1 text-center text-white text-sm font-bold py-2.5 rounded-lg transition-colors ${p.primaryBg}`}
                 >
                   {p.primary.label}

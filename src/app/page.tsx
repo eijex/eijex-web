@@ -2,7 +2,6 @@ import Nav from "@/app/components/Nav";
 import AboutStrip from "@/app/components/AboutStrip";
 import Hero from "@/app/components/Hero";
 import AccessOptions from "@/app/components/AccessOptions";
-import StatsBar from "@/app/components/StatsBar";
 import Objective from "@/app/components/Objective";
 import Products from "@/app/components/Products";
 import Footer from "@/app/components/Footer";
@@ -13,7 +12,6 @@ export default function Home() {
       <Nav />
       <Hero />
       <AccessOptions />
-      <StatsBar />
       <AboutStrip />
       <Objective />
       <Products />
