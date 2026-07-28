@@ -1,5 +1,7 @@
+import Link from "next/link";
+
 const productLinks = [
-  { label: "FactorForge", href: "https://factorforge.eijex.com" },
+  { label: "FactorForge", href: "/factorforge" },
   { label: "Eijex MCP", href: "https://mcp.eijex.com" },
 ];
 
@@ -37,18 +39,29 @@ export default function Footer() {
               Products
             </p>
             <ul className="space-y-2">
-              {productLinks.map((l) => (
-                <li key={l.label}>
-                  <a
-                    href={l.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-teal-200/70 hover:text-teal-200 transition-colors"
-                  >
-                    {l.label}
-                  </a>
-                </li>
-              ))}
+              {productLinks.map((l) =>
+                l.href.startsWith("/") ? (
+                  <li key={l.label}>
+                    <Link
+                      href={l.href}
+                      className="text-xs text-teal-200/70 hover:text-teal-200 transition-colors"
+                    >
+                      {l.label}
+                    </Link>
+                  </li>
+                ) : (
+                  <li key={l.label}>
+                    <a
+                      href={l.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-teal-200/70 hover:text-teal-200 transition-colors"
+                    >
+                      {l.label}
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
           </div>
           <div>

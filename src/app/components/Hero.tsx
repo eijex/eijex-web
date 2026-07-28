@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <section
@@ -15,14 +17,12 @@ export default function Hero() {
           Open-source, reproducible, and citable.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-3">
-          <a
-            href="https://factorforge.eijex.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/factorforge"
             className="bg-teal-600 text-white px-7 py-3.5 rounded-full text-base font-bold hover:bg-teal-700 transition-colors"
           >
             Explore FactorForge →
-          </a>
+          </Link>
           <a
             href="https://github.com/eijex/factorforge-cds"
             target="_blank"
