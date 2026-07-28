@@ -60,6 +60,39 @@ export default function FactorForgePage() {
         </div>
       </section>
 
+      <section className="border-t border-slate-200 px-6 py-20 dark:border-slate-800">
+        <div className="mx-auto max-w-5xl">
+          <p className="text-sm font-bold uppercase tracking-widest text-teal-600 dark:text-teal-400">Algorithm</p>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 dark:text-white">Constrained CAI maximization, computed exactly.</h2>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+            For a fixed protein and a configured GC% target range, <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs dark:bg-slate-800">feasibility_best</code> searches every synonymous CDS that encodes the protein and returns the one with the highest Codon Adaptation Index inside that range — an exact dynamic-programming solution, not a heuristic approximation.
+          </p>
+          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-800">
+              <h3 className="font-extrabold text-slate-900 dark:text-white">Objective</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">Among all synonymous codon sequences whose GC% falls within the configured range, choose the one that maximizes CAI.</p>
+              <pre className="mt-3 overflow-x-auto rounded-lg bg-slate-950 p-3 text-xs leading-6 text-teal-300"><code>{`maximize   CAI(C)
+subject to GC_low <= GC%(C) <= GC_high
+over       C in synonymous(protein)`}</code></pre>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-800">
+              <h3 className="font-extrabold text-slate-900 dark:text-white">Recurrence</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">Each state is (codon position, cumulative GC-base count). The DP keeps only the highest-scoring path into every reachable state.</p>
+              <pre className="mt-3 overflow-x-auto rounded-lg bg-slate-950 p-3 text-xs leading-6 text-teal-300"><code>{`D[i][h] = max over codon c
+  of D[i-1][h - gc(c)] + log(weight(c))`}</code></pre>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-800">
+              <h3 className="font-extrabold text-slate-900 dark:text-white">Fallback</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">If no synonymous sequence satisfies the configured GC window, the DP returns the highest-CAI sequence with no GC constraint applied — a defined fallback, not a constraint failure.</p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-800">
+              <h3 className="font-extrabold text-slate-900 dark:text-white">Tie-breaking</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">Equal-scoring paths keep the first codon encountered in the reference table&apos;s fixed order — deterministic by construction, not by chance.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="border-t border-slate-200 bg-slate-50 px-6 py-16 dark:border-slate-800 dark:bg-slate-950">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Read the implementation notes</h2>
