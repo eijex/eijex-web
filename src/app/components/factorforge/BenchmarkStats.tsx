@@ -4,6 +4,7 @@ import {
   NATIVE_REFERENCE_MEAN_CAI,
   NATIVE_REFERENCE_CDS_COUNT,
 } from "../../lib/site-stats";
+import BenchmarkChart from "./BenchmarkChart";
 
 const benchmarks = [
   {
@@ -46,6 +47,7 @@ export default function BenchmarkStats() {
             </div>
           ))}
         </div>
+        <BenchmarkChart />
       </div>
     </section>
   );
