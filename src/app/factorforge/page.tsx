@@ -24,7 +24,8 @@ export default function FactorForgePage() {
             Reproducible CDS design with explicit constraints, reviewable outputs, and a production path that removes biological hallucination risks from the optimization engine.
           </p>
           <div className="mt-10 flex flex-wrap gap-3 text-sm font-bold">
-            <span className="rounded-full bg-teal-600 px-4 py-2 text-white">CPU deterministic DP</span>
+            <span className="rounded-full bg-teal-600 px-4 py-2 text-white">DBTL Design Anchor</span>
+            <span className="rounded-full bg-teal-800 px-4 py-2 text-white">CPU deterministic DP</span>
             <span className="rounded-full border border-slate-300 px-4 py-2 text-slate-600 dark:border-slate-600 dark:text-slate-300">RSPA-aligned evidence boundaries</span>
           </div>
         </div>
