@@ -11,14 +11,14 @@ export default function Hero() {
             PLANT BIO-DESIGN INFRASTRUCTURE
           </span>
           <span className="inline-block bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-400 text-xs font-extrabold px-3.5 py-1 rounded-full tracking-widest uppercase">
-            OPEN SOURCE
+            PLANT MOLECULAR EXPRESSION
           </span>
         </div>
         <h1 className="text-5xl sm:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight tracking-tight mb-5">
-          Reproducible CDS design,<br />powered by DBTL.
+          Reproducible plant CDS design,<br />powered by DBTL.
         </h1>
         <p className="text-lg text-slate-500 dark:text-slate-400 mb-10 leading-relaxed">
-          Connecting computational sequence engineering with reviewable wet-lab evidence capture.<br />
+          Connecting computational plant sequence engineering with reviewable wet-lab evidence capture.<br />
           Open-source, constraint-aware, and citable.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-3">
