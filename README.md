@@ -4,6 +4,9 @@ Company landing page for [eijex](https://www.eijex.com) — evidence-linked rese
 
 **Live:** [www.eijex.com](https://www.eijex.com)
 
+[![Sponsor](https://img.shields.io/badge/Sponsor-EA4AAA?style=flat&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/eijex)
+
+
 ## Stack
 
 - [Next.js 15](https://nextjs.org) (App Router)
@@ -37,3 +40,9 @@ Naked domain (`eijex.com`) redirects to `www.eijex.com` via Cloudflare Redirect 
 - [FactorForge](https://factorforge.eijex.com) — CDS design engine
 - [Eijex MCP](https://mcp.eijex.com) — MCP-compatible public tool access
 - [eijex GitHub](https://github.com/eijex)
+
+## Support
+
+- [GitHub Sponsors](https://github.com/sponsors/eijex)
+- [PayPal](https://paypal.me/munkyukim)
+

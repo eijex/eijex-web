@@ -6,6 +6,8 @@ const productLinks = [
 ];
 
 const resourceLinks = [
+  { label: "Sponsor Research (GitHub)", href: "https://github.com/sponsors/eijex" },
+  { label: "Donate via PayPal", href: "https://paypal.me/munkyukim" },
   { label: "Documentation", href: "https://eijex.github.io/factorforge-cds/" },
   { label: "Share Wet-lab Results (GitHub)", href: "https://github.com/eijex/factorforge-cds/issues/new?template=wet_lab_result.yml" },
   { label: "GitHub", href: "https://github.com/eijex" },
