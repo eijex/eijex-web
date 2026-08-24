@@ -3,6 +3,8 @@ import Link from "next/link";
 const productLinks = [
   { label: "FactorForge", href: "/factorforge" },
   { label: "Eijex MCP", href: "https://mcp.eijex.com" },
+  { label: "AgentOS", href: "https://github.com/eijex/eijex-agentOps" },
+  { label: "ValidationHub", href: "https://github.com/eijex/eijex-validationHub" },
 ];
 
 const resourceLinks = [

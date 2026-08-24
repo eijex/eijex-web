@@ -18,15 +18,17 @@ export default function Objective() {
             End-to-End DBTL Infrastructure for Plant Expression.
           </h2>
           <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-            Eijex provides a closed-loop Design–Build–Test–Learn (DBTL) platform
-            for plant molecular expression research. We connect open-source,
-            constraint-aware CDS design (FactorForge) to wet-lab validation data
-            capture (ValidationHub) and machine-learning yield optimization (YieldPredict).
+            Eijex is building an open-source, evidence-bounded
+            Design–Build–Test–Learn (DBTL) stack for plant molecular expression
+            research: FactorForge for reproducible CDS design and review, AgentOS
+            for human-supervised workflow integrity, and ValidationHub for curated
+            validation evidence.
           </p>
           <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-            Every step is intentionally evidence-bounded: computational CDS
-            outputs support expert review prior to synthesis, cloning, and
-            experimental testing, ensuring reproducible research decisions.
+            The software, schemas, and synthetic examples are intended to be
+            openly available. Proprietary sequences, partner records, and other
+            permissioned research data remain governed separately from the
+            public code.
           </p>
         </div>
 

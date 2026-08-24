@@ -39,10 +39,11 @@ Naked domain (`eijex.com`) redirects to `www.eijex.com` via Cloudflare Redirect 
 
 - [FactorForge](https://factorforge.eijex.com) — CDS design engine
 - [Eijex MCP](https://mcp.eijex.com) — MCP-compatible public tool access
+- [AgentOS](https://github.com/eijex/eijex-agentOps) — human-supervised workflow integrity
+- [ValidationHub](https://github.com/eijex/eijex-validationHub) — evidence registry and public schemas
 - [eijex GitHub](https://github.com/eijex)
 
 ## Support
 
 - [GitHub Sponsors](https://github.com/sponsors/eijex)
 - [PayPal](https://paypal.me/munkyukim)
-
