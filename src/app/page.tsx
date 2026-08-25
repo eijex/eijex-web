@@ -1,9 +1,11 @@
 import Nav from "@/app/components/Nav";
 import AboutStrip from "@/app/components/AboutStrip";
 import Hero from "@/app/components/Hero";
-import AccessOptions from "@/app/components/AccessOptions";
-import Objective from "@/app/components/Objective";
+import Ecosystem from "@/app/components/Ecosystem";
+import ImplementationStatus from "@/app/components/ImplementationStatus";
 import Products from "@/app/components/Products";
+import Research from "@/app/components/Research";
+import DataBoundary from "@/app/components/DataBoundary";
 import Footer from "@/app/components/Footer";
 
 export default function Home() {
@@ -11,10 +13,12 @@ export default function Home() {
     <main>
       <Nav />
       <Hero />
-      <AccessOptions />
       <AboutStrip />
-      <Objective />
+      <Ecosystem />
+      <ImplementationStatus />
       <Products />
+      <Research />
+      <DataBoundary />
       <Footer />
     </main>
   );

@@ -10,7 +10,7 @@ export const NATIVE_REFERENCE_MEAN_CAI = "0.72";
 export const NATIVE_REFERENCE_CDS_COUNT = HISTORICAL_CDS_COUNT;
 
 // Current software — live application configuration, independent of the historical benchmark above.
-export const CURRENT_APP_VERSION = "v3.4.4";
+export const CURRENT_APP_VERSION = "v3.4.5";
 export const CURRENT_CODON_REFERENCE = "NbeV1.1 HC";
 export const CURRENT_CODON_REFERENCE_ID = "nbenthamiana_nbev11_hc_v2";
 export const CURRENT_GC_POLICY = "40–47%";

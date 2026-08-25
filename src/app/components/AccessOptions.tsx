@@ -20,10 +20,10 @@ const options = [
 
 export default function AccessOptions() {
   return (
-    <div className="bg-white dark:bg-slate-900 border-t border-b border-slate-200 dark:border-slate-700 py-5 px-6">
-      <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-3">
+    <div className="mx-auto mt-8 max-w-4xl rounded-2xl border border-teal-200 bg-teal-50 px-5 py-5 dark:border-teal-900 dark:bg-teal-950/30">
+      <div className="flex flex-wrap items-center justify-center gap-3">
         <span className="text-sm font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-widest">
-          Available via
+          FactorForge available via
         </span>
         {options.map((opt) =>
           opt.href ? (

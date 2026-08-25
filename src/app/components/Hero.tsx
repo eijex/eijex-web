@@ -1,42 +1,52 @@
 import Link from "next/link";
+import { publicLinks } from "@/app/lib/ecosystem";
 
 export default function Hero() {
   return (
     <section
-      className="py-20 px-6 text-center bg-gradient-to-br from-teal-50 via-slate-50 to-green-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800"
+      className="overflow-hidden bg-gradient-to-br from-teal-50 via-slate-50 to-green-50 px-6 py-20 text-center dark:from-slate-950 dark:via-slate-900 dark:to-emerald-950/40 sm:py-24"
     >
-      <div className="max-w-2xl mx-auto">
-        <div className="flex justify-center gap-2 mb-6">
-          <span className="inline-block bg-teal-100 dark:bg-teal-900/40 text-teal-800 dark:text-teal-300 text-xs font-extrabold px-3.5 py-1 rounded-full tracking-widest uppercase">
-            PLANT BIO-DESIGN INFRASTRUCTURE
-          </span>
-          <span className="inline-block bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-400 text-xs font-extrabold px-3.5 py-1 rounded-full tracking-widest uppercase">
-            PLANT MOLECULAR EXPRESSION
+      <div className="mx-auto max-w-4xl">
+        <div className="mb-7 flex justify-center">
+          <span className="inline-block rounded-full border border-teal-200 bg-white/70 px-4 py-1.5 text-[0.68rem] font-extrabold uppercase tracking-[0.2em] text-teal-800 shadow-sm backdrop-blur dark:border-teal-800 dark:bg-slate-900/70 dark:text-teal-300">
+            Open evidence infrastructure for plant expression
           </span>
         </div>
-        <h1 className="text-5xl sm:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight tracking-tight mb-5">
-          Reproducible plant CDS design,<br />powered by DBTL.
+        <h1 className="mb-6 text-5xl font-extrabold leading-[1.04] tracking-tight text-slate-950 dark:text-white sm:text-7xl">
+          Design sequences.<br />Govern workflows.<br />Preserve evidence.
         </h1>
-        <p className="text-lg text-slate-500 dark:text-slate-400 mb-10 leading-relaxed">
-          Connecting computational plant sequence engineering with reviewable wet-lab evidence capture.<br />
-          Open-source, constraint-aware, and citable.
+        <p className="mx-auto mb-5 max-w-3xl text-lg leading-relaxed text-slate-600 dark:text-slate-300 sm:text-xl">
+          Eijex develops open-source, human-supervised research software connecting
+          reproducible plant CDS design with reviewable evidence infrastructure.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-3">
+        <p className="mx-auto mb-10 max-w-2xl text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+          FactorForge is available now. Shared database integration remains a
+          research checkpoint.
+        </p>
+        <div className="flex flex-col justify-center gap-3 sm:flex-row">
           <Link
-            href="/factorforge"
+            href="#ecosystem"
             className="bg-teal-600 text-white px-7 py-3.5 rounded-full text-base font-bold hover:bg-teal-700 transition-colors"
           >
-            Explore FactorForge →
+            Explore the stack ↓
           </Link>
           <a
-            href="https://github.com/eijex/factorforge-cds"
+            href={publicLinks.factorforgeApp}
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 px-7 py-3.5 rounded-full text-base font-semibold hover:border-slate-400 dark:hover:border-slate-400 transition-colors"
+            className="rounded-full border border-slate-300 px-7 py-3.5 text-base font-semibold text-slate-700 transition-colors hover:border-slate-500 dark:border-slate-600 dark:text-slate-200 dark:hover:border-slate-400"
           >
-            View on GitHub
+            Try FactorForge ↗
           </a>
         </div>
+        <a
+          href={publicLinks.eijexGitHub}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-block text-sm font-semibold text-slate-500 underline decoration-slate-300 underline-offset-4 hover:text-slate-800 dark:text-slate-400 dark:decoration-slate-600 dark:hover:text-white"
+        >
+          View Eijex on GitHub
+        </a>
       </div>
     </section>
   );

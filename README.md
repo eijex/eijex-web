@@ -1,6 +1,6 @@
 # eijex-web
 
-Company landing page for [eijex](https://www.eijex.com) — evidence-linked research software for plant molecular expression, starting with reproducible plant CDS design and sequence review.
+Company landing page for [eijex](https://www.eijex.com) — open-source research software for reproducible plant CDS design, human-supervised workflow governance, and evidence traceability.
 
 **Live:** [www.eijex.com](https://www.eijex.com)
 
@@ -9,7 +9,7 @@ Company landing page for [eijex](https://www.eijex.com) — evidence-linked rese
 
 ## Stack
 
-- [Next.js 15](https://nextjs.org) (App Router)
+- [Next.js 16](https://nextjs.org) (App Router)
 - [Tailwind CSS v4](https://tailwindcss.com)
 - [next-themes](https://github.com/pacocoursey/next-themes) — dark/light mode
 - Deployed on [Vercel](https://vercel.com)
@@ -39,8 +39,8 @@ Naked domain (`eijex.com`) redirects to `www.eijex.com` via Cloudflare Redirect 
 
 - [FactorForge](https://factorforge.eijex.com) — CDS design engine
 - [Eijex MCP](https://mcp.eijex.com) — MCP-compatible public tool access
-- [AgentOS](https://github.com/eijex/eijex-agentOps) — human-supervised workflow integrity
-- [ValidationHub](https://github.com/eijex/eijex-validationHub) — evidence registry and public schemas
+- [AgentOS](https://github.com/eijex/eijex-agentOps) — public human-supervised workflow control-plane code
+- [ValidationHub](https://github.com/eijex/eijex-validationHub) — public evidence-registry code and schemas
 - [eijex GitHub](https://github.com/eijex)
 
 ## Support
