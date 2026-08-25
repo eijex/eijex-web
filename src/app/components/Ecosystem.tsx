@@ -69,7 +69,7 @@ function WorkflowStep({
 
 export default function Ecosystem() {
   return (
-    <section id="ecosystem" className="bg-white px-6 py-20 dark:bg-slate-900">
+    <section id="ecosystem" className="scroll-mt-20 bg-white px-6 py-20 dark:bg-slate-900">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <p className="mb-3 text-xs font-extrabold uppercase tracking-[0.2em] text-teal-600 dark:text-teal-400">

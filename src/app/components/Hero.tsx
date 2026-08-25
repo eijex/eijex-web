@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { publicLinks } from "@/app/lib/ecosystem";
+import EcosystemLink from "./EcosystemLink";
 
 export default function Hero() {
   return (
@@ -24,12 +24,11 @@ export default function Hero() {
           research checkpoint.
         </p>
         <div className="flex flex-col justify-center gap-3 sm:flex-row">
-          <Link
-            href="#ecosystem"
+          <EcosystemLink
             className="bg-teal-600 text-white px-7 py-3.5 rounded-full text-base font-bold hover:bg-teal-700 transition-colors"
           >
             Explore the stack ↓
-          </Link>
+          </EcosystemLink>
           <a
             href={publicLinks.factorforgeApp}
             target="_blank"

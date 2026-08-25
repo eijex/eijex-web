@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import EcosystemLink from "./EcosystemLink";
 import { publicLinks } from "@/app/lib/ecosystem";
 
 export default function Nav() {
@@ -17,9 +18,9 @@ export default function Nav() {
             <Link href="/about" className="hover:text-slate-900 dark:hover:text-white transition-colors">
               About
             </Link>
-            <Link href="/#ecosystem" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+            <EcosystemLink className="hover:text-slate-900 dark:hover:text-white transition-colors">
               Stack
-            </Link>
+            </EcosystemLink>
             <Link href="/factorforge" className="hover:text-slate-900 dark:hover:text-white transition-colors">
               FactorForge
             </Link>
@@ -46,9 +47,9 @@ export default function Nav() {
               <Link href="/about" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
                 About Eijex
               </Link>
-              <Link href="/#ecosystem" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
+              <EcosystemLink className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
                 Stack
-              </Link>
+              </EcosystemLink>
               <div className="my-1 border-t border-slate-200 dark:border-slate-700" />
               <Link href="/factorforge" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
                 FactorForge
