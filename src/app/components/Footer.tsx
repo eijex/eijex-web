@@ -24,7 +24,7 @@ export default function Footer() {
       style={{ background: "linear-gradient(90deg, #134e4a, #14532d)" }}
     >
       <div className="max-w-5xl mx-auto">
-        <div className="mb-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mb-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div className="sm:col-span-1">
             <div className="font-extrabold text-lg text-teal-300 mb-2">eijex</div>
             <p className="text-xs text-teal-200/70 leading-relaxed mb-3">
@@ -65,23 +65,6 @@ export default function Footer() {
                   </li>
                 )
               )}
-            </ul>
-          </div>
-          <div>
-            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-teal-400">
-              Research
-            </p>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/#research" className="text-xs text-teal-200/70 transition-colors hover:text-teal-200">
-                  Paper 1 · Computational case study
-                </Link>
-              </li>
-              <li>
-                <Link href="/#research" className="text-xs text-teal-200/70 transition-colors hover:text-teal-200">
-                  Paper 2 · Planning scaffold
-                </Link>
-              </li>
             </ul>
           </div>
           <div>
