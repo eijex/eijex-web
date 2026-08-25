@@ -34,6 +34,8 @@ const required = [
   "No hosted public evidence database",
   'href: "/agentos"',
   'href: "/validationhub"',
+  'href="/about"',
+  "The name is a design philosophy",
 ];
 
 for (const marker of required) {
@@ -57,4 +59,5 @@ for (const pattern of prohibited) {
 assert(statSync(new URL("../src/app/page.tsx", import.meta.url)).isFile());
 assert(statSync(new URL("../src/app/agentos/page.tsx", import.meta.url)).isFile());
 assert(statSync(new URL("../src/app/validationhub/page.tsx", import.meta.url)).isFile());
+assert(statSync(new URL("../src/app/about/page.tsx", import.meta.url)).isFile());
 console.log(`Public-claim contract passed across ${files.length} source files.`);

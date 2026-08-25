@@ -30,6 +30,12 @@ export default function Footer() {
             <p className="text-xs text-teal-200/70 leading-relaxed mb-3">
               Open research software for plant bio-design,<br />workflow governance, and evidence traceability.
             </p>
+            <Link
+              href="/about"
+              className="mb-2 block text-xs font-semibold text-teal-300/90 transition-colors hover:text-teal-200"
+            >
+              About Eijex →
+            </Link>
             <a
               href="mailto:eijex.lab@gmail.com"
               className="text-xs text-teal-300/80 hover:text-teal-300 transition-colors"

@@ -14,6 +14,9 @@ export default function Nav() {
         </Link>
         <div className="flex items-center gap-3 sm:gap-4 text-sm text-slate-500 dark:text-slate-400">
           <div className="hidden items-center gap-4 md:flex">
+            <Link href="/about" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+              About
+            </Link>
             <Link href="/#ecosystem" className="hover:text-slate-900 dark:hover:text-white transition-colors">
               Stack
             </Link>
@@ -37,9 +40,16 @@ export default function Nav() {
           </a>
           <details className="group relative md:hidden">
             <summary className="cursor-pointer list-none rounded-full border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-700 transition-colors hover:border-slate-400 dark:border-slate-700 dark:text-slate-200 dark:hover:border-slate-500">
-              Products <span aria-hidden="true">▾</span>
+              Menu <span aria-hidden="true">▾</span>
             </summary>
             <div className="absolute right-0 top-full z-50 mt-2 w-52 overflow-hidden rounded-xl border border-slate-200 bg-white p-2 shadow-xl dark:border-slate-700 dark:bg-slate-900">
+              <Link href="/about" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
+                About Eijex
+              </Link>
+              <Link href="/#ecosystem" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
+                Stack
+              </Link>
+              <div className="my-1 border-t border-slate-200 dark:border-slate-700" />
               <Link href="/factorforge" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
                 FactorForge
               </Link>
