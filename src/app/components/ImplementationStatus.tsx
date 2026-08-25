@@ -65,9 +65,10 @@ export default function ImplementationStatus() {
         </div>
 
         <div className="mt-7 rounded-2xl border border-amber-200 bg-amber-50 px-6 py-5 text-center text-sm leading-relaxed text-amber-950 dark:border-amber-900 dark:bg-amber-950/30 dark:text-amber-200">
-          These checkpoints show that implementation has begun. They do not
-          establish a synchronized production database, a completed evidence
-          ledger, or biological performance.
+          These checkpoints show that implementation has begun.
+          <br />
+          They do not establish a synchronized production database, a completed
+          evidence ledger, or biological performance.
         </div>
       </div>
     </section>
