@@ -36,6 +36,12 @@ export default function Footer() {
             >
               About Eijex →
             </Link>
+            <Link
+              href="/research-notes"
+              className="mb-2 block text-xs font-semibold text-teal-300/90 transition-colors hover:text-teal-200"
+            >
+              Research Notes →
+            </Link>
             <a
               href="mailto:eijex.lab@gmail.com"
               className="text-xs text-teal-300/80 hover:text-teal-300 transition-colors"
