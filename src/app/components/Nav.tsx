@@ -24,6 +24,9 @@ export default function Nav() {
             <Link href="/factorforge" className="hover:text-slate-900 dark:hover:text-white transition-colors">
               FactorForge
             </Link>
+            <Link href="/slm" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+              SLM Lab
+            </Link>
             <Link href="/agentos" className="hover:text-slate-900 dark:hover:text-white transition-colors">
               AgentOS
             </Link>
@@ -56,6 +59,9 @@ export default function Nav() {
               <div className="my-1 border-t border-slate-200 dark:border-slate-700" />
               <Link href="/factorforge" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
                 FactorForge
+              </Link>
+              <Link href="/slm" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
+                FactorForge SLM Lab
               </Link>
               <Link href="/agentos" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
                 AgentOS

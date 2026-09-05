@@ -64,6 +64,9 @@ const prohibited = [
   /collaborators\//i,
   /PlantForm/i,
   /Target-mAb/i,
+  /world.?s first biologically[- ]constrained/i,
+  /100% physically synthesizable/i,
+  /consistently outperforms dynamic programming/i,
   /project-[a-z0-9-]{8,}/i,
   /\b[ACGT]{45,}\b/i,
 ];
@@ -77,6 +80,7 @@ assert(statSync(new URL("../src/app/agentos/page.tsx", import.meta.url)).isFile(
 assert(statSync(new URL("../src/app/validationhub/page.tsx", import.meta.url)).isFile());
 assert(statSync(new URL("../src/app/about/page.tsx", import.meta.url)).isFile());
 assert(statSync(new URL("../src/app/research-notes/page.tsx", import.meta.url)).isFile());
+assert(statSync(new URL("../src/app/slm/page.tsx", import.meta.url)).isFile());
 console.log(
   `Public-claim contract passed across ${files.length} source files and ${noteFiles.length} research notes.`,
 );
