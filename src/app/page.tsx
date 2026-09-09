@@ -2,6 +2,7 @@ import Nav from "@/app/components/Nav";
 import AboutStrip from "@/app/components/AboutStrip";
 import Hero from "@/app/components/Hero";
 import Ecosystem from "@/app/components/Ecosystem";
+import ResearcherReport from "@/app/components/ResearcherReport";
 import ImplementationStatus from "@/app/components/ImplementationStatus";
 import Products from "@/app/components/Products";
 import Research from "@/app/components/Research";
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero />
       <AboutStrip />
       <Ecosystem />
+      <ResearcherReport />
       <ImplementationStatus />
       <Products />
       <Research />
