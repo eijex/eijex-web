@@ -23,6 +23,18 @@ const accentStyles = {
     code: "text-violet-700 dark:text-violet-300",
     button: "bg-violet-700 hover:bg-violet-800",
   },
+  amber: {
+    tag: "text-amber-700 dark:text-amber-300",
+    code: "text-amber-700 dark:text-amber-300",
+    button: "bg-amber-700 hover:bg-amber-800",
+  },
+} as const;
+
+const statusStyles = {
+  Available:
+    "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300",
+  "Public code": "bg-cyan-100 text-cyan-800 dark:bg-cyan-950 dark:text-cyan-300",
+  Development: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300",
 } as const;
 
 export default function Products() {
@@ -46,11 +58,11 @@ export default function Products() {
             return (
             <div
               key={p.id}
-              className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-7"
+              className={`bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-7 ${p.id === "evidence-toolkit" ? "sm:col-span-2" : ""}`}
             >
               <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
                 <h3 className="font-extrabold text-xl text-slate-900 dark:text-white">{p.name}</h3>
-                <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-wide text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
+                <span className={`rounded-full px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-wide ${statusStyles[p.status]}`}>
                   {p.status}
                 </span>
               </div>
@@ -61,7 +73,7 @@ export default function Products() {
               <code className={`block bg-slate-100 dark:bg-slate-900 rounded-md px-3 py-2 text-sm mb-5 ${accent.code}`}>
                 {p.code}
               </code>
-              {p.primary && p.secondary ? (
+              {p.primary ? (
                 <div className="flex gap-2">
                   {p.primary.href.startsWith("/") ? (
                     <Link
@@ -80,14 +92,16 @@ export default function Products() {
                       {p.primary.label}
                     </a>
                   )}
-                  <a
-                    href={p.secondary.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 text-center border border-slate-200 dark:border-slate-600 text-slate-500 dark:text-slate-400 text-sm py-2.5 rounded-lg hover:border-slate-300 dark:hover:border-slate-500 transition-colors"
-                  >
-                    {p.secondary.label}
-                  </a>
+                  {p.secondary ? (
+                    <a
+                      href={p.secondary.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center border border-slate-200 dark:border-slate-600 text-slate-500 dark:text-slate-400 text-sm py-2.5 rounded-lg hover:border-slate-300 dark:hover:border-slate-500 transition-colors"
+                    >
+                      {p.secondary.label}
+                    </a>
+                  ) : null}
                 </div>
               ) : null}
             </div>

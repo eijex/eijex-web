@@ -1,15 +1,15 @@
-export type ProductStatus = "Available" | "Public code";
+export type ProductStatus = "Available" | "Public code" | "Development";
 
 export type Product = {
-  id: "factorforge" | "mcp" | "agentos" | "validationhub";
+  id: "factorforge" | "mcp" | "agentos" | "validationhub" | "evidence-toolkit";
   name: string;
   tag: string;
   status: ProductStatus;
   description: string;
   code: string;
   primary: { label: string; href: string };
-  secondary: { label: string; href: string };
-  accent: "teal" | "slate" | "cyan" | "violet";
+  secondary?: { label: string; href: string };
+  accent: "teal" | "slate" | "cyan" | "violet" | "amber";
 };
 
 export const publicLinks = {
@@ -74,6 +74,17 @@ export const products: readonly Product[] = [
     secondary: { label: "GitHub", href: publicLinks.validationhubGitHub },
     accent: "violet",
   },
+  {
+    id: "evidence-toolkit",
+    name: "Evidence Toolkit",
+    tag: "Review Package Contract",
+    status: "Development",
+    description:
+      "Sequence-free schemas and deterministic checks for linking design, selection, and validation-evidence references into a reviewable package.",
+    code: "Contract v0.1 · Synthetic fixtures",
+    primary: { label: "Learn more", href: "/evidence-toolkit" },
+    accent: "amber",
+  },
 ] as const;
 
 export const implementationStatus = [
@@ -91,6 +102,7 @@ export const implementationStatus = [
     label: "Research checkpoint",
     tone: "amber",
     items: [
+      "Evidence Toolkit v0.1 contract and synthetic package validator",
       "Captured GCP PostgreSQL 16 research instance",
       "Separate tested FactorForge SQLite metadata path",
       "Byte-pinned candidate-asset manifest registration",

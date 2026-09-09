@@ -3,7 +3,16 @@ import { getAllResearchNotes } from "@/app/lib/research-notes";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.eijex.com";
-  const staticRoutes = ["", "/about", "/factorforge", "/slm", "/agentos", "/validationhub", "/research-notes"];
+  const staticRoutes = [
+    "",
+    "/about",
+    "/factorforge",
+    "/slm",
+    "/agentos",
+    "/validationhub",
+    "/evidence-toolkit",
+    "/research-notes",
+  ];
 
   return [
     ...staticRoutes.map((route) => ({

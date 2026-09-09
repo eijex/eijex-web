@@ -59,6 +59,7 @@ Naked domain (`eijex.com`) redirects to `www.eijex.com` via Cloudflare Redirect 
 - [Eijex MCP](https://mcp.eijex.com) — MCP-compatible public tool access
 - [AgentOS](https://github.com/eijex/eijex-agentOps) — public human-supervised workflow control-plane code
 - [ValidationHub](https://github.com/eijex/eijex-validationHub) — public evidence-registry code and schemas
+- Evidence Toolkit — development-stage sequence-free evidence-package contract and validator
 - [eijex GitHub](https://github.com/eijex)
 
 ## Support

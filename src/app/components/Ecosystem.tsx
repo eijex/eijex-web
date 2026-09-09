@@ -81,7 +81,8 @@ export default function Ecosystem() {
           <p className="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300">
             FactorForge creates reviewable design candidates, AgentOS guides
             human-supervised decisions, and ValidationHub preserves the evidence
-            behind each handoff.
+            behind each handoff. The Evidence Toolkit checks a sequence-free package
+            of references across those responsibilities.
           </p>
         </div>
 
@@ -123,9 +124,15 @@ export default function Ecosystem() {
             One identity and provenance trail connects the entire workflow.
           </p>
           <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-            Shared infrastructure is being validated as a research checkpoint—not
-            presented as a completed production database.
+            The current connection is a development-stage contract over identifiers,
+            provenance, and checksums—not a completed shared runtime or database.
           </p>
+          <Link
+            href="/evidence-toolkit"
+            className="mt-4 inline-flex rounded-full border border-amber-300 bg-amber-50 px-4 py-2 text-sm font-bold text-amber-800 transition-colors hover:border-amber-500 dark:border-amber-800 dark:bg-amber-950 dark:text-amber-300"
+          >
+            See the Evidence Toolkit contract <span aria-hidden="true">→</span>
+          </Link>
         </div>
 
         <p className="mx-auto mt-6 max-w-3xl text-center text-sm leading-relaxed text-slate-500 dark:text-slate-400">

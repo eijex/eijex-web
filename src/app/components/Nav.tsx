@@ -33,6 +33,9 @@ export default function Nav() {
             <Link href="/validationhub" className="hover:text-slate-900 dark:hover:text-white transition-colors">
               ValidationHub
             </Link>
+            <Link href="/evidence-toolkit" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+              Evidence
+            </Link>
             <Link href="/research-notes" className="hover:text-slate-900 dark:hover:text-white transition-colors">
               Notes
             </Link>
@@ -68,6 +71,9 @@ export default function Nav() {
               </Link>
               <Link href="/validationhub" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
                 ValidationHub
+              </Link>
+              <Link href="/evidence-toolkit" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
+                Evidence Toolkit
               </Link>
               <Link href="/research-notes" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
                 Research Notes

@@ -42,6 +42,9 @@ const required = [
   "No hosted public evidence database",
   'href: "/agentos"',
   'href: "/validationhub"',
+  'href: "/evidence-toolkit"',
+  "Evidence Toolkit · Development",
+  "not a completed shared runtime or database",
   'href="/about"',
   "The name is a design philosophy",
   "The decisions, dead ends, and lessons behind the work.",
@@ -59,6 +62,10 @@ const prohibited = [
   /password\s*=/i,
   /production[- ]ready/i,
   /fully integrated/i,
+  /regulatory[- ]ready/i,
+  /FDA[- ]ready/i,
+  /submission[- ]ready/i,
+  /Part 11 compliant/i,
   /(?<!not )(?<!does not )guarantee(?:s|d)? (?:expression|yield|biological performance)/i,
   /file:\/\/\//i,
   /collaborators\//i,
@@ -78,6 +85,7 @@ for (const pattern of prohibited) {
 assert(statSync(new URL("../src/app/page.tsx", import.meta.url)).isFile());
 assert(statSync(new URL("../src/app/agentos/page.tsx", import.meta.url)).isFile());
 assert(statSync(new URL("../src/app/validationhub/page.tsx", import.meta.url)).isFile());
+assert(statSync(new URL("../src/app/evidence-toolkit/page.tsx", import.meta.url)).isFile());
 assert(statSync(new URL("../src/app/about/page.tsx", import.meta.url)).isFile());
 assert(statSync(new URL("../src/app/research-notes/page.tsx", import.meta.url)).isFile());
 assert(statSync(new URL("../src/app/slm/page.tsx", import.meta.url)).isFile());
