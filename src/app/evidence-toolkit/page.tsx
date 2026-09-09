@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Nav from "@/app/components/Nav";
+import Footer from "@/app/components/Footer";
 
 export const metadata: Metadata = {
   title: "Evidence Toolkit | Reviewable package contracts — eijex",
@@ -46,7 +48,9 @@ const exclusions = [
 
 export default function EvidenceToolkitPage() {
   return (
-    <main className="bg-white text-slate-950 dark:bg-slate-900 dark:text-white">
+    <>
+      <Nav />
+      <main className="bg-white text-slate-950 dark:bg-slate-900 dark:text-white">
       <section className="border-b border-slate-200 px-6 py-20 dark:border-slate-800">
         <div className="mx-auto max-w-5xl">
           <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-amber-700 dark:text-amber-300">
@@ -132,6 +136,8 @@ export default function EvidenceToolkitPage() {
           </p>
         </div>
       </section>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }
