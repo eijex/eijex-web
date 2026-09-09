@@ -7,8 +7,6 @@ const productLinks = products.map((product) => ({
 }));
 
 const resourceLinks = [
-  { label: "Sponsor Research (GitHub)", href: "https://github.com/sponsors/eijex" },
-  { label: "Donate via PayPal", href: "https://paypal.me/munkyukim" },
   { label: "FactorForge documentation", href: publicLinks.factorforgeDocs },
   { label: "Share Wet-lab Results (GitHub)", href: "https://github.com/eijex/factorforge-cds/issues/new?template=wet_lab_result.yml" },
   { label: "Eijex GitHub", href: publicLinks.eijexGitHub },
@@ -24,7 +22,7 @@ export default function Footer() {
       style={{ background: "linear-gradient(90deg, #134e4a, #14532d)" }}
     >
       <div className="max-w-5xl mx-auto">
-        <div className="mb-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mb-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-1">
             <div className="font-extrabold text-lg text-teal-300 mb-2">eijex</div>
             <p className="text-xs text-teal-200/70 leading-relaxed mb-3">
@@ -97,6 +95,32 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+          <div>
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-teal-400">
+              Support open research
+            </p>
+            <p className="mb-4 text-xs leading-relaxed text-teal-100/70">
+              Help sustain FactorForge and Eijex&apos;s open research software.
+            </p>
+            <div className="grid gap-2">
+              <a
+                href="https://github.com/sponsors/eijex"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl border border-pink-300/40 bg-pink-300/10 px-4 py-3 text-sm font-bold text-pink-100 transition hover:border-pink-200 hover:bg-pink-300/20"
+              >
+                Sponsor on GitHub ↗
+              </a>
+              <a
+                href="https://paypal.me/munkyukim"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl border border-sky-300/40 bg-sky-300/10 px-4 py-3 text-sm font-bold text-sky-100 transition hover:border-sky-200 hover:bg-sky-300/20"
+              >
+                Donate via PayPal ↗
+              </a>
+            </div>
           </div>
         </div>
         <div className="border-t border-white/10 pt-4 flex justify-between items-center">
