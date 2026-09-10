@@ -36,6 +36,16 @@ export default function ResearcherReport() {
             actions, and keeps full evidence available without making the summary
             read like a regulatory submission.
           </p>
+          <div className="mt-6 grid max-w-xl gap-2 text-sm sm:grid-cols-2">
+            <div className="rounded-xl border border-emerald-800/70 bg-emerald-950/40 px-4 py-3">
+              <span className="font-extrabold text-emerald-300">Available now</span>
+              <p className="mt-1 text-slate-400">Decision report and sequence-free evidence JSON</p>
+            </div>
+            <div className="rounded-xl border border-amber-800/70 bg-amber-950/30 px-4 py-3">
+              <span className="font-extrabold text-amber-300">Planned next</span>
+              <p className="mt-1 text-slate-400">Append-oriented Research Activity Log</p>
+            </div>
+          </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href={publicLinks.factorforgeApp}
