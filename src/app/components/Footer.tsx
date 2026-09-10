@@ -13,7 +13,6 @@ const resourceLinks = [
   { label: "PyPI", href: "https://pypi.org/project/factorforge-cds/" },
   { label: "Software DOI: 10.5281/zenodo.20407330", href: "https://doi.org/10.5281/zenodo.20407330" },
   { label: "Benchmark Data DOI: 10.5281/zenodo.20676276", href: "https://doi.org/10.5281/zenodo.20676276" },
-  { label: "Support on Buy Me a Coffee ☕", href: publicLinks.buyMeACoffee },
 ];
 
 export default function Footer() {
@@ -106,12 +105,12 @@ export default function Footer() {
             </p>
             <div className="grid gap-2">
               <a
-                href="https://github.com/sponsors/eijex"
+                href={publicLinks.buyMeACoffee}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-xl border border-pink-300/40 bg-pink-300/10 px-4 py-3 text-sm font-bold text-pink-100 transition hover:border-pink-200 hover:bg-pink-300/20"
+                className="rounded-xl border border-amber-300/40 bg-amber-300/10 px-4 py-3 text-sm font-bold text-amber-100 transition hover:border-amber-200 hover:bg-amber-300/20"
               >
-                Sponsor on GitHub ↗
+                Support on Buy Me a Coffee ☕ ↗
               </a>
               <a
                 href="https://paypal.me/munkyukim"
