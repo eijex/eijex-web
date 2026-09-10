@@ -13,6 +13,7 @@ const resourceLinks = [
   { label: "PyPI", href: "https://pypi.org/project/factorforge-cds/" },
   { label: "Software DOI: 10.5281/zenodo.20407330", href: "https://doi.org/10.5281/zenodo.20407330" },
   { label: "Benchmark Data DOI: 10.5281/zenodo.20676276", href: "https://doi.org/10.5281/zenodo.20676276" },
+  { label: "Support on Buy Me a Coffee ☕", href: publicLinks.buyMeACoffee },
 ];
 
 export default function Footer() {

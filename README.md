@@ -4,7 +4,7 @@ Company landing page for [eijex](https://www.eijex.com) — open-source research
 
 **Live:** [www.eijex.com](https://www.eijex.com)
 
-[![Sponsor](https://img.shields.io/badge/Sponsor-EA4AAA?style=flat&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/eijex)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Donate-yellow?style=flat&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/eijex)
 
 
 ## Stack

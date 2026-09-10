@@ -23,6 +23,7 @@ export const publicLinks = {
   agentosSecurity: "https://github.com/eijex/eijex-agentOps/security",
   validationhubGitHub: "https://github.com/eijex/eijex-validationHub",
   validationhubSecurity: "https://github.com/eijex/eijex-validationHub/security",
+  buyMeACoffee: "https://www.buymeacoffee.com/eijex",
 } as const;
 
 export const products: readonly Product[] = [
