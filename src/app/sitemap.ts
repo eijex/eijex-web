@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/validationhub",
     "/evidence-toolkit",
     "/research-notes",
+    "/policies",
   ];
 
   return [

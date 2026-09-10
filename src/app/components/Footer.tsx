@@ -8,11 +8,19 @@ const productLinks = products.map((product) => ({
 
 const resourceLinks = [
   { label: "FactorForge documentation", href: publicLinks.factorforgeDocs },
+  { label: "FactorForge release notes", href: publicLinks.factorforgeReleases },
   { label: "Share Wet-lab Results (GitHub)", href: "https://github.com/eijex/factorforge-cds/issues/new?template=wet_lab_result.yml" },
   { label: "Eijex GitHub", href: publicLinks.eijexGitHub },
   { label: "PyPI", href: "https://pypi.org/project/factorforge-cds/" },
   { label: "Software DOI: 10.5281/zenodo.20407330", href: "https://doi.org/10.5281/zenodo.20407330" },
   { label: "Benchmark Data DOI: 10.5281/zenodo.20676276", href: "https://doi.org/10.5281/zenodo.20676276" },
+];
+
+const policyLinks = [
+  { label: "Privacy & data handling", href: "/policies#privacy" },
+  { label: "Research-use disclaimer", href: "/policies#research-use" },
+  { label: "Security disclosure", href: "/policies#security" },
+  { label: "Licenses", href: "/policies#licenses" },
 ];
 
 export default function Footer() {
@@ -21,8 +29,8 @@ export default function Footer() {
       className="px-6 pt-10 pb-6"
       style={{ background: "linear-gradient(90deg, #134e4a, #14532d)" }}
     >
-      <div className="max-w-5xl mx-auto">
-        <div className="mb-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           <div className="sm:col-span-1">
             <div className="font-extrabold text-lg text-teal-300 mb-2">eijex</div>
             <p className="text-xs text-teal-200/70 leading-relaxed mb-3">
@@ -78,6 +86,31 @@ export default function Footer() {
             </ul>
           </div>
           <div>
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-teal-400">
+              Policies
+            </p>
+            <ul className="space-y-2">
+              {policyLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-xs text-teal-200/70 transition-colors hover:text-teal-200"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="/research-notes/feed.xml"
+                  className="text-xs text-teal-200/70 transition-colors hover:text-teal-200"
+                >
+                  Research Notes RSS
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
             <p className="text-xs font-bold text-teal-400 uppercase tracking-widest mb-3">
               Open source & resources
             </p>
@@ -110,7 +143,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="rounded-xl border border-amber-300/40 bg-amber-300/10 px-4 py-3 text-sm font-bold text-amber-100 transition hover:border-amber-200 hover:bg-amber-300/20"
               >
-                Support on Buy Me a Coffee ☕ ↗
+                Buy Me a Coffee ☕ ↗
               </a>
               <a
                 href="https://paypal.me/munkyukim"
