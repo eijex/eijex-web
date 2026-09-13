@@ -10,7 +10,38 @@ export const NATIVE_REFERENCE_MEAN_CAI = "0.72";
 export const NATIVE_REFERENCE_CDS_COUNT = HISTORICAL_CDS_COUNT;
 
 // Current software — live application configuration, independent of the historical benchmark above.
-export const CURRENT_APP_VERSION = "v3.4.5";
+export const CURRENT_APP_VERSION = "v3.5.0 RC";
+
+export const FACTORFORGE_ENGINE_VERSIONS = [
+  {
+    generation: "Gen 1",
+    engine: "Rule / Profile",
+    version: "1.0.0",
+    status: "Stable",
+    availability: "Public · default comparison engine",
+  },
+  {
+    generation: "Gen 2",
+    engine: "DP v2",
+    version: "2.0.1",
+    status: "Stable",
+    availability: "Public · default feasibility path",
+  },
+  {
+    generation: "Gen 2",
+    engine: "DP v2.1",
+    version: "2.1.0-dev",
+    status: "Development candidate",
+    availability: "Public API capability · explicit opt-in",
+  },
+  {
+    generation: "Gen 3",
+    engine: "sLLM Hybrid",
+    version: "0.1.0-preview.1",
+    status: "Research preview",
+    availability: "Feature-gated · disabled by default",
+  },
+] as const;
 export const CURRENT_CODON_REFERENCE = "NbeV1.1 HC";
 export const CURRENT_CODON_REFERENCE_ID = "nbenthamiana_nbev11_hc_v2";
 export const CURRENT_GC_POLICY = "40–47%";

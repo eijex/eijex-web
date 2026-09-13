@@ -3,6 +3,7 @@ import Link from "next/link";
 import Nav from "@/app/components/Nav";
 import Footer from "@/app/components/Footer";
 import BenchmarkStats from "@/app/components/factorforge/BenchmarkStats";
+import { CURRENT_APP_VERSION, FACTORFORGE_ENGINE_VERSIONS } from "@/app/lib/site-stats";
 
 export const metadata: Metadata = {
   title: "FactorForge | Deterministic Bio-Design Engine — eijex",
@@ -25,13 +26,54 @@ export default function FactorForgePage() {
           </p>
           <div className="mt-10 flex flex-wrap gap-3 text-sm font-bold">
             <span className="rounded-full bg-teal-600 px-4 py-2 text-white">DBTL Design Anchor</span>
-            <span className="rounded-full bg-teal-800 px-4 py-2 text-white">CPU deterministic DP</span>
+            <span className="rounded-full bg-teal-800 px-4 py-2 text-white">v3.5.0 release candidate</span>
+            <span className="rounded-full bg-slate-800 px-4 py-2 text-white">Rule Gen 1 · DP v2/v2.1 Gen 2 · sLLM Gen 3 Preview</span>
             <span className="rounded-full border border-slate-300 px-4 py-2 text-slate-600 dark:border-slate-600 dark:text-slate-300">RSPA-aligned evidence boundaries</span>
           </div>
         </div>
       </section>
 
       <BenchmarkStats />
+
+      <section className="border-b border-slate-200 px-6 py-16 dark:border-slate-800">
+        <div className="mx-auto max-w-5xl">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-widest text-teal-600 dark:text-teal-400">Version contract</p>
+              <h2 className="mt-3 text-3xl font-bold text-slate-900 dark:text-white">One product release. Independently versioned engines.</h2>
+            </div>
+            <p className="font-mono text-sm font-bold text-teal-700 dark:text-teal-300">FactorForge {CURRENT_APP_VERSION}</p>
+          </div>
+          <p className="mt-5 max-w-3xl text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+            Product versions describe the integrated FactorForge release. Engine versions describe each optimization implementation and do not advance automatically with the product version.
+          </p>
+          <div className="mt-8 overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-700">
+            <table className="w-full min-w-[720px] border-collapse text-left text-sm">
+              <thead className="bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200">
+                <tr>
+                  {['Generation', 'Engine', 'Version', 'Status', 'Availability'].map((label) => (
+                    <th key={label} className="px-5 py-4 font-extrabold">{label}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-200 dark:divide-slate-700">
+                {FACTORFORGE_ENGINE_VERSIONS.map((item) => (
+                  <tr key={item.engine} className="bg-white dark:bg-slate-900">
+                    <td className="px-5 py-4 font-bold text-teal-700 dark:text-teal-300">{item.generation}</td>
+                    <td className="px-5 py-4 font-bold text-slate-900 dark:text-white">{item.engine}</td>
+                    <td className="px-5 py-4 font-mono text-xs text-slate-700 dark:text-slate-300">{item.version}</td>
+                    <td className="px-5 py-4 text-slate-600 dark:text-slate-300">{item.status}</td>
+                    <td className="px-5 py-4 text-slate-600 dark:text-slate-300">{item.availability}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+            v3.5.0 is a source release candidate until tagging and deployment gates complete. DP v2.1 is an explicit development candidate, not the default and not a biological-performance claim. sLLM availability does not imply a trained production model or biological validation.
+          </p>
+        </div>
+      </section>
 
       <section className="px-6 py-20">
         <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-[1fr_0.9fr]">
@@ -61,6 +103,29 @@ export default function FactorForgePage() {
         </div>
       </section>
 
+      <section className="border-t border-slate-200 bg-slate-50 px-6 py-16 dark:border-slate-800 dark:bg-slate-950">
+        <div className="mx-auto max-w-5xl">
+          <p className="text-sm font-bold uppercase tracking-widest text-teal-600 dark:text-teal-400">DP v2.1 design contract</p>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 dark:text-white">Three axes, with evidence classes kept separate.</h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              ['Assembly feasibility', 'HARD', 'Configured GC and Type IIS constraints are enforced by the deterministic search.'],
+              ['Codon adaptation', 'OPTIMIZED', 'Host-relative codon weights contribute to the optimization objective.'],
+              ['5′ initiation', 'OPTIMIZED', 'A position-dependent open-topology proxy shapes the first codons; RNA folding is not computed.'],
+            ].map(([axis, evidence, detail]) => (
+              <div key={axis} className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-900">
+                <span className="font-mono text-xs font-bold text-teal-700 dark:text-teal-300">{evidence}</span>
+                <h3 className="mt-2 font-extrabold text-slate-900 dark:text-white">{axis}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{detail}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+            <span className="font-mono font-bold">INDEPENDENTLY_EVALUATED</span> is reserved for measurements produced outside candidate generation, such as a separately configured RNA-folding evaluator. DP v2.1 does not currently emit that measurement.
+          </p>
+        </div>
+      </section>
+
       <section className="border-t border-slate-200 px-6 py-20 dark:border-slate-800">
         <div className="mx-auto max-w-5xl">
           <p className="text-sm font-bold uppercase tracking-widest text-teal-600 dark:text-teal-400">Algorithm</p>
@@ -78,13 +143,13 @@ over       C in synonymous(protein)`}</code></pre>
             </div>
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-800">
               <h3 className="font-extrabold text-slate-900 dark:text-white">Recurrence</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">Each state is (codon position, cumulative GC-base count). The DP keeps only the highest-scoring path into every reachable state.</p>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">Each DP v2 state is (codon position, cumulative GC-base count, configured-motif automaton state). It keeps only the highest-scoring path into every reachable state.</p>
               <pre className="mt-3 overflow-x-auto rounded-lg bg-slate-950 p-3 text-xs leading-6 text-teal-300"><code>{`D[i][h] = max over codon c
   of D[i-1][h - gc(c)] + log(weight(c))`}</code></pre>
             </div>
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-800">
               <h3 className="font-extrabold text-slate-900 dark:text-white">Fallback</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">If no synonymous sequence satisfies the configured GC window, the DP returns the highest-CAI sequence with no GC constraint applied — a defined fallback, not a constraint failure.</p>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">If the configured GC window is unreachable, DP v2 returns the valid synonymous candidate closest to that band and reports the target as infeasible. Configured motif constraints remain active.</p>
             </div>
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-800">
               <h3 className="font-extrabold text-slate-900 dark:text-white">Tie-breaking</h3>

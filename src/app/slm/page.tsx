@@ -45,7 +45,7 @@ export default function FactorForgeSLMPage() {
             <span className="block text-teal-300">Deterministic boundaries.</span>
           </h1>
           <p className="mt-8 max-w-3xl text-lg leading-relaxed text-slate-300 sm:text-xl">
-            FactorForge SLM is an exploratory sequence-generation track. Its goal is to propose synonymous CDS candidates while AgentOS keeps feasibility, evidence, and human approval outside the model&apos;s authority.
+            FactorForge sLLM Hybrid 0.1 is the Gen 3 research-preview track in the v3.5.0 release-candidate line. Its goal is to propose synonymous CDS candidates while deterministic checks keep feasibility, evidence, and human approval outside the model&apos;s authority.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <a
@@ -64,7 +64,7 @@ export default function FactorForgeSLMPage() {
             </Link>
           </div>
           <p className="mt-5 max-w-2xl text-xs leading-relaxed text-slate-400">
-            The public MCP surface currently exposes documented FactorForge capabilities. It does not represent a public trained-SLM endpoint.
+            The MCP contract may advertise this feature-gated preview, but that does not represent a public trained-sLLM endpoint or a production-model claim.
           </p>
         </div>
       </section>
@@ -166,7 +166,7 @@ export default function FactorForgeSLMPage() {
           <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-teal-700 dark:text-teal-300">Build on the available surface</p>
           <h2 className="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">Use today&apos;s deterministic tools. Follow the SLM evidence as it matures.</h2>
           <p className="mt-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
-            Eijex MCP provides agent-compatible access to documented public FactorForge capabilities. The SLM track will not be presented as available until its public endpoint and validation evidence exist.
+            Eijex MCP provides agent-compatible access to documented FactorForge capabilities. The sLLM path remains a gated preview until a trained endpoint and validation evidence satisfy the promotion gates.
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <a href={publicLinks.mcpService} target="_blank" rel="noopener noreferrer" className="rounded-full bg-teal-600 px-6 py-3 text-sm font-extrabold text-white transition hover:bg-teal-700">
@@ -183,4 +183,3 @@ export default function FactorForgeSLMPage() {
     </main>
   );
 }
-
