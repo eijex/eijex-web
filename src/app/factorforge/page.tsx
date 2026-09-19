@@ -26,8 +26,8 @@ export default function FactorForgePage() {
           </p>
           <div className="mt-10 flex flex-wrap gap-3 text-sm font-bold">
             <span className="rounded-full bg-teal-600 px-4 py-2 text-white">DBTL Design Anchor</span>
-            <span className="rounded-full bg-teal-800 px-4 py-2 text-white">v3.5.0 release candidate</span>
-            <span className="rounded-full bg-slate-800 px-4 py-2 text-white">Rule Gen 1 · DP v2/v2.1 Gen 2 · sLLM Gen 3 Preview</span>
+            <span className="rounded-full bg-teal-800 px-4 py-2 text-white">v3.6.0</span>
+            <span className="rounded-full bg-slate-800 px-4 py-2 text-white">Rule Gen 1 · DP v2/v2.1.1 Gen 2 · sLLM Gen 3 Preview</span>
             <span className="rounded-full border border-slate-300 px-4 py-2 text-slate-600 dark:border-slate-600 dark:text-slate-300">RSPA-aligned evidence boundaries</span>
           </div>
         </div>
@@ -70,7 +70,7 @@ export default function FactorForgePage() {
             </table>
           </div>
           <p className="mt-4 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-            v3.5.0 is a source release candidate until tagging and deployment gates complete. DP v2.1 is an explicit development candidate, not the default and not a biological-performance claim. sLLM availability does not imply a trained production model or biological validation.
+            FactorForge v3.6.0 adds versioned Top-K discovery slates and a feature-gated constrained-sLLM research path while keeping stable DP v2 as the default. DP v2.1.1 and sLLM results are computational evidence; they do not establish biological performance.
           </p>
         </div>
       </section>
@@ -105,13 +105,13 @@ export default function FactorForgePage() {
 
       <section className="border-t border-slate-200 bg-slate-50 px-6 py-16 dark:border-slate-800 dark:bg-slate-950">
         <div className="mx-auto max-w-5xl">
-          <p className="text-sm font-bold uppercase tracking-widest text-teal-600 dark:text-teal-400">DP v2.1 design contract</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900 dark:text-white">Three axes, with evidence classes kept separate.</h2>
+          <p className="text-sm font-bold uppercase tracking-widest text-teal-600 dark:text-teal-400">DP v2.1.1 local-guard contract</p>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 dark:text-white">Three axes, with local composition and evidence classes kept separate.</h2>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {[
-              ['Assembly feasibility', 'HARD', 'Configured GC and Type IIS constraints are enforced by the deterministic search.'],
+              ['Assembly feasibility', 'HARD', 'Configured global GC, Type IIS motifs, and homopolymers of 6 nt or longer are enforced by deterministic search.'],
               ['Codon adaptation', 'OPTIMIZED', 'Host-relative codon weights contribute to the optimization objective.'],
-              ['5′ initiation', 'OPTIMIZED', 'A position-dependent open-topology proxy shapes the first codons; RNA folding is not computed.'],
+              ['5′ initiation', 'HARD + OPTIMIZED', 'At layer 15, the active 45-nt GC count is pruned to 9–13 when reachable; the position-dependent proxy then ranks retained paths.'],
             ].map(([axis, evidence, detail]) => (
               <div key={axis} className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-900">
                 <span className="font-mono text-xs font-bold text-teal-700 dark:text-teal-300">{evidence}</span>
@@ -121,8 +121,28 @@ export default function FactorForgePage() {
             ))}
           </div>
           <p className="mt-5 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
-            <span className="font-mono font-bold">INDEPENDENTLY_EVALUATED</span> is reserved for measurements produced outside candidate generation, such as a separately configured RNA-folding evaluator. DP v2.1 does not currently emit that measurement.
+            <span className="font-mono font-bold">INDEPENDENTLY_EVALUATED</span> covers post-generation measurements such as the ViennaRNA 5′ MFE value and 50-bp sliding-window GC. The anonymized two-chain calibration recovered 45-nt GC from 11.11% to 20.00% and removed ≥6-nt homopolymers while preserving amino-acid identity and configured BsaI/BsmBI/BpiI cleanliness. These are in-silico calibration observations; the 36-protein holdout and all biological outcomes remain pending.
           </p>
+        </div>
+      </section>
+
+      <section className="border-t border-slate-200 px-6 py-16 dark:border-slate-800">
+        <div className="mx-auto max-w-5xl">
+          <p className="text-sm font-bold uppercase tracking-widest text-purple-600 dark:text-purple-300">Discovery slate · v3.6.0</p>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 dark:text-white">Several research hypotheses, one deterministic evidence boundary.</h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              ['Top-K slate', 'Versioned design contracts create a diverse pool; every emitted candidate passes the shared hard-constraint filter.'],
+              ['Constrained sLLM', 'A feature-gated learned prior proposes synonymous choices while automaton and translation masks retain veto authority.'],
+              ['Partial-DP rescue', 'A blocked path can preserve a verified prefix and solve an exact suffix conditioned on it; this is not a global DP optimum.'],
+            ].map(([title, detail]) => (
+              <div key={title} className="rounded-2xl border border-purple-200 bg-purple-50/60 p-5 dark:border-purple-800 dark:bg-purple-950/20">
+                <h3 className="font-extrabold text-purple-900 dark:text-purple-200">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{detail}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 text-xs leading-relaxed text-slate-500 dark:text-slate-400">The discovery surface supports computational comparison and prospective experiment design. It does not guarantee expression, yield, synthesis success, or clinical performance.</p>
         </div>
       </section>
 
