@@ -60,6 +60,11 @@ export default function Footer() {
               Products
             </p>
             <ul className="space-y-2">
+              <li>
+                <Link href="/products" className="text-xs font-bold text-teal-200 transition-colors hover:text-white">
+                  Version registry
+                </Link>
+              </li>
               {productLinks.map((l) =>
                 l.href.startsWith("/") ? (
                   <li key={l.label}>

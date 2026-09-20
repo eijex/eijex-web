@@ -21,6 +21,9 @@ export default function Nav() {
             <EcosystemLink className="hover:text-slate-900 dark:hover:text-white transition-colors">
               Stack
             </EcosystemLink>
+            <Link href="/products" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+              Products
+            </Link>
             <Link href="/factorforge" className="hover:text-slate-900 dark:hover:text-white transition-colors">
               FactorForge
             </Link>
@@ -59,6 +62,9 @@ export default function Nav() {
               <EcosystemLink className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
                 Stack
               </EcosystemLink>
+              <Link href="/products" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
+                Products & versions
+              </Link>
               <div className="my-1 border-t border-slate-200 dark:border-slate-700" />
               <Link href="/factorforge" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
                 FactorForge

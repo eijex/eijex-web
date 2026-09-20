@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/about",
     "/factorforge",
+    "/products",
     "/slm",
     "/agentos",
     "/validationhub",

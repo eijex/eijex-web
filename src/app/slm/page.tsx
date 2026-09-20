@@ -45,7 +45,7 @@ export default function FactorForgeSLMPage() {
             <span className="block text-teal-300">Deterministic boundaries.</span>
           </h1>
           <p className="mt-8 max-w-3xl text-lg leading-relaxed text-slate-300 sm:text-xl">
-            FactorForge sLLM Hybrid 0.2 is a feature-gated Gen 3 research-preview track in v3.6.0. It proposes synonymous CDS candidates while deterministic vetoes, versioned partial-DP rescue, evidence gates, and human approval remain outside the model&apos;s authority.
+            FactorForge sLLM Hybrid 0.2 is a feature-gated Gen 3 research-preview track in v3.5.0. It proposes synonymous CDS candidates while deterministic vetoes, versioned partial-DP rescue, evidence gates, and human approval remain outside the model&apos;s authority.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <a

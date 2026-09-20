@@ -15,7 +15,7 @@ bookOrder: 4
 
 A single optimum is useful when the objective is complete and the constraints are known.
 Research often needs a different artifact: several feasible hypotheses that differ for
-traceable reasons. FactorForge v3.6.0 introduces a discovery-slate path while retaining
+traceable reasons. FactorForge v3.5.0 introduces a discovery-slate path while retaining
 the stable deterministic optimizer as the default.
 
 ## Four responsibilities, kept separate
