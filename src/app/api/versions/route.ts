@@ -4,7 +4,8 @@ import { CURRENT_APP_VERSION, FACTORFORGE_ENGINE_VERSIONS } from "@/app/lib/site
 export function GET() {
   return NextResponse.json({
     schema_version: "1.0",
-    generated_from: "factorforge/src/factorforge/registry/version_manifest.json",
+    source_contract: "factorforge/src/factorforge/registry/version_manifest.json",
+    synchronization: "release-audited mirror",
     product: { name: "FactorForge", version: CURRENT_APP_VERSION.replace(/^v/, "") },
     components: FACTORFORGE_ENGINE_VERSIONS.map(({ engine, version, status, availability }) => ({
       name: engine,
