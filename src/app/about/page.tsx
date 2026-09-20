@@ -6,7 +6,7 @@ import Nav from "@/app/components/Nav";
 export const metadata: Metadata = {
   title: "About Eijex | Why the name exists",
   description:
-    "The origin and design philosophy of Eijex: a coined name inspired by eigenstate and joint expression.",
+    "The origin and design philosophy of Eijex: a name we created, inspired by eigenstate and joint expression.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About Eijex — Engineering Intrinsic Expression",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "About Eijex — Engineering Intrinsic Expression",
     description:
-      "A coined name inspired by eigenstate, joint expression, and evidence-linked engineering.",
+      "A name we created, inspired by eigenstate, joint expression, and evidence-linked engineering.",
     images: [],
   },
 };
@@ -66,7 +66,7 @@ export default function AboutPage() {
             Why Eijex?
           </h1>
           <p className="mt-7 max-w-3xl text-xl leading-relaxed text-slate-600 dark:text-slate-300">
-            Eijex is a coined name inspired by <em>eigenstate</em> and
+            Eijex is a name we created, inspired by <em>eigenstate</em> and
             <em> joint expression</em>—a way to describe our direction without
             reducing biological expression to a single score.
           </p>
@@ -75,7 +75,7 @@ export default function AboutPage() {
               AY-jeks · 아이젝스
             </span>
             <span className="rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-slate-700 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-200">
-              A coined name
+              A name we created
             </span>
           </div>
         </div>
