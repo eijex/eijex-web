@@ -2,15 +2,14 @@
 export const HISTORICAL_MEAN_CAI = "0.94";
 export const HISTORICAL_AA_IDENTITY = "100%";
 export const HISTORICAL_CDS_COUNT = "49,257";
-export const HISTORICAL_CAPTION =
-  "FactorForge v3.2.0 · balanced profile · SGN QLD183 v103 corpus · historical packaged codon reference · scoring_contract v1.1";
+export const HISTORICAL_CAPTION = "FactorForge v3.2.0 · balanced profile · SGN QLD183 v103 corpus · historical packaged codon reference · scoring_contract v1.1";
 
 // Native reference (unoptimized) — same v3.2.0 run, same corpus, no optimization applied.
 export const NATIVE_REFERENCE_MEAN_CAI = "0.72";
 export const NATIVE_REFERENCE_CDS_COUNT = HISTORICAL_CDS_COUNT;
 
 // Current software — live application configuration, independent of the historical benchmark above.
-export const CURRENT_APP_VERSION = "v3.5.0";
+export const CURRENT_APP_VERSION = "v3.5.1";
 
 export const FACTORFORGE_ENGINE_VERSIONS = [
   {
@@ -37,20 +36,8 @@ export const FACTORFORGE_ENGINE_VERSIONS = [
   {
     generation: "Gen 3",
     engine: "sLLM Hybrid",
-    version: "0.2.0-preview.1",
+    version: "3.0.0-alpha",
     status: "Research preview",
-    availability: "Feature-gated · constrained generation and partial-DP rescue",
-  },
-  {
-    generation: "Gen 3",
-    engine: "Partial-DP Rescue",
-    version: "1.0.0",
-    status: "Research preview",
-    availability: "Feature-gated · exact suffix rescue",
-  },
-] as const;
-export const CURRENT_CODON_REFERENCE = "NbeV1.1 HC";
-export const CURRENT_CODON_REFERENCE_ID = "nbenthamiana_nbev11_hc_v2";
-export const CURRENT_GC_POLICY = "40–47%";
-export const CURRENT_CAPTION =
-  "Current operational configuration for FactorForge. These settings are separate from the archived v3.2.0 historical benchmark.";
+    availability: "Feature gated · restricted deployment",
+  }
+];

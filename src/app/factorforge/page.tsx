@@ -75,6 +75,17 @@ export default function FactorForgePage() {
         </div>
       </section>
 
+      <section className="border-b border-slate-200 px-6 py-20 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
+        <div className="mx-auto max-w-5xl">
+          <p className="text-sm font-bold uppercase tracking-widest text-teal-600 dark:text-teal-400">Biological Guardrails</p>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 dark:text-white">Aligning with Wet-Lab SOPs.</h2>
+          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+            Optimization is meaningless if the host cell destroys the sequence. FactorForge goes beyond computational CAI scoring by integrating robust <strong>Advisory Sequence-Risk Scans</strong>. 
+            By proactively detecting cryptic splice-site motifs, premature polyadenylation signals, and local GC extremes, FactorForge provides explicit decision-support data that aligns directly with experimental PlantForm Standard Operating Procedures (SOPs).
+          </p>
+        </div>
+      </section>
+
       <section className="px-6 py-20">
         <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-[1fr_0.9fr]">
           <div>
