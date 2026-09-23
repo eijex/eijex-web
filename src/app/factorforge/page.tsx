@@ -26,7 +26,7 @@ export default function FactorForgePage() {
           </p>
           <div className="mt-10 flex flex-wrap gap-3 text-sm font-bold">
             <span className="rounded-full bg-teal-600 px-4 py-2 text-white">DBTL Design Anchor</span>
-            <span className="rounded-full bg-teal-800 px-4 py-2 text-white">v3.5.0</span>
+            <span className="rounded-full bg-teal-800 px-4 py-2 text-white">v3.5.1</span>
             <span className="rounded-full bg-slate-800 px-4 py-2 text-white">Rule Gen 1 · DP v2/v2.1.1 Gen 2 · sLLM Gen 3 Preview</span>
             <span className="rounded-full border border-slate-300 px-4 py-2 text-slate-600 dark:border-slate-600 dark:text-slate-300">RSPA-aligned evidence boundaries</span>
           </div>
@@ -70,7 +70,7 @@ export default function FactorForgePage() {
             </table>
           </div>
           <p className="mt-4 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-            FactorForge v3.5.0 adds versioned Top-K discovery slates and a feature-gated constrained-sLLM research path while keeping stable DP v2 as the default. DP v2.1.1 and sLLM results are computational evidence; they do not establish biological performance.
+            FactorForge v3.5.1 adds a versioned SOP-profile workflow while keeping stable DP v2 as the default. Product and engine versions remain independent; DP v2.1.1, discovery-slate, and sLLM results are computational evidence and do not establish biological performance.
           </p>
         </div>
       </section>
@@ -78,10 +78,9 @@ export default function FactorForgePage() {
       <section className="border-b border-slate-200 px-6 py-20 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
         <div className="mx-auto max-w-5xl">
           <p className="text-sm font-bold uppercase tracking-widest text-teal-600 dark:text-teal-400">Biological Guardrails</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900 dark:text-white">Aligning with Wet-Lab SOPs.</h2>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 dark:text-white">Findings and laboratory policy, kept separate.</h2>
           <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
-            Optimization is meaningless if the host cell destroys the sequence. FactorForge goes beyond computational CAI scoring by integrating robust <strong>Advisory Sequence-Risk Scans</strong>. 
-            By proactively detecting cryptic splice-site motifs, premature polyadenylation signals, and local GC extremes, FactorForge provides explicit decision-support data that aligns directly with experimental PlantForm Standard Operating Procedures (SOPs).
+            FactorForge records deterministic sequence findings separately from the policy used to review them. A versioned SOP profile can classify supported findings as required, preferred, informational, or ignored while retaining profile provenance. The bundled conservative profile is an editable starting template, not a complete or approved SOP for any named laboratory, and advisory scans do not establish biological risk or wet-lab performance.
           </p>
         </div>
       </section>
