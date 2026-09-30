@@ -9,7 +9,7 @@ export const NATIVE_REFERENCE_MEAN_CAI = "0.72";
 export const NATIVE_REFERENCE_CDS_COUNT = HISTORICAL_CDS_COUNT;
 
 // Current software — live application configuration, independent of the historical benchmark above.
-export const CURRENT_APP_VERSION = "v3.5.1";
+export const CURRENT_APP_VERSION = "v3.5.4";
 
 export const FACTORFORGE_ENGINE_VERSIONS = [
   {
@@ -36,8 +36,15 @@ export const FACTORFORGE_ENGINE_VERSIONS = [
   {
     generation: "Gen 3",
     engine: "sLLM Hybrid",
-    version: "3.0.0-alpha",
+    version: "0.2.0-preview.1",
     status: "Research preview",
     availability: "Feature gated · restricted deployment",
-  }
+  },
+  {
+    generation: "Gen 3",
+    engine: "Partial-DP Rescue",
+    version: "1.0.0",
+    status: "Research preview",
+    availability: "Feature gated · restricted deployment",
+  },
 ];

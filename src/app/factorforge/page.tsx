@@ -26,7 +26,7 @@ export default function FactorForgePage() {
           </p>
           <div className="mt-10 flex flex-wrap gap-3 text-sm font-bold">
             <span className="rounded-full bg-teal-600 px-4 py-2 text-white">DBTL Design Anchor</span>
-            <span className="rounded-full bg-teal-800 px-4 py-2 text-white">v3.5.1</span>
+            <span className="rounded-full bg-teal-800 px-4 py-2 text-white">v3.5.4</span>
             <span className="rounded-full bg-slate-800 px-4 py-2 text-white">Rule Gen 1 · DP v2/v2.1.1 Gen 2 · sLLM Gen 3 Preview</span>
             <span className="rounded-full border border-slate-300 px-4 py-2 text-slate-600 dark:border-slate-600 dark:text-slate-300">RSPA-aligned evidence boundaries</span>
           </div>
@@ -70,7 +70,7 @@ export default function FactorForgePage() {
             </table>
           </div>
           <p className="mt-4 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-            FactorForge v3.5.1 adds a versioned SOP-profile workflow while keeping stable DP v2 as the default. Product and engine versions remain independent; DP v2.1.1, discovery-slate, and sLLM results are computational evidence and do not establish biological performance.
+            FactorForge v3.5.4 retains the versioned sequence-policy workflow and SOP Builder, improves standalone packaging and optional persistence configuration, and keeps stable DP v2 as the default. Product and engine versions remain independent; DP v2.1.1, discovery-slate, and sLLM results are computational evidence and do not establish biological performance.
           </p>
         </div>
       </section>
