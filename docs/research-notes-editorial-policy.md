@@ -10,6 +10,22 @@ biological evidence.
 The website reads only `content/research-notes/*.md`. It never imports or serves
 the internal workspace. Public articles are separately reviewed copies.
 
+`npm run build` runs privacy fixtures and the public-claim contract before generating
+the site. Complete notes, including frontmatter and links, are checked. Errors show
+rule IDs, not matching sensitive text. This is a tripwire, not exhaustive disclosure
+certification or a substitute for human review.
+
+For confidential partner/target terms, a maintainer may supply the pipe-separated
+`EIJEX_PRIVATE_REDACTION_TERMS` in a private local/build environment. The terms
+themselves must never be committed to the public repository or printed in logs.
+The generic guard still runs when no private terms are configured; named-entity
+coverage then depends on the maintainer's disclosure review.
+
+Do not merely swap names when context identifies a private party or reconstructs a
+result. Omit target-specific counts, settings, correspondence, private outcomes and
+unpublished publication plans. Use generic roles only when the engineering lesson
+survives independently of that context. No automatic workspace sync is permitted.
+
 Public notes must exclude:
 
 - collaborator or partner identity;

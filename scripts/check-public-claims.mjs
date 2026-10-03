@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
+import { privacyFindings } from "./lib/research-note-privacy.mjs";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const sourceRoot = fileURLToPath(new URL("../src/app/", import.meta.url));
@@ -26,6 +27,15 @@ const publicNotes = noteFiles
   .map((file) => `\n// ${relative(root, file)}\n${readFileSync(file, "utf8")}`)
   .join("\n");
 const allPublicContent = `${publicSource}\n${publicNotes}`;
+
+// Include frontmatter and links; never echo sensitive matching text into CI logs.
+// Supply confidential names locally or through a private build environment;
+// never store a partner/target denylist in this public repository.
+const privateTerms = (process.env.EIJEX_PRIVATE_REDACTION_TERMS || "").split("|").filter(Boolean);
+for (const file of noteFiles) {
+  const findings = privacyFindings(readFileSync(file, "utf8"), privateTerms);
+  assert.equal(findings.length, 0, `Publication review failed: ${relative(root, file)} (${findings.join(", ")})`);
+}
 
 const required = [
   "https://github.com/eijex/factorforge-cds",
