@@ -3,6 +3,7 @@ import Nav from "@/app/components/Nav";
 import Footer from "@/app/components/Footer";
 import ResearchNoteCard from "@/app/components/ResearchNoteCard";
 import { getAllResearchNotes } from "@/app/lib/research-notes";
+import { getResearchNoteSections } from "@/app/lib/research-note-sections.mjs";
 
 export const metadata: Metadata = {
   title: "Research Notes — eijex",
@@ -16,13 +17,7 @@ export const metadata: Metadata = {
 
 export default function ResearchNotesPage() {
   const notes = getAllResearchNotes();
-  const sectionOrder = [
-    "Architecture and direction",
-    "Design and validation",
-    "Evidence and governance",
-    "Models and comparative evaluation",
-    "Reliability and release engineering",
-  ];
+  const sectionOrder = getResearchNoteSections(notes);
 
   return (
     <main className="min-h-screen bg-slate-50 dark:bg-slate-950">

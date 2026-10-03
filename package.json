@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "npm run test:privacy && npm run check:claims",
+    "prebuild": "npm run test:privacy && npm run test:notes && npm run check:claims",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "check:claims": "node scripts/check-public-claims.mjs",
-    "test:privacy": "node --test scripts/research-note-privacy.test.mjs"
+    "test:privacy": "node --test scripts/research-note-privacy.test.mjs",
+    "test:notes": "node --test scripts/research-note-sections.test.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
