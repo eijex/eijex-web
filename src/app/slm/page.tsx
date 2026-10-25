@@ -78,10 +78,10 @@ export default function FactorForgeSLMPage() {
             </span>
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-teal-300">
-                Continuous Learning &amp; Evidence Reconciliation
+                Learning workflow &amp; evidence boundaries
               </p>
               <p className="text-sm font-semibold text-slate-200">
-                Causal sLLM training and multi-modal codon tokens are actively reconciled into the public ledger.
+                Local training summaries are distinct from independently verified evidence and live service integration.
               </p>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function FactorForgeSLMPage() {
             href="/validationhub"
             className="rounded-full bg-teal-400 px-5 py-2.5 text-xs font-extrabold text-slate-950 transition hover:bg-teal-300 whitespace-nowrap"
           >
-            View Live Telemetry on ValidationHub →
+            View Telemetry Scope on ValidationHub →
           </Link>
         </div>
       </section>

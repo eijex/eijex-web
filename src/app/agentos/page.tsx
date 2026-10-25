@@ -115,10 +115,10 @@ export default function AgentOSPage() {
             </span>
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-cyan-300">
-                Operational in Daemon Supervision
+                Workflow supervision boundaries
               </p>
               <p className="text-sm font-semibold text-slate-200">
-                AgentOS policy gates enforce automated quarantine shielding against unverified sequence leakage.
+                Local policy checks do not establish complete benchmark isolation or a live connection to the public evidence registry.
               </p>
             </div>
           </div>
@@ -126,7 +126,7 @@ export default function AgentOSPage() {
             href="/validationhub"
             className="rounded-full bg-cyan-400 px-5 py-2.5 text-xs font-extrabold text-slate-950 transition hover:bg-cyan-300 whitespace-nowrap"
           >
-            Inspect Audit Ledger on ValidationHub →
+            Inspect Evidence Boundaries on ValidationHub →
           </Link>
         </div>
       </section>
