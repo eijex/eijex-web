@@ -1,0 +1,15 @@
+{
+  "status": "RUNNING",
+  "cycleCount": 620,
+  "globalStep": 620,
+  "auditedReceipts": 620,
+  "totalTokensTrained": 58280,
+  "currentLoss": 0.0023,
+  "lastTaskId": "THIOREDOXIN_ECOLI",
+  "lastHash": "80fe5f8ed582018a8c35ff1f9297b4725caaac6033c835dc266b9b64df739a42",
+  "quarantineBlocked": 0,
+  "timestamp": "2026-10-25T02:48:30Z",
+  "evidenceClassification": "UNVERIFIED_PUBLIC_CORPUS",
+  "biologicalValidation": "NOT_AVAILABLE",
+  "sourceEnvironment": "Vercel Edge Synchronized Snapshot"
+}

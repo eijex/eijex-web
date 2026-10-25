@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "@/app/components/Footer";
 import Nav from "@/app/components/Nav";
+import ValidationLiveStats from "@/app/components/ValidationLiveStats";
 import { publicDataBoundary, publicLinks } from "@/app/lib/ecosystem";
 
 export const metadata: Metadata = {
@@ -119,6 +120,8 @@ export default function ValidationHubPage() {
           </div>
         </div>
       </section>
+
+      <ValidationLiveStats />
 
       <section className="px-6 py-20">
         <div className="mx-auto max-w-5xl">
