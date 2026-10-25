@@ -108,6 +108,8 @@ export const implementationStatus = [
       "Captured GCP PostgreSQL 16 research instance",
       "Separate tested FactorForge SQLite metadata path",
       "Byte-pinned candidate-asset manifest registration",
+      "Local ResearchOS → AgentOS → FactorForge → ValidationHub synthetic integration",
+      "Experimental structure-conditioned comparison (3DP); human candidate selection",
     ],
   },
   {

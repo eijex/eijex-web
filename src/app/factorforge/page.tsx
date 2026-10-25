@@ -22,11 +22,11 @@ export default function FactorForgePage() {
             Deterministic CPU-First Core.
           </h1>
           <p className="mt-7 max-w-2xl text-xl leading-relaxed text-slate-600 dark:text-slate-300">
-            Reproducible CDS design with explicit constraints, reviewable outputs, and a production path that removes biological hallucination risks from the optimization engine.
+            Reproducible CDS design with explicit constraints, reviewable outputs, and deterministic optimization with explicit review boundaries.
           </p>
           <div className="mt-10 flex flex-wrap gap-3 text-sm font-bold">
             <span className="rounded-full bg-teal-600 px-4 py-2 text-white">DBTL Design Anchor</span>
-            <span className="rounded-full bg-teal-800 px-4 py-2 text-white">v3.5.4</span>
+            <span className="rounded-full bg-teal-800 px-4 py-2 text-white">v3.5.11</span>
             <span className="rounded-full bg-slate-800 px-4 py-2 text-white">Rule Gen 1 · DP v2/v2.1.1 Gen 2 · sLLM Gen 3 Preview</span>
             <span className="rounded-full border border-slate-300 px-4 py-2 text-slate-600 dark:border-slate-600 dark:text-slate-300">RSPA-aligned evidence boundaries</span>
           </div>
@@ -34,6 +34,15 @@ export default function FactorForgePage() {
       </section>
 
       <BenchmarkStats />
+      <section className="border-b border-slate-200 px-6 py-14 dark:border-slate-800">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-2xl font-bold">Choose 1DP or experimental structure-conditioned 3DP.</h2>
+          <p className="mt-4 text-slate-600 dark:text-slate-300">Sequence-only design remains the baseline (1DP). Experimental 3DP uses reviewed structure positions to condition synonymous codon selection and compares its candidate with DP v2. Direct browser testing accepts an uploaded exact-match PDB/mmCIF chain and reviewed protein positions. It returns both candidates without automatically choosing a biological winner. Custom SOP management is paused; the built-in FactorForge default policy is applied.</p>
+          <p className="mt-4 text-slate-600 dark:text-slate-300">The current direct test path uses the FactorForge API without ResearchOS approval or ValidationHub recording. The existing registered-input, approval and evidence workflow is retained for later operational use. Synthetic engineering tests do not establish experimental performance.</p>
+          <p className="mt-4 text-sm font-semibold">Watermark: disabled for current testing.</p>
+        </div>
+      </section>
+
 
       <section className="border-b border-slate-200 px-6 py-16 dark:border-slate-800">
         <div className="mx-auto max-w-5xl">
@@ -70,7 +79,7 @@ export default function FactorForgePage() {
             </table>
           </div>
           <p className="mt-4 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-            FactorForge v3.5.4 retains the versioned sequence-policy workflow and SOP Builder, improves standalone packaging and optional persistence configuration, and keeps stable DP v2 as the default. Product and engine versions remain independent; DP v2.1.1, discovery-slate, and sLLM results are computational evidence and do not establish biological performance.
+            FactorForge v3.5.5 retains the versioned sequence-policy workflow and SOP Builder, improves standalone packaging and optional persistence configuration, and keeps stable DP v2 as the default. Product and engine versions remain independent; DP v2.1.1, discovery-slate, and sLLM results are computational evidence and do not establish biological performance.
           </p>
         </div>
       </section>

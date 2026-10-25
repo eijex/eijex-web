@@ -66,3 +66,9 @@ Naked domain (`eijex.com`) redirects to `www.eijex.com` via Cloudflare Redirect 
 
 - [GitHub Sponsors](https://github.com/sponsors/eijex)
 - [PayPal](https://paypal.me/munkyukim)
+
+## Current source update — deployment paused
+
+FactorForge copy distinguishes sequence-only baseline from experimental local 3DP comparison, labels watermark disabled, and describes ResearchOS/AgentOS/ValidationHub responsibilities. Application version copy follows the current FactorForge package v3.5.5; historical benchmark figures are unchanged. Local synthetic integration is software evidence, not partner approval or wet-lab performance. These edits do not change the deployed website until an authorized deployment.
+
+Job 389 supersedes the Job 388 local-only browser routing: the FactorForge source now implements direct stateless 3DP browser/API testing with uploaded exact-match structure and reviewed positions. No ResearchOS approval or ValidationHub record is collected in this test path. It is unreleased; public MCP tools do not yet expose this execution mode.
