@@ -45,7 +45,7 @@ export default function FactorForgeSLMPage() {
             <span className="block text-teal-300">Deterministic boundaries.</span>
           </h1>
           <p className="mt-8 max-w-3xl text-lg leading-relaxed text-slate-300 sm:text-xl">
-            FactorForge sLLM Hybrid 0.2 is a feature-gated Gen 3 research-preview track in v3.5.0. It proposes synonymous CDS candidates while deterministic vetoes, versioned partial-DP rescue, evidence gates, and human approval remain outside the model&apos;s authority.
+            FactorForge sLLM Hybrid 0.2 is a feature-gated Gen 3 research-preview track in v3.5.11. It proposes synonymous CDS candidates while deterministic vetoes, versioned partial-DP rescue, evidence gates, and human approval remain outside the model&apos;s authority.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <a
@@ -66,6 +66,31 @@ export default function FactorForgeSLMPage() {
           <p className="mt-5 max-w-2xl text-xs leading-relaxed text-slate-400">
             The MCP contract may advertise this feature-gated preview, but that does not represent a public trained-sLLM endpoint or a production-model claim.
           </p>
+        </div>
+      </section>
+
+      <section className="border-b border-teal-200/30 bg-teal-950/40 px-6 py-6 text-white">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+          <div className="flex items-center gap-3">
+            <span className="relative flex h-3 w-3">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-500" />
+            </span>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-teal-300">
+                Continuous Learning &amp; Evidence Reconciliation
+              </p>
+              <p className="text-sm font-semibold text-slate-200">
+                Causal sLLM training and multi-modal codon tokens are actively reconciled into the public ledger.
+              </p>
+            </div>
+          </div>
+          <Link
+            href="/validationhub"
+            className="rounded-full bg-teal-400 px-5 py-2.5 text-xs font-extrabold text-slate-950 transition hover:bg-teal-300 whitespace-nowrap"
+          >
+            View Live Telemetry on ValidationHub →
+          </Link>
         </div>
       </section>
 

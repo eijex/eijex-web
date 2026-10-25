@@ -106,6 +106,31 @@ export default function AgentOSPage() {
         </div>
       </section>
 
+      <section className="border-b border-cyan-200/30 bg-cyan-950/40 px-6 py-6 text-white">
+        <div className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+          <div className="flex items-center gap-3">
+            <span className="relative flex h-3 w-3">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75" />
+              <span className="relative inline-flex h-3 w-3 rounded-full bg-cyan-500" />
+            </span>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-cyan-300">
+                Operational in Daemon Supervision
+              </p>
+              <p className="text-sm font-semibold text-slate-200">
+                AgentOS policy gates enforce automated quarantine shielding against unverified sequence leakage.
+              </p>
+            </div>
+          </div>
+          <Link
+            href="/validationhub"
+            className="rounded-full bg-cyan-400 px-5 py-2.5 text-xs font-extrabold text-slate-950 transition hover:bg-cyan-300 whitespace-nowrap"
+          >
+            Inspect Audit Ledger on ValidationHub →
+          </Link>
+        </div>
+      </section>
+
       <section className="px-6 py-20">
         <div className="mx-auto max-w-5xl">
           <div className="max-w-3xl">

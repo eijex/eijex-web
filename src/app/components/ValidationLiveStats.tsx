@@ -23,6 +23,39 @@ export default function ValidationLiveStats() {
   const [loading, setLoading] = useState(true);
   const [lastRefreshed, setLastRefreshed] = useState<Date>(new Date());
 
+  const formatKstTime = (date: Date) => {
+    return (
+      new Intl.DateTimeFormat("ko-KR", {
+        timeZone: "Asia/Seoul",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false,
+      }).format(date) + " KST (UTC+9)"
+    );
+  };
+
+  const formatKstDateTime = (isoString?: string) => {
+    if (!isoString) return "N/A";
+    try {
+      const d = new Date(isoString);
+      return (
+        new Intl.DateTimeFormat("ko-KR", {
+          timeZone: "Asia/Seoul",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: false,
+        }).format(d) + " KST (UTC+9)"
+      );
+    } catch {
+      return isoString;
+    }
+  };
+
   const fetchStats = async () => {
     try {
       const res = await fetch("/api/validationhub/stats", { cache: "no-store" });
@@ -77,7 +110,7 @@ export default function ValidationLiveStats() {
             onClick={fetchStats}
             className="self-start rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700 sm:self-auto"
           >
-            Refreshed {lastRefreshed.toLocaleTimeString()} ⟳
+            Refreshed {formatKstTime(lastRefreshed)} ⟳
           </button>
         </div>
 
@@ -87,7 +120,7 @@ export default function ValidationLiveStats() {
               Audited Receipts
             </p>
             <p className="mt-2 text-3xl font-extrabold text-violet-700 dark:text-violet-400">
-              {loading ? "..." : (stats?.auditedReceipts ?? 471).toLocaleString()}
+              {loading ? "..." : (stats?.auditedReceipts ?? 620).toLocaleString()}
             </p>
             <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
               Immutable SHA-256 records
@@ -101,7 +134,7 @@ export default function ValidationLiveStats() {
             <p className="mt-2 text-3xl font-extrabold text-slate-900 dark:text-white">
               {loading
                 ? "..."
-                : (stats?.totalTokensTrained ?? 44200).toLocaleString()}
+                : (stats?.totalTokensTrained ?? 58280).toLocaleString()}
             </p>
             <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
               Causal non-leakage tokens
@@ -113,7 +146,7 @@ export default function ValidationLiveStats() {
               Current Model Loss
             </p>
             <p className="mt-2 text-3xl font-extrabold text-emerald-600 dark:text-emerald-400">
-              {loading ? "..." : (stats?.currentLoss ?? 0.0057).toFixed(4)}
+              {loading ? "..." : (stats?.currentLoss ?? 0.0023).toFixed(4)}
             </p>
             <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
               Synonymous Cross-Entropy
@@ -141,8 +174,13 @@ export default function ValidationLiveStats() {
             </span>
             <span className="text-slate-400">|</span>
             <span className="font-bold">Receipt Hash:</span>
-            <span className="truncate max-w-[200px] text-slate-600 dark:text-slate-400">
-              {stats?.lastHash ?? "d138771c80e4b53d..."}
+            <span className="truncate max-w-[160px] text-slate-600 dark:text-slate-400">
+              {stats?.lastHash ?? "80fe5f8ed582018a..."}
+            </span>
+            <span className="text-slate-400">|</span>
+            <span className="font-bold">Reconciled:</span>
+            <span className="text-slate-600 dark:text-slate-400">
+              {formatKstDateTime(stats?.timestamp)}
             </span>
           </div>
 
