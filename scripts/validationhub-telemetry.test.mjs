@@ -69,3 +69,21 @@ test('public stats route defines authenticated POST endpoint', () => {
   assert.match(source, /export async function POST/);
   assert.match(source, /x-telemetry-token/);
 });
+import { validatePush } from '../src/app/lib/validationhub-telemetry.ts';
+test('push rejects sensitive fields, stale observations and invalid aggregates', () => {
+  for (const extra of [{lastTaskId:'private'}, {totalTokensTrained:-1}, {currentLoss:Infinity}, {timestamp:'2020-01-01T00:00:00Z'}]) {
+    assert.throws(() => validatePush({timestamp:now.toISOString(), cycleCount:1, ...extra}, now));
+  }
+  assert.throws(() => validatePush([], now));
+  assert.deepEqual(validatePush({timestamp:now.toISOString(), currentLoss:0}, now), {timestamp:now.toISOString(), currentLoss:0});
+});
+test('pushed observations never imply durable or audited storage', () => {
+  const result = projectSnapshot({timestamp:now.toISOString()}, now, 'VOLATILE_PUSH');
+  assert.equal(result.sourceKind, 'VOLATILE_PUSH');
+  assert.match(result.sourceEnvironment, /process memory only/);
+  assert.equal(result.remotePersistenceVerified, false);
+  const route = readFileSync(new URL('../src/app/api/validationhub/stats/route.ts', import.meta.url), 'utf8');
+  assert.doesNotMatch(route, /SYNC_TOKEN\s*\|\|/);
+  assert.match(route, /status: 503/);
+  assert.match(route, /size > 4096/);
+});

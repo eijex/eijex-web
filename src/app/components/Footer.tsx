@@ -12,6 +12,7 @@ const resourceLinks = [
   { label: "Share Wet-lab Results (GitHub)", href: "https://github.com/eijex/factorforge-cds/issues/new?template=wet_lab_result.yml" },
   { label: "Eijex GitHub", href: publicLinks.eijexGitHub },
   { label: "PyPI", href: "https://pypi.org/project/factorforge-cds/" },
+  { label: "Bioconda", href: "https://anaconda.org/bioconda/factorforge-cds" },
   { label: "Software DOI: 10.5281/zenodo.20407330", href: "https://doi.org/10.5281/zenodo.20407330" },
   { label: "Benchmark Data DOI: 10.5281/zenodo.20676276", href: "https://doi.org/10.5281/zenodo.20676276" },
 ];

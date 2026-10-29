@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0",
+  "sourceKind": "REVIEWED_DEVELOPMENT_SNAPSHOT",
+  "observedAt": "2026-10-26T07:28:26.178502+00:00",
+  "executionEnvironment": "LOCAL_WINDOWS_CPU",
+  "automaticRefresh": false,
+  "counts": {
+    "candidates": 50,
+    "sourceMatched": 36,
+    "sourceRejectedOrUnavailable": 14,
+    "retainedUniqueProteins": 22,
+    "duplicatesRemoved": 0,
+    "quarantinedByLimitedPanel": 14,
+    "newProteinsAgainstDeclaredHistory": 19,
+    "historicalReferenceUniqueProteins": 38,
+    "homologyGroups": 17
+  },
+  "splits": {
+    "train": 17,
+    "validation": 2,
+    "finalTestReserved": 3
+  },
+  "validationNll": {
+    "frequency": 1.031775148042904,
+    "bigram": 1.08497627117629,
+    "transformerMean": 1.0906881252490324
+  },
+  "finalTestEvaluated": false,
+  "finalTestNll": null,
+  "artifactReadbackChecked": true,
+  "independentAudit": false,
+  "remotePersistenceVerified": false,
+  "productionModelPromoted": false,
+  "evidenceClassification": "UNVERIFIED_PUBLIC_CORPUS",
+  "biologicalValidation": "NOT_AVAILABLE"
+}

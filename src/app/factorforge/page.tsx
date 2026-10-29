@@ -205,6 +205,7 @@ over       C in synonymous(protein)`}</code></pre>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href="https://eijex.github.io/factorforge-cds/" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-teal-600 px-5 py-3 text-sm font-bold text-white hover:bg-teal-700">Documentation ↗</a>
             <a href="https://github.com/eijex/factorforge-cds" target="_blank" rel="noopener noreferrer" className="rounded-lg border border-slate-300 px-5 py-3 text-sm font-bold text-slate-700 hover:border-slate-400 dark:border-slate-600 dark:text-slate-200">Source on GitHub ↗</a>
+            <a href="https://anaconda.org/bioconda/factorforge-cds" target="_blank" rel="noopener noreferrer" className="rounded-lg border border-teal-300 bg-teal-50 px-5 py-3 text-sm font-bold text-teal-800 hover:bg-teal-100 dark:border-teal-700 dark:bg-teal-950 dark:text-teal-200">Bioconda Package ↗</a>
           </div>
         </div>
       </section>

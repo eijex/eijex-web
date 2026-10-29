@@ -1,4 +1,4 @@
-const biocondaSoon = true; // set to false once the upstream Bioconda recipe PR merges
+const biocondaSoon = false; // upstream Bioconda recipe PR #65834 merged 2026-10-29
 
 const options = [
   {
@@ -7,8 +7,8 @@ const options = [
     soon: false,
   },
   {
-    label: "conda install factorforge-cds",
-    href: null, // no link yet -- Bioconda recipe not merged
+    label: "conda install -c bioconda factorforge-cds",
+    href: "https://anaconda.org/bioconda/factorforge-cds",
     soon: biocondaSoon,
   },
   {

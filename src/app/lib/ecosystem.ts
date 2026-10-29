@@ -18,6 +18,7 @@ export const publicLinks = {
   factorforgeGitHub: "https://github.com/eijex/factorforge-cds",
   factorforgeDocs: "https://eijex.github.io/factorforge-cds/",
   factorforgeReleases: "https://github.com/eijex/factorforge-cds/releases",
+  factorforgeBioconda: "https://anaconda.org/bioconda/factorforge-cds",
   mcpService: "https://mcp.eijex.com",
   mcpGitHub: "https://github.com/eijex/eijex-mcp",
   agentosGitHub: "https://github.com/eijex/eijex-agentOps",
