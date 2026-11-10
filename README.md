@@ -72,3 +72,11 @@ Naked domain (`eijex.com`) redirects to `www.eijex.com` via Cloudflare Redirect 
 FactorForge copy distinguishes sequence-only baseline from experimental local 3DP comparison, labels watermark disabled, and describes ResearchOS/AgentOS/ValidationHub responsibilities. Application version copy follows the current FactorForge package v3.5.5; historical benchmark figures are unchanged. Local synthetic integration is software evidence, not partner approval or wet-lab performance. These edits do not change the deployed website until an authorized deployment.
 
 Job 389 supersedes the Job 388 local-only browser routing: the FactorForge source now implements direct stateless 3DP browser/API testing with uploaded exact-match structure and reviewed positions. No ResearchOS approval or ValidationHub record is collected in this test path. It is unreleased; public MCP tools do not yet expose this execution mode.
+
+## Research evidence surfaces
+
+`/slm` separates the research objective, locally implemented foundation, reviewed partial experiments and planned DP-teacher pilot. `/validationhub` shares the reviewed result panel and labels the initial pilot as historical; counts from different runs are not cumulative totals.
+
+The public aggregate at `/evidence/slm-development-2026-10-29.json` is manually reviewed static data, not a live registry connection. It excludes raw sequences, individual checkpoint hashes and local storage references. Its rendered copy is `src/app/lib/reviewed-research-evidence.json`; keep both copies consistent. Reused development-validation NLL does not establish final-test or biological performance.
+
+Run `node --test scripts/public-learning-summary.test.mjs scripts/research-evidence.test.mjs` as well as the normal build checks after editing these surfaces.

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "@/app/components/Footer";
 import Nav from "@/app/components/Nav";
+import ResearchEvidenceOverview from "@/app/components/ResearchEvidenceOverview";
 import ValidationLiveStats from "@/app/components/ValidationLiveStats";
 import { publicDataBoundary, publicLinks } from "@/app/lib/ecosystem";
 
@@ -121,6 +122,7 @@ export default function ValidationHubPage() {
         </div>
       </section>
 
+      <ResearchEvidenceOverview />
       <ValidationLiveStats />
 
       <section className="px-6 py-20">
