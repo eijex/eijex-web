@@ -79,7 +79,7 @@ export const FACTORFORGE_ENGINE_VERSIONS = [
 
 // Workflow modes are not engine generations or independently versioned engine releases.
 export const FACTORFORGE_DESIGN_WORKFLOWS = [
-  { mode: "1DP", implementation: "Sequence-only baseline", version: "DP v2 / DP v2.1.1 · FactorForge 3.5.11", status: "Public browser testing (synthetic verification)", availability: "Default policy; RNA scan and available initiation MFE" },
-  { mode: "3DP", implementation: "Structure-conditioned DP comparison", version: "DP v2.2 · FactorForge 3.5.11", status: "Experimental; direct browser testing", availability: "Uploaded structure + reviewed positions; default policy" },
-  { mode: "4DP", implementation: "Space-time exit-tunnel (+35 aa) & TASEP buffer smoothing", version: "DP v2.3 / DP v2.4 · FactorForge 3.5.11", status: "Research candidate (local Python)", availability: "Multi-class pause + TASEP ramp smoothing + local codon rewriter" },
+  { mode: "1DP", implementation: "Sequence-only baseline", version: "DP v2 / DP v2.1.1 · FactorForge 3.6.0", status: "Public browser testing (synthetic verification)", availability: "Default policy; RNA scan and available initiation MFE" },
+  { mode: "3DP", implementation: "Structure-conditioned DP comparison", version: "DP v2.2 · FactorForge 3.6.0", status: "Experimental; direct browser testing", availability: "Uploaded structure + reviewed positions; default policy" },
+  { mode: "4DP", implementation: "Space-time exit-tunnel (+35 aa) & TASEP buffer smoothing", version: "DP v2.3 / DP v2.4 · FactorForge 3.6.0", status: "Research candidate (local Python)", availability: "Multi-class pause + TASEP ramp smoothing + local codon rewriter" },
 ];
