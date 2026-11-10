@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0",
+  "researchId": "CDS-DIAGNOSTIC-2026-10-27",
+  "reviewedDate": "2026-10-29",
+  "publicationMode": "MANUAL_REVIEWED_SNAPSHOT",
+  "status": "PARTIAL_CLOSED",
+  "plannedArms": 5,
+  "completedArms": 3,
+  "deferredArms": 2,
+  "checkpointsReplayed": 9,
+  "splits": {
+    "train": 98,
+    "developmentValidation": 7,
+    "reservedTest": 13
+  },
+  "validationDesignation": "REUSED_DEVELOPMENT_VALIDATION",
+  "validationNll": {
+    "frequency": 1.1036969202848244,
+    "bigram": 1.1147787084984926,
+    "standardMean": 1.1173802090462326,
+    "residualMean": 1.1035856913577728,
+    "zeroedCodonMean": 1.1167708994136238
+  },
+  "finalTestEvaluated": false,
+  "finalTestNll": null,
+  "productionModelPromoted": false,
+  "yieldPredictionAvailable": false,
+  "independentAudit": false,
+  "liveRegistryConnection": false,
+  "evidenceClassification": "UNVERIFIED_PUBLIC_CORPUS",
+  "biologicalValidation": "NOT_AVAILABLE",
+  "seriesDate": "2026-10-27"
+}
