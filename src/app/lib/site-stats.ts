@@ -9,7 +9,7 @@ export const NATIVE_REFERENCE_MEAN_CAI = "0.72";
 export const NATIVE_REFERENCE_CDS_COUNT = HISTORICAL_CDS_COUNT;
 
 // Current software — live application configuration, independent of the historical benchmark above.
-export const CURRENT_APP_VERSION = "v3.6.1";
+export const CURRENT_APP_VERSION = "v3.6.2";
 
 export const FACTORFORGE_ENGINE_VERSIONS = [
   {
@@ -79,7 +79,7 @@ export const FACTORFORGE_ENGINE_VERSIONS = [
 
 // Workflow modes are not engine generations or independently versioned engine releases.
 export const FACTORFORGE_DESIGN_WORKFLOWS = [
-  { mode: "1DP", implementation: "Sequence-only baseline", version: "DP v2 / DP v2.1.1 · FactorForge 3.6.1", status: "Public browser testing (synthetic verification)", availability: "Default policy; RNA scan and available initiation MFE" },
-  { mode: "3DP", implementation: "Structure-conditioned DP comparison", version: "DP v2.2 · FactorForge 3.6.1", status: "Experimental; direct browser testing", availability: "Uploaded structure + reviewed positions; default policy" },
-  { mode: "4DP", implementation: "Structure-conditioned comparison using the sidecar-declared offset", version: "DP v2.4 · FactorForge 3.6.1", status: "Experimental; direct browser testing", availability: "Uploaded pause sidecar + reviewed model positions; default policy" },
+  { mode: "1DP", implementation: "Sequence-only baseline", version: "DP v2 / DP v2.1.1 · FactorForge 3.6.2", status: "Public browser testing (synthetic verification)", availability: "Default policy; RNA scan and available initiation MFE" },
+  { mode: "3DP", implementation: "Structure-conditioned DP comparison", version: "DP v2.2 · FactorForge 3.6.2", status: "Experimental; direct browser testing", availability: "Uploaded structure + reviewed positions; default policy" },
+  { mode: "4DP", implementation: "Structure-conditioned comparison using the sidecar-declared offset", version: "DP v2.4 · FactorForge 3.6.2", status: "Experimental; direct browser testing", availability: "Uploaded pause sidecar + reviewed model positions; default policy" },
 ];
