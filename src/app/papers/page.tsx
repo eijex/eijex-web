@@ -54,50 +54,6 @@ const PAPERS = [
     ],
     nextRevisionNote: "Original Version 1 snapshot (DOI: 10.20944/preprints202610.3128.v1); see Version 2 above for the latest revision.",
   },
-  {
-    id: "paper-5",
-    track: "PRISM Monograph Series · Paper 5",
-    statusBadge: "Working Revision (v0.2.23)",
-    statusClass: "bg-sky-100 text-sky-800 dark:bg-sky-900/40 dark:text-sky-300 border-sky-300",
-    title:
-      "Exact Synonymous Optimization with Bounded Dinucleotide and Positional Constraints: The FactorForge Assembly Compiler",
-    authors: "Mun-Kyu Kim",
-    date: "November 2026",
-    doi: "In Preparation",
-    doiUrl: null,
-    pdfUrl: null,
-    version: "v0.2.23",
-    abstract:
-      "Formalizes the mathematical state-space formulation of the FactorForge 1DP sequence compiler. Demonstrates exact finite-state dynamic programming across multi-constraint lattices, proving conditional optimality while preserving Type IIS restriction assembly invariants.",
-    highlights: [
-      "Rigorous O(N · |S|) DP algorithmic complexity analysis",
-      "Exact finite-state automaton verification for boundary-spanning motifs",
-      "Benchmark comparison against heuristic codon optimizers (DNA Chisel)",
-    ],
-    nextRevisionNote: "Under review within the PRISM monograph series.",
-  },
-  {
-    id: "paper-6",
-    track: "PRISM Monograph Series · Paper 6",
-    statusBadge: "Working Revision (v0.2.12)",
-    statusClass: "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300 border-amber-300",
-    title:
-      "Cotranslational Domain Folding and Ribosome Exit-Tunnel Latency in Plant Molecular Pharming",
-    authors: "Mun-Kyu Kim",
-    date: "November 2026",
-    doi: "In Preparation",
-    doiUrl: null,
-    pdfUrl: null,
-    version: "v0.2.12",
-    abstract:
-      "Formulates the 3DP and 4DP biophysical hypotheses for eukaryotic translation. Investigates whether synchronizing codon elongation rates with the secondary-structure-dependent (+30/+35/+40 aa) 80S ribosome exit-tunnel emergence latency alters cotranslational folding fidelity for complex biotherapeutics.",
-    highlights: [
-      "Matched comparative framework (1DP vs 3DP vs 4DP)",
-      "Strict separation between crystallographic coordinates and translational hypotheses",
-      "Formal evidence chain from in-silico metrics to prospective wet-lab readouts",
-    ],
-    nextRevisionNote: "Matched Adalimumab wet-lab benchmark protocol integration in progress.",
-  },
 ];
 
 export default function PapersPage() {
@@ -115,7 +71,7 @@ export default function PapersPage() {
               Papers &amp; Preprints
             </h1>
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
-              Peer-reviewed manuscripts, official open-access preprints, and versioned research monographs supporting the Eijex bio-design platform. All publications are tied to reproducible code, open benchmark datasets, and auditable evidence bundles.
+              Official open-access preprints and peer-reviewed publications supporting the Eijex bio-design platform. All published works are tied to reproducible code, open benchmark datasets, and auditable evidence bundles.
             </p>
           </div>
 
@@ -197,13 +153,8 @@ export default function PapersPage() {
                       rel="noopener noreferrer"
                       className="py-2 px-4 rounded-lg border border-slate-300 dark:border-slate-700 bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 font-semibold text-xs inline-flex items-center gap-1.5 transition-all"
                     >
-                      <span>📥</span> Download Full Monograph PDF (45 Pages)
+                      <span>📥</span> Download Preprint PDF
                     </a>
-                  )}
-                  {!paper.doiUrl && (
-                    <span className="text-xs text-slate-400 italic">
-                      Manuscript undergoing PRISM internal peer review. Previews available upon academic request.
-                    </span>
                   )}
                 </div>
               </article>
