@@ -11,10 +11,32 @@ export const metadata: Metadata = {
 
 const PAPERS = [
   {
+    id: "paper-1-v3",
+    track: "Preprint · Preprints.org (v3)",
+    statusBadge: "Published Preprint v3",
+    statusClass: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300 border-emerald-300",
+    title:
+      "Constraint-Aware Coding-Sequence Design for Nicotiana benthamiana: A 49,257-Record Benchmark and Codon-Reference Sensitivity Analysis",
+    authors: "Mun-Kyu Kim (Sole Author)",
+    date: "19 November 2026",
+    doi: "10.20944/preprints202610.3128.v3",
+    doiUrl: "https://doi.org/10.20944/preprints202610.3128.v3",
+    pdfUrl: "/papers/FactorForge_Preprint_v1.2.2.pdf",
+    version: "v3 (Preprint v1.2.2)",
+    abstract:
+      "Synonymous coding sequence (CDS) design for plant molecular pharming requires simultaneously satisfying strict sequence-level synthesis constraints, global GC distributions, and host codon adaptation. Preserving the 49,257-record SGN QLD183 benchmark and FactorForge v3.6.4 2x2 factorial sensitivity analysis unchanged, Version 3 adds explicit prior-art positioning relative to exact and multicriteria dynamic-programming codon optimization (Condon and Thachuk, COSMO) and CoDOn alongside expanded provenance and audit-bundle documentation.",
+    highlights: [
+      "Explicit prior-art positioning vs. Condon & Thachuk, COSMO, and CoDOn (Sections 1.2, 2.4, 3.5, 5.2; Table 9)",
+      "49,257-record SGN QLD183 benchmark and v3.6.4 2x2 codon-reference x GC factorial sensitivity analysis preserved",
+      "Explicit three-execution software boundary (v3.2.0, v3.3.0, v3.6.4) with computational-only evidence separation",
+    ],
+    nextRevisionNote: "Version 3 published (DOI: 10.20944/preprints202610.3128.v3), superseding Version 2.",
+  },
+  {
     id: "paper-1-v2",
     track: "Preprint · Preprints.org (v2)",
-    statusBadge: "Published Preprint v2",
-    statusClass: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300 border-emerald-300",
+    statusBadge: "Published Preprint v2 (Archived)",
+    statusClass: "bg-slate-100 text-slate-700 dark:bg-slate-800/60 dark:text-slate-300 border-slate-300",
     title:
       "Constraint-Aware Coding-Sequence Design for Nicotiana benthamiana: A 49,257-Record Benchmark and Codon-Reference Sensitivity Analysis",
     authors: "Mun-Kyu Kim (Sole Author)",
@@ -30,7 +52,7 @@ const PAPERS = [
       "Assembly-friendly combined pass rate shifts from 0.00% to 9.39% when GC window aligns with NbeV1.1",
       "Explicit separation of computational pass rates from empirical wet-lab expression evidence",
     ],
-    nextRevisionNote: "Version 2 published (DOI: 10.20944/preprints202610.3128.v2), superseding Version 1.",
+    nextRevisionNote: "Version 2 snapshot (DOI: 10.20944/preprints202610.3128.v2); see Version 3 above for the latest revision.",
   },
   {
     id: "paper-1-v1",
