@@ -31,50 +31,22 @@ const PAPERS = [
       "Explicit three-execution software boundary (v3.2.0, v3.3.0, v3.6.4) with computational-only evidence separation",
     ],
     nextRevisionNote: "Version 3 published (DOI: 10.20944/preprints202610.3128.v3), superseding Version 2.",
-  },
-  {
-    id: "paper-1-v2",
-    track: "Preprint · Preprints.org (v2)",
-    statusBadge: "Published Preprint v2 (Archived)",
-    statusClass: "bg-slate-100 text-slate-700 dark:bg-slate-800/60 dark:text-slate-300 border-slate-300",
-    title:
-      "Constraint-Aware Coding-Sequence Design for Nicotiana benthamiana: A 49,257-Record Benchmark and Codon-Reference Sensitivity Analysis",
-    authors: "Mun-Kyu Kim (Sole Author)",
-    date: "16 November 2026",
-    doi: "10.20944/preprints202610.3128.v2",
-    doiUrl: "https://doi.org/10.20944/preprints202610.3128.v2",
-    pdfUrl: "/papers/FactorForge_Preprint_v1.1.8.pdf",
-    version: "v2 (Preprint v1.1.8)",
-    abstract:
-      "Synonymous coding sequence (CDS) design for plant molecular pharming requires simultaneously satisfying strict sequence-level synthesis constraints, global GC distributions, and host codon adaptation. Evaluated across 49,257 SGN QLD183 records and a FactorForge v3.6.4 2x2 factorial sensitivity analysis crossing legacy vs. NbeV1.1 codon references with GC target windows (55-65% vs. 40-47%), this preprint establishes reproducible computational baselines (1DP) without claiming unverified in vivo expression.",
-    highlights: [
-      "49,257-record SGN QLD183 benchmark and v3.6.4 2x2 codon-reference x GC factorial sensitivity analysis",
-      "Assembly-friendly combined pass rate shifts from 0.00% to 9.39% when GC window aligns with NbeV1.1",
-      "Explicit separation of computational pass rates from empirical wet-lab expression evidence",
+    previousVersions: [
+      {
+        version: "v2 (Preprint v1.1.8)",
+        date: "16 November 2026",
+        doi: "10.20944/preprints202610.3128.v2",
+        doiUrl: "https://doi.org/10.20944/preprints202610.3128.v2",
+        summary: "Added FactorForge v3.6.4 2x2 codon-reference x GC factorial sensitivity analysis and High-CAI contract reconciliation.",
+      },
+      {
+        version: "v1 (Preprint v1.2.14, 45 pages)",
+        date: "28 October 2026",
+        doi: "10.20944/preprints202610.3128.v1",
+        doiUrl: "https://doi.org/10.20944/preprints202610.3128.v1",
+        summary: "Initial open-access benchmark across 49,257 SGN QLD183 CDS records (FactorForge v3.2.0 presets and v3.3.0 DP).",
+      },
     ],
-    nextRevisionNote: "Version 2 snapshot (DOI: 10.20944/preprints202610.3128.v2); see Version 3 above for the latest revision.",
-  },
-  {
-    id: "paper-1-v1",
-    track: "Preprint · Preprints.org (v1)",
-    statusBadge: "Published Preprint v1 (Archived)",
-    statusClass: "bg-slate-100 text-slate-700 dark:bg-slate-800/60 dark:text-slate-300 border-slate-300",
-    title:
-      "Constraint-Aware Coding-Sequence Design for Nicotiana benthamiana: A 49,257-Record Benchmark and Codon-Reference Sensitivity Analysis",
-    authors: "Mun-Kyu Kim (Sole Author)",
-    date: "28 October 2026",
-    doi: "10.20944/preprints202610.3128.v1",
-    doiUrl: "https://doi.org/10.20944/preprints202610.3128.v1",
-    pdfUrl: "/papers/FactorForge_Preprint_v1.2.14.pdf",
-    version: "v1 (Preprint v1.2.14, 45 pages)",
-    abstract:
-      "Initial open-access preprint establishing the FactorForge v3.2.0 preset benchmark and matched v3.3.0 dynamic programming evaluation across 49,257 Nicotiana benthamiana transcript records.",
-    highlights: [
-      "Sole-authored, 45-page initial benchmark monograph",
-      "Matched evaluation across 49,257 SGN QLD183 CDS records",
-      "Preserved as the original citable Version 1 snapshot",
-    ],
-    nextRevisionNote: "Original Version 1 snapshot (DOI: 10.20944/preprints202610.3128.v1); see Version 2 above for the latest revision.",
   },
 ];
 
@@ -179,6 +151,55 @@ export default function PapersPage() {
                     </a>
                   )}
                 </div>
+
+                {/* Collapsible Previous Versions */}
+                {paper.previousVersions && paper.previousVersions.length > 0 && (
+                  <details className="group pt-4 border-t border-slate-100 dark:border-slate-800">
+                    <summary className="cursor-pointer list-none flex items-center justify-between text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 select-none">
+                      <span>
+                        Previous Versions ({paper.previousVersions.length}) ·{" "}
+                        {paper.previousVersions.map((p) => p.version.split(" ")[0]).join(", ")}
+                      </span>
+                      <span className="text-[11px] font-mono text-slate-400 group-open:hidden">
+                        Show ▾
+                      </span>
+                      <span className="text-[11px] font-mono text-slate-400 hidden group-open:inline">
+                        Hide ▴
+                      </span>
+                    </summary>
+                    <ul className="mt-3 divide-y divide-slate-100 dark:divide-slate-800 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/40">
+                      {paper.previousVersions.map((prev) => (
+                        <li
+                          key={prev.doi}
+                          className="px-4 py-2.5 flex flex-wrap items-center justify-between gap-2 text-xs"
+                        >
+                          <div className="space-y-0.5">
+                            <div className="flex items-center gap-2">
+                              <span className="font-mono font-semibold text-slate-800 dark:text-slate-200">
+                                {prev.version}
+                              </span>
+                              <span className="text-slate-300 dark:text-slate-700">·</span>
+                              <span className="text-slate-500 dark:text-slate-400">
+                                {prev.date}
+                              </span>
+                            </div>
+                            <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                              {prev.summary}
+                            </p>
+                          </div>
+                          <a
+                            href={prev.doiUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-mono text-[11px] text-teal-700 dark:text-teal-400 hover:underline shrink-0"
+                          >
+                            DOI: {prev.doi} ↗
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                )}
               </article>
             ))}
           </div>
