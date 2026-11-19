@@ -22,7 +22,7 @@ const PAPERS = [
     doi: "10.20944/preprints202610.3128.v3",
     doiUrl: "https://doi.org/10.20944/preprints202610.3128.v3",
     pdfUrl: "/papers/FactorForge_Preprint_v1.2.2.pdf",
-    version: "v3 (Preprint v1.2.2)",
+    version: "Version 3",
     abstract:
       "Synonymous coding sequence (CDS) design for plant molecular pharming requires simultaneously satisfying strict sequence-level synthesis constraints, global GC distributions, and host codon adaptation. Preserving the 49,257-record SGN QLD183 benchmark and FactorForge v3.6.4 2x2 factorial sensitivity analysis unchanged, Version 3 adds explicit prior-art positioning relative to exact and multicriteria dynamic-programming codon optimization (Condon and Thachuk, COSMO) and CoDOn alongside expanded provenance and audit-bundle documentation.",
     highlights: [
@@ -33,14 +33,14 @@ const PAPERS = [
     nextRevisionNote: "Version 3 published (DOI: 10.20944/preprints202610.3128.v3), superseding Version 2.",
     previousVersions: [
       {
-        version: "v2 (Preprint v1.1.8)",
+        version: "Version 2",
         date: "16 November 2026",
         doi: "10.20944/preprints202610.3128.v2",
         doiUrl: "https://doi.org/10.20944/preprints202610.3128.v2",
         summary: "Added FactorForge v3.6.4 2x2 codon-reference x GC factorial sensitivity analysis and High-CAI contract reconciliation.",
       },
       {
-        version: "v1 (Preprint v1.2.14, 45 pages)",
+        version: "Version 1 (45 pages)",
         date: "28 October 2026",
         doi: "10.20944/preprints202610.3128.v1",
         doiUrl: "https://doi.org/10.20944/preprints202610.3128.v1",
