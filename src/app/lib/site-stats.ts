@@ -21,38 +21,45 @@ export const FACTORFORGE_ENGINE_VERSIONS = [
   },
   {
     generation: "Gen 2",
-    engine: "DP v2",
+    engine: "1DP (DP v2)",
     version: "2.0.1",
     status: "Stable",
     availability: "Public · default feasibility path",
   },
   {
     generation: "Gen 2",
-    engine: "DP v2.1.1",
+    engine: "1DP (DP v2.1.1)",
     version: "2.1.1",
     status: "Research candidate",
     availability: "Public opt-in · calibration complete / holdout pending",
   },
   {
     generation: "Gen 2",
-    engine: "DP v2.2",
-    version: "2.2.0",
+    engine: "3DP (legacy DP v2.2)",
+    version: "1.0.0",
     status: "Research candidate",
     availability: "Local Python opt-in · initiation-aware reviewed position penalties",
   },
   {
     generation: "Gen 2",
-    engine: "DP v2.3",
-    version: "2.3.0",
+    engine: "4DP (legacy DP v2.3)",
+    version: "1.0.0",
     status: "Research candidate",
     availability: "Local Python opt-in · multi-class structural pause (3DP static & 4DP +35 aa window)",
   },
   {
     generation: "Gen 2",
-    engine: "DP v2.4",
-    version: "2.4.0",
+    engine: "4DP (legacy DP v2.4)",
+    version: "1.1.0",
     status: "Research candidate",
     availability: "Local Python opt-in · tropical semiring matrix recurrence & TASEP buffer smoothing",
+  },
+  {
+    generation: "Gen 2",
+    engine: "5DP Assembly",
+    version: "0.1.0",
+    status: "Research preview",
+    availability: "Local Python prototype · multi-part fusion assembly & plant N-glycan layer",
   },
   {
     generation: "Gen 2",
@@ -77,9 +84,9 @@ export const FACTORFORGE_ENGINE_VERSIONS = [
   },
 ];
 
-// Workflow modes are not engine generations or independently versioned engine releases.
+// Formulation tiers (1DP/3DP/4DP) carry independent x.y.z versions per tier.
 export const FACTORFORGE_DESIGN_WORKFLOWS = [
-  { mode: "1DP", implementation: "Sequence-only baseline", version: "DP v2 / DP v2.1.1 · FactorForge 3.6.8", status: "Public browser testing (synthetic verification)", availability: "Default policy; Auto/Manual/Compare & multi-FASTA support" },
-  { mode: "3DP", implementation: "Structure-conditioned DP comparison", version: "DP v2.2 · FactorForge 3.6.8", status: "Experimental; direct browser testing", availability: "Uploaded PDB/mmCIF (multi-chain inspection) + reviewed positions; default policy" },
-  { mode: "4DP", implementation: "Structure-conditioned comparison using the sidecar-declared offset", version: "DP v2.4 · FactorForge 3.6.8", status: "Experimental; direct browser testing", availability: "Verified pause sidecar + reviewed model positions & hypothesis acknowledgment; default policy" },
+  { mode: "1DP", implementation: "Sequence-only baseline", version: "1DP 2.0.1 / 2.1.1 (legacy DP v2) · FactorForge 3.6.8", status: "Public browser testing (synthetic verification)", availability: "Default policy; Auto/Manual/Compare & multi-FASTA support" },
+  { mode: "3DP", implementation: "Structure-conditioned DP comparison", version: "3DP 1.0.0 (legacy DP v2.2) · FactorForge 3.6.8", status: "Experimental; direct browser testing", availability: "Uploaded PDB/mmCIF (multi-chain inspection) + reviewed positions; default policy" },
+  { mode: "4DP", implementation: "Structure-conditioned comparison using the sidecar-declared offset", version: "4DP 1.1.0 (legacy DP v2.4) · FactorForge 3.6.8", status: "Experimental; direct browser testing", availability: "Verified pause sidecar + reviewed model positions & hypothesis acknowledgment; default policy" },
 ];
