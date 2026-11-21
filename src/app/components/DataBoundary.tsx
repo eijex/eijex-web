@@ -16,12 +16,12 @@ export default function DataBoundary() {
               {publicDataBoundary}
             </p>
           </div>
-          <div className="flex flex-wrap gap-2 md:max-w-44 md:flex-col">
+          <div className="flex flex-wrap gap-2.5 md:min-w-48 md:flex-col">
             <a
               href={publicLinks.agentosSecurity}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg border border-amber-300 bg-white px-4 py-2.5 text-center text-xs font-bold text-amber-900 transition-colors hover:border-amber-500 dark:border-amber-800 dark:bg-slate-900 dark:text-amber-200"
+              className="whitespace-nowrap rounded-lg border border-amber-300 bg-white px-4 py-2.5 text-center text-xs font-bold text-amber-900 transition-colors hover:border-amber-500 dark:border-amber-800 dark:bg-slate-900 dark:text-amber-200"
             >
               AgentOS security ↗
             </a>
@@ -29,7 +29,7 @@ export default function DataBoundary() {
               href={publicLinks.validationhubSecurity}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg border border-amber-300 bg-white px-4 py-2.5 text-center text-xs font-bold text-amber-900 transition-colors hover:border-amber-500 dark:border-amber-800 dark:bg-slate-900 dark:text-amber-200"
+              className="whitespace-nowrap rounded-lg border border-amber-300 bg-white px-4 py-2.5 text-center text-xs font-bold text-amber-900 transition-colors hover:border-amber-500 dark:border-amber-800 dark:bg-slate-900 dark:text-amber-200"
             >
               ValidationHub security ↗
             </a>
