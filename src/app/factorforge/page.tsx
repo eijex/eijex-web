@@ -54,7 +54,7 @@ export default function FactorForgePage() {
             <p className="font-mono text-sm font-bold text-teal-700 dark:text-teal-300">FactorForge {CURRENT_APP_VERSION}</p>
           </div>
           <p className="mt-5 max-w-3xl text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-            Product versions describe the integrated FactorForge release. Engine versions describe each optimization implementation and do not advance automatically with the product version.
+            Product versions identify the integrated FactorForge release. The table shows formulation-family versions where assigned, and component versions elsewhere. Legacy DP aliases identify the corresponding implementation. Existing engine identifiers retain their recorded implementation versions.
           </p>
           <div className="mt-8 overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-700">
             <table className="w-full min-w-[720px] border-collapse text-left text-sm">
