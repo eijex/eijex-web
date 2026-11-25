@@ -5,7 +5,7 @@ updated: "2026-11-25"
 status: "Engineering note"
 category: "Formal verification"
 layout: "blueprint"
-version: "Technical Monograph v1.0.2 · Lean 4.36.0"
+version: "Technical Monograph v1.0.3 · Lean 4.36.0"
 summary: "Complete mathematical blueprint, locked Lean 4.36.0 specifications, inductive proof sketches, 12-state BsaI constructive trace, and sampled Python correspondence for FactorForge's discrete integer DP core."
 abstract: "Constraint-aware coding-sequence (CDS) optimization selects synonymous codons preserving a target protein while avoiding forbidden motifs across flanks and inter-codon junctions, satisfying global nucleotide GC bounds, and maximizing an additive codon-fitness objective. Finite unit suites test sampled inputs, whereas informal or unconstrained AI-generated proofs risk silent specification weakening unless checked by an independent proof kernel. Here we present the full mathematical blueprint of FactorForgeFormal, a zero-dependency Lean 4.36.0 formalization (14 modules, >2,500 lines, 0 sorry, verified transitively via leanchecker) proving 20 core theorems, 3 helper lemmas, and 14 concrete witnesses across Tropical max-plus algebra, construct-level DFA safety, the 64-triplet Standard Genetic Code (ValidCodonForAA), constructive backtracking DP optimality (dpOptimizeEndToEnd), exact rational pause-ramp interpolation (ExactRat), and conditional integer perturbation margins - alongside a fail-closed Python correspondence and 8/8 reference-copy mutation suite."
 toc:
@@ -41,7 +41,7 @@ featured: true
 bookSection: "Formal verification (Lean 4)"
 bookOrder: 1
 pdfUrl: "/research-notes/FactorForge_Lean4_Formal_Verification_Technical_Note.pdf"
-pdfLabel: "Download Full Technical Monograph v1.0.2 (PDF, 15p)"
+pdfLabel: "Download Full Technical Monograph v1.0.3 (PDF, 14p)"
 bundleUrl: "/research-notes/FactorForge_Lean4_Verification_Package.zip"
 bundleLabel: "Download Reproducible Lean 4 + Oracle Archive (.zip)"
 ---
