@@ -9,6 +9,7 @@ import rehypeKatex from "rehype-katex";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import matter from "gray-matter";
+import { privacyFindings } from "./lib/research-note-privacy.mjs";
 
 const root = new URL("../", import.meta.url);
 const note = matter(fs.readFileSync(new URL(
@@ -36,6 +37,26 @@ test("the released Lean note uses blueprint layout, display equations, and Lean 
   assert(html.includes('class="katex-display"'));
   assert(html.includes('class="language-lean"'));
   assert(!html.includes("katex-error"));
+});
+
+test("all 7 Lean note translations (ko, ja, zh, fr, es, ru, de) pass privacy, zero em-dash, and KaTeX checks", () => {
+  const translationsDir = new URL("content/research-notes/translations/", root);
+  const expectedLangs = ["ko", "ja", "zh", "fr", "es", "ru", "de"];
+  for (const lang of expectedLangs) {
+    const fileUrl = new URL(`lean4-formal-verification-of-factorforge-dp.${lang}.md`, translationsDir);
+    const raw = fs.readFileSync(fileUrl, "utf8");
+    assert(!raw.includes("—"), `Em dash found in ${lang} translation`);
+    assert.deepEqual(privacyFindings(raw), [], `Privacy tripwire hit in ${lang} translation`);
+    const parsed = matter(raw);
+    assert.equal(parsed.data.lang, lang);
+    assert.equal(typeof parsed.data.abstract, "string");
+    assert(Array.isArray(parsed.data.toc) && parsed.data.toc.length === 9);
+    const html = render(parsed.content);
+    assert(html.includes('class="katex"'), `Missing KaTeX in ${lang}`);
+    assert(html.includes('class="katex-display"'), `Missing display KaTeX in ${lang}`);
+    assert(html.includes('class="language-lean"'), `Missing Lean block in ${lang}`);
+    assert(!html.includes("katex-error"), `KaTeX parse error in ${lang}`);
+  }
 });
 
 test("navbar uses route-aware NavActiveLink rather than hardcoded teal highlight on /papers", () => {

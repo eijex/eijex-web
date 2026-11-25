@@ -5,6 +5,7 @@ import path from "node:path";
 import matter from "gray-matter";
 
 const NOTES_DIRECTORY = path.join(process.cwd(), "content", "research-notes");
+const TRANSLATIONS_DIRECTORY = path.join(NOTES_DIRECTORY, "translations");
 
 export type ResearchNoteStatus =
   | "Current"
@@ -20,6 +21,20 @@ export type ResearchNoteTocItem = {
   id: string;
   number: string;
   title: string;
+};
+
+export type ResearchNoteTranslation = {
+  lang: string;
+  langLabel: string;
+  title: string;
+  summary: string;
+  version?: string;
+  evidenceScope: string;
+  abstract?: string;
+  pdfLabel?: string;
+  bundleLabel?: string;
+  toc?: ResearchNoteTocItem[];
+  content: string;
 };
 
 export type ResearchNote = {
@@ -54,6 +69,8 @@ const VALID_STATUSES = new Set<ResearchNoteStatus>([
   "Superseded",
   "Public-redacted case study",
 ]);
+
+const PREFERRED_LANG_ORDER = ["en", "ko", "ja", "zh", "fr", "es", "ru", "de"] as const;
 
 function requiredString(value: unknown, field: string, fileName: string): string {
   if (typeof value !== "string" || value.trim() === "") {
@@ -139,4 +156,58 @@ export function getFeaturedResearchNotes(limit = 4): ResearchNote[] {
 
 export function getResearchNote(slug: string): ResearchNote | undefined {
   return getAllResearchNotes().find((note) => note.slug === slug);
+}
+
+export function getResearchNoteTranslations(note: ResearchNote): ResearchNoteTranslation[] {
+  const base: ResearchNoteTranslation = {
+    lang: "en",
+    langLabel: "English",
+    title: note.title,
+    summary: note.summary,
+    version: note.version,
+    evidenceScope: note.evidenceScope,
+    abstract: note.abstract,
+    pdfLabel: note.pdfLabel,
+    bundleLabel: note.bundleLabel,
+    toc: note.toc,
+    content: note.content,
+  };
+
+  if (!fs.existsSync(TRANSLATIONS_DIRECTORY)) return [base];
+
+  const prefix = `${note.slug}.`;
+  const files = fs
+    .readdirSync(TRANSLATIONS_DIRECTORY)
+    .filter((name) => name.startsWith(prefix) && name.endsWith(".md"));
+
+  const items: ResearchNoteTranslation[] = [base];
+  for (const fileName of files) {
+    const raw = fs.readFileSync(path.join(TRANSLATIONS_DIRECTORY, fileName), "utf8");
+    const { data, content } = matter(raw);
+    items.push({
+      lang: requiredString(data.lang, "lang", fileName),
+      langLabel: requiredString(data.langLabel, "langLabel", fileName),
+      title: requiredString(data.title, "title", fileName),
+      summary: requiredString(data.summary, "summary", fileName),
+      version:
+        typeof data.version === "string" && data.version.trim() ? data.version.trim() : undefined,
+      evidenceScope: requiredString(data.evidenceScope, "evidenceScope", fileName),
+      abstract:
+        typeof data.abstract === "string" && data.abstract.trim() ? data.abstract.trim() : undefined,
+      pdfLabel:
+        typeof data.pdfLabel === "string" && data.pdfLabel.trim() ? data.pdfLabel.trim() : undefined,
+      bundleLabel:
+        typeof data.bundleLabel === "string" && data.bundleLabel.trim()
+          ? data.bundleLabel.trim()
+          : undefined,
+      toc: parseToc(data.toc),
+      content: content.trim(),
+    });
+  }
+
+  return items.sort((a, b) => {
+    const ia = PREFERRED_LANG_ORDER.indexOf(a.lang as (typeof PREFERRED_LANG_ORDER)[number]);
+    const ib = PREFERRED_LANG_ORDER.indexOf(b.lang as (typeof PREFERRED_LANG_ORDER)[number]);
+    return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+  });
 }

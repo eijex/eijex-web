@@ -10,7 +10,12 @@ import "katex/dist/katex.min.css";
 import Nav from "@/app/components/Nav";
 import Footer from "@/app/components/Footer";
 import LeanBlueprintDiagram from "@/app/components/LeanBlueprintDiagram";
-import { getAllResearchNotes, getResearchNote } from "@/app/lib/research-notes";
+import LocalizedBlueprintArticle from "@/app/components/LocalizedBlueprintArticle";
+import {
+  getAllResearchNotes,
+  getResearchNote,
+  getResearchNoteTranslations,
+} from "@/app/lib/research-notes";
 
 type NotePageProps = { params: Promise<{ slug: string }> };
 
@@ -33,6 +38,13 @@ function headingIdFromText(text: string): string {
     .replace(/^-|-$/g, "");
 }
 
+const CALLOUT_PREFIX =
+  /^(Definition|Theorem|Lemma|Corollary|Proof sketch|Runtime boundary|정의|정리|보조정리|증명 스케치|실행 경계|定義|定理|補題|証明スケッチ|ランタイム境界|定义|引理|证明概要|运行边界|Définition|Théorème|Lemme|Esquisse de preuve|Limite d'exécution|Definición|Teorema|Lema|Bosquejo de prueba|Límite de ejecución|Определение|Теорема|Лемма|Схема доказательства|Граница выполнения|Satz|Beweisskizze|Laufzeitgrenze)\b/i;
+const PROOF_PREFIX =
+  /^(Proof sketch|증명 스케치|証明スケッチ|证明概要|Esquisse de preuve|Bosquejo de prueba|Схема доказательства|Beweisskizze)\b/i;
+const BOUNDARY_PREFIX =
+  /^(Runtime boundary|실행 경계|ランタイム境界|运行边界|Limite d'exécution|Límite de ejecución|Граница выполнения|Laufzeitgrenze)\b/i;
+
 const blueprintComponents: Components = {
   h2({ children }) {
     const id = headingIdFromText(extractText(children));
@@ -52,13 +64,11 @@ const blueprintComponents: Components = {
   },
   blockquote({ children }) {
     const text = extractText(children).trim();
-    const isFormalBlock =
-      /^(Definition|Theorem|Lemma|Corollary|Proof sketch|Runtime boundary)\b/i.test(text);
-    if (!isFormalBlock) {
+    if (!CALLOUT_PREFIX.test(text)) {
       return <blockquote>{children}</blockquote>;
     }
-    const isProof = /^Proof sketch\b/i.test(text);
-    const isBoundary = /^Runtime boundary\b/i.test(text);
+    const isProof = PROOF_PREFIX.test(text);
+    const isBoundary = BOUNDARY_PREFIX.test(text);
     const toneClass = isBoundary
       ? "border-amber-500/80 bg-amber-50/70 dark:border-amber-500/70 dark:bg-amber-950/25"
       : isProof
@@ -112,145 +122,122 @@ export default async function ResearchNotePage({ params }: NotePageProps) {
   if (!note) notFound();
 
   const isBlueprint = note.layout === "blueprint";
+  const translations = isBlueprint ? getResearchNoteTranslations(note) : [];
 
   return (
     <main className="min-h-screen bg-white dark:bg-slate-950">
       <Nav />
-      <article>
-        <header className="border-b border-slate-200 bg-slate-50 px-6 py-14 dark:border-slate-800 dark:bg-slate-900 sm:py-20">
-          <div className={isBlueprint ? "mx-auto max-w-5xl" : "mx-auto max-w-4xl"}>
-            <Link
-              href="/research-notes"
-              className="text-sm font-bold text-teal-700 transition hover:text-teal-900 dark:text-teal-400 dark:hover:text-teal-200"
-            >
-              ← All Research Notes
-            </Link>
-            <div className="mt-8 flex flex-wrap items-center gap-3 text-xs font-bold uppercase tracking-wider">
-              <span className="rounded-full bg-teal-100 px-3 py-1.5 text-teal-800 dark:bg-teal-950 dark:text-teal-300">
-                {note.category}
-              </span>
-              <span className="text-slate-500 dark:text-slate-400">{note.status}</span>
-              {note.version && (
-                <span className="rounded-full border border-slate-300 bg-white px-3 py-1 font-mono text-[11px] normal-case text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
-                  {note.version}
+      {isBlueprint && translations.length > 1 ? (
+        <LocalizedBlueprintArticle
+          category={note.category}
+          status={note.status}
+          date={note.date}
+          readingMinutes={note.readingMinutes}
+          pdfUrl={note.pdfUrl}
+          bundleUrl={note.bundleUrl}
+          locales={translations.map((loc) => ({
+            lang: loc.lang,
+            langLabel: loc.langLabel,
+            title: loc.title,
+            summary: loc.summary,
+            version: loc.version,
+            evidenceScope: loc.evidenceScope,
+            abstract: loc.abstract,
+            pdfLabel: loc.pdfLabel,
+            bundleLabel: loc.bundleLabel,
+            toc: loc.toc,
+            renderedBody: (
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm, remarkMath]}
+                rehypePlugins={[rehypeKatex]}
+                components={blueprintComponents}
+              >
+                {loc.content}
+              </ReactMarkdown>
+            ),
+          }))}
+        />
+      ) : (
+        <article>
+          <header className="border-b border-slate-200 bg-slate-50 px-6 py-16 dark:border-slate-800 dark:bg-slate-900 sm:py-24">
+            <div className={isBlueprint ? "mx-auto max-w-5xl" : "mx-auto max-w-4xl"}>
+              <Link
+                href="/research-notes"
+                className="text-sm font-bold text-teal-700 transition hover:text-teal-900 dark:text-teal-400 dark:hover:text-teal-200"
+              >
+                ← All Research Notes
+              </Link>
+              <div className="mt-10 flex flex-wrap items-center gap-3 text-xs font-bold uppercase tracking-wider">
+                <span className="rounded-full bg-teal-100 px-3 py-1.5 text-teal-800 dark:bg-teal-950 dark:text-teal-300">
+                  {note.category}
                 </span>
-              )}
-            </div>
-            <h1
-              className={
-                isBlueprint
-                  ? "mt-5 text-3xl font-extrabold leading-[1.12] tracking-[-0.03em] text-slate-950 dark:text-white sm:text-5xl"
-                  : "mt-6 text-4xl font-extrabold leading-[1.05] tracking-[-0.04em] text-slate-950 dark:text-white sm:text-6xl"
-              }
-            >
-              {note.title}
-            </h1>
-            <p className="mt-5 max-w-4xl text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-lg">
-              {note.summary}
-            </p>
-            <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-slate-500 dark:text-slate-400">
-              {isBlueprint && (
-                <span className="text-slate-800 dark:text-slate-200">Mun-Kyu Kim (Eijex Research)</span>
-              )}
-              <time dateTime={note.date}>{note.date}</time>
-              <span>{note.readingMinutes} min read</span>
-              <span>{note.evidenceScope}</span>
-            </div>
-            {(note.pdfUrl || note.bundleUrl) && (
-              <div className="mt-7 flex flex-wrap items-center gap-3">
-                {note.pdfUrl && (
-                  <a
-                    href={note.pdfUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl bg-teal-700 px-4 py-2.5 text-xs font-bold text-white shadow-sm transition hover:bg-teal-600"
-                  >
-                    <span>📄</span>
-                    <span>{note.pdfLabel ?? "Download Technical Monograph (PDF)"}</span>
-                  </a>
-                )}
-                {note.bundleUrl && (
-                  <a
-                    href={note.bundleUrl}
-                    download
-                    className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-xs font-bold text-slate-800 shadow-sm transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
-                  >
-                    <span>📦</span>
-                    <span>{note.bundleLabel ?? "Download Reproducible Verification Bundle (.zip)"}</span>
-                  </a>
-                )}
+                <span className="text-slate-500 dark:text-slate-400">{note.status}</span>
               </div>
-            )}
-
-            {isBlueprint && note.abstract && (
-              <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-xs dark:border-slate-800 dark:bg-slate-950/80 sm:p-7">
-                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3 dark:border-slate-800">
-                  <span className="text-xs font-extrabold uppercase tracking-wider text-teal-700 dark:text-teal-400">
-                    Abstract &amp; Formal Verification Scope
-                  </span>
-                  <span className="font-mono text-[11px] text-slate-500 dark:text-slate-400">
-                    leanprover/lean4:v4.36.0 · 20+3 Theorems · 14 Witnesses · 0 sorry
-                  </span>
-                </div>
-                <p className="mt-3.5 text-sm leading-relaxed text-slate-700 dark:text-slate-300 sm:text-[15px]">
-                  {note.abstract}
-                </p>
-              </div>
-            )}
-          </div>
-        </header>
-
-        <div className={isBlueprint ? "mx-auto max-w-5xl px-6 py-12 sm:py-16" : "mx-auto max-w-4xl px-6 py-14 sm:py-20"}>
-          {isBlueprint && note.toc && note.toc.length > 0 && (
-            <nav
-              aria-label="Blueprint table of contents"
-              className="mb-10 rounded-2xl border border-slate-200 bg-slate-50/70 p-5 dark:border-slate-800 dark:bg-slate-900/50 sm:p-6"
-            >
-              <p className="text-xs font-extrabold uppercase tracking-wider text-slate-700 dark:text-slate-300">
-                Contents · Formal Blueprint &amp; Proof Architecture
+              <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] tracking-[-0.04em] text-slate-950 dark:text-white sm:text-6xl">
+                {note.title}
+              </h1>
+              <p className="mt-7 max-w-3xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+                {note.summary}
               </p>
-              <ol className="mt-3 grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2">
-                {note.toc.map((item) => (
-                  <li key={item.id}>
+              <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-slate-500 dark:text-slate-400">
+                <time dateTime={note.date}>{note.date}</time>
+                <span>{note.readingMinutes} min read</span>
+                <span>{note.evidenceScope}</span>
+              </div>
+              {(note.pdfUrl || note.bundleUrl) && (
+                <div className="mt-8 flex flex-wrap items-center gap-3">
+                  {note.pdfUrl && (
                     <a
-                      href={`#${item.id}`}
-                      className="group flex items-baseline gap-2.5 rounded-lg py-1 text-slate-700 transition hover:text-teal-700 dark:text-slate-300 dark:hover:text-teal-300"
+                      href={note.pdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-xl bg-teal-700 px-4 py-2.5 text-xs font-bold text-white shadow-sm transition hover:bg-teal-600"
                     >
-                      <span className="font-mono text-xs font-bold text-teal-700 dark:text-teal-400">
-                        §{item.number}
-                      </span>
-                      <span className="font-medium group-hover:underline">{item.title}</span>
+                      <span>📄</span>
+                      <span>{note.pdfLabel ?? "Download Technical Note (PDF)"}</span>
                     </a>
-                  </li>
-                ))}
-              </ol>
-            </nav>
-          )}
+                  )}
+                  {note.bundleUrl && (
+                    <a
+                      href={note.bundleUrl}
+                      download
+                      className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-xs font-bold text-slate-800 shadow-sm transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
+                    >
+                      <span>📦</span>
+                      <span>{note.bundleLabel ?? "Download Reproducible Verification Bundle (.zip)"}</span>
+                    </a>
+                  )}
+                </div>
+              )}
+            </div>
+          </header>
 
-          {isBlueprint && <LeanBlueprintDiagram />}
+          <div className={isBlueprint ? "mx-auto max-w-5xl px-6 py-12 sm:py-16" : "mx-auto max-w-4xl px-6 py-14 sm:py-20"}>
+            {isBlueprint && <LeanBlueprintDiagram />}
 
-          <div className="research-note-prose">
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm, remarkMath]}
-              rehypePlugins={[rehypeKatex]}
-              components={isBlueprint ? blueprintComponents : undefined}
-            >
-              {note.content}
-            </ReactMarkdown>
+            <div className="research-note-prose">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm, remarkMath]}
+                rehypePlugins={[rehypeKatex]}
+                components={isBlueprint ? blueprintComponents : undefined}
+              >
+                {note.content}
+              </ReactMarkdown>
+            </div>
+
+            <aside className="mt-16 rounded-3xl border border-amber-200 bg-amber-50 p-6 text-sm leading-relaxed text-amber-950 dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-100 sm:p-8">
+              <p className="font-extrabold">About this note</p>
+              <p className="mt-2">
+                Research Notes preserve engineering decisions, computational observations,
+                incomplete experiments, and corrected interpretations. They are not
+                peer-reviewed publications or biological validation evidence. Public-redacted
+                cases omit partner identity, raw sequences, private records, and infrastructure
+                identifiers.
+              </p>
+            </aside>
           </div>
-
-          <aside className="mt-16 rounded-3xl border border-amber-200 bg-amber-50 p-6 text-sm leading-relaxed text-amber-950 dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-100 sm:p-8">
-            <p className="font-extrabold">About this note</p>
-            <p className="mt-2">
-              Research Notes preserve engineering decisions, computational observations,
-              incomplete experiments, and corrected interpretations. They are not
-              peer-reviewed publications or biological validation evidence. Public-redacted
-              cases omit partner identity, raw sequences, private records, and infrastructure
-              identifiers.
-            </p>
-          </aside>
-        </div>
-      </article>
+        </article>
+      )}
       <Footer />
     </main>
   );
