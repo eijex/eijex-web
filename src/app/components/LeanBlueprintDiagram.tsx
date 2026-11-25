@@ -132,11 +132,11 @@ export default function LeanBlueprintDiagram() {
           </g>
 
           {/* Row 2: Layer 1 Theorems */}
-          <g className="font-mono text-[10.5px]">
+          <g className="font-mono text-[10px]">
             <rect
-              x="20"
+              x="16"
               y="98"
-              width="200"
+              width="208"
               height="54"
               rx="8"
               className="fill-teal-50/80 stroke-teal-600 stroke-[1.4] dark:fill-teal-950/40 dark:stroke-teal-500"
@@ -149,9 +149,9 @@ export default function LeanBlueprintDiagram() {
             </text>
 
             <rect
-              x="246"
+              x="242"
               y="98"
-              width="200"
+              width="208"
               height="54"
               rx="8"
               className="fill-teal-50/80 stroke-teal-600 stroke-[1.4] dark:fill-teal-950/40 dark:stroke-teal-500"
@@ -164,9 +164,9 @@ export default function LeanBlueprintDiagram() {
             </text>
 
             <rect
-              x="472"
+              x="468"
               y="98"
-              width="200"
+              width="208"
               height="54"
               rx="8"
               className="fill-teal-50/80 stroke-teal-600 stroke-[1.4] dark:fill-teal-950/40 dark:stroke-teal-500"
@@ -179,9 +179,9 @@ export default function LeanBlueprintDiagram() {
             </text>
 
             <rect
-              x="698"
+              x="694"
               y="98"
-              width="202"
+              width="210"
               height="54"
               rx="8"
               className="fill-teal-50/80 stroke-teal-600 stroke-[1.4] dark:fill-teal-950/40 dark:stroke-teal-500"
@@ -240,9 +240,9 @@ export default function LeanBlueprintDiagram() {
           {/* Row 4: Crown Theorem */}
           <g className="font-mono">
             <rect
-              x="105"
+              x="45"
               y="280"
-              width="520"
+              width="640"
               height="60"
               rx="10"
               className="fill-teal-100/90 stroke-teal-700 stroke-[2] dark:fill-teal-900/50 dark:stroke-teal-400"
