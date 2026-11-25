@@ -7,11 +7,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.eijex.com"),
-  title: "eijex — Open evidence infrastructure for plant expression",
+  title: "eijex - Open evidence infrastructure for plant expression",
   description:
     "Open-source software for reproducible plant CDS design, human-supervised workflow governance, and evidence traceability.",
   openGraph: {
-    title: "eijex — Design, govern, and preserve evidence",
+    title: "eijex - Design, govern, and preserve evidence",
     description:
       "Open-source research software connecting reproducible plant CDS design with reviewable evidence infrastructure.",
     url: "https://www.eijex.com",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "eijex — Design, govern, and preserve evidence",
+    title: "eijex - Design, govern, and preserve evidence",
     description:
       "Open-source research software for plant bio-design, workflow governance, and evidence traceability.",
   },

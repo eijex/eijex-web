@@ -9,8 +9,9 @@ test("keeps canonical order and includes unknown sections exactly once", () => {
     { bookSection: "New section" }, { bookSection: "New section" },
   ]);
   assert.equal(sections[0], "Architecture and direction");
-  assert.equal(sections[4], "Reliability and release engineering");
-  assert.equal(sections[5], "New section");
+  assert.equal(sections[2], "Formal verification (Lean 4)");
+  assert.equal(sections[5], "Reliability and release engineering");
+  assert.equal(sections[6], "New section");
   assert.equal(sections.filter((section) => section === "New section").length, 1);
 });
 

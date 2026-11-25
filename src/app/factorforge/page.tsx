@@ -6,7 +6,7 @@ import BenchmarkStats from "@/app/components/factorforge/BenchmarkStats";
 import { CURRENT_APP_VERSION, FACTORFORGE_ENGINE_VERSIONS } from "@/app/lib/site-stats";
 
 export const metadata: Metadata = {
-  title: "FactorForge | Deterministic Bio-Design Engine — eijex",
+  title: "FactorForge | Deterministic Bio-Design Engine - eijex",
   description: "Technical whitepaper for FactorForge's CPU-first deterministic CDS design core.",
 };
 
@@ -170,7 +170,7 @@ export default function FactorForgePage() {
           <p className="text-sm font-bold uppercase tracking-widest text-teal-600 dark:text-teal-400">Algorithm</p>
           <h2 className="mt-3 text-3xl font-bold text-slate-900 dark:text-white">Constrained CAI maximization, computed exactly.</h2>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-            For a fixed protein and a configured GC% target range, <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs dark:bg-slate-800">feasibility_best</code> searches every synonymous CDS that encodes the protein and returns the one with the highest Codon Adaptation Index inside that range — an exact dynamic-programming solution, not a heuristic approximation.
+            For a fixed protein and a configured GC% target range, <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs dark:bg-slate-800">feasibility_best</code> searches every synonymous CDS that encodes the protein and returns the one with the highest Codon Adaptation Index inside that range - an exact dynamic-programming solution, not a heuristic approximation.
           </p>
           <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-800">
@@ -192,7 +192,7 @@ over       C in synonymous(protein)`}</code></pre>
             </div>
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-800">
               <h3 className="font-extrabold text-slate-900 dark:text-white">Tie-breaking</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">Equal-scoring paths keep the first codon encountered in the reference table&apos;s fixed order — deterministic by construction, not by chance.</p>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">Equal-scoring paths keep the first codon encountered in the reference table&apos;s fixed order - deterministic by construction, not by chance.</p>
             </div>
           </div>
         </div>

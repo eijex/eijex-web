@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "The origin and design philosophy of Eijex: a name we created, inspired by eigenstate and joint expression.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Eijex — Engineering Intrinsic Expression",
+    title: "About Eijex - Engineering Intrinsic Expression",
     description:
       "Why Eijex connects context-dependent expression design with workflow control and reviewable evidence.",
     url: "/about",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "About Eijex — Engineering Intrinsic Expression",
+    title: "About Eijex - Engineering Intrinsic Expression",
     description:
       "A name we created, inspired by eigenstate, joint expression, and evidence-linked engineering.",
     images: [],
@@ -67,7 +67,7 @@ export default function AboutPage() {
           </h1>
           <p className="mt-7 max-w-3xl text-xl leading-relaxed text-slate-600 dark:text-slate-300">
             Eijex is a name we created, inspired by <em>eigenstate</em> and
-            <em> joint expression</em>—a way to describe our direction without
+            <em> joint expression</em> - a way to describe our direction without
             reducing biological expression to a single score.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-3 text-sm font-bold">
@@ -135,7 +135,7 @@ export default function AboutPage() {
             <p className="font-bold">What this means in practice</p>
             <p className="mt-3 leading-relaxed text-slate-600 dark:text-slate-300">
               Eijex builds open, evidence-linked software for exploring and
-              reviewing context-dependent plant expression designs—from
+              reviewing context-dependent plant expression designs - from
               reproducible CDS candidates to governed workflows and traceable
               evidence records.
             </p>

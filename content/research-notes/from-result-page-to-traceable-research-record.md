@@ -4,7 +4,7 @@ date: "2026-09-10"
 updated: "2026-09-10"
 status: "Engineering note"
 category: "Evidence Architecture"
-summary: "Why FactorForge now separates researcher decisions, sequence-bearing reports, and sequence-free evidence—and what must exist before that history becomes a controlled audit trail."
+summary: "Why FactorForge now separates researcher decisions, sequence-bearing reports, and sequence-free evidence - and what must exist before that history becomes a controlled audit trail."
 evidenceScope: "Implemented report boundary and development-stage activity-log contract; no experimental or regulatory claim"
 featured: true
 bookSection: "Evidence architecture"

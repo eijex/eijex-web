@@ -1,5 +1,5 @@
 ---
-title: "What a decoder comparison can—and cannot—show"
+title: "What a decoder comparison can - and cannot - show"
 date: "2026-08-26"
 updated: "2026-08-29"
 status: "Superseded"

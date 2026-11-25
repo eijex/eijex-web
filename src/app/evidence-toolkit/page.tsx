@@ -4,7 +4,7 @@ import Nav from "@/app/components/Nav";
 import Footer from "@/app/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Evidence Toolkit | Reviewable package contracts — eijex",
+  title: "Evidence Toolkit | Reviewable package contracts - eijex",
   description:
     "Development-stage, sequence-free contracts for assembling linked research evidence packages.",
 };
@@ -119,7 +119,7 @@ export default function EvidenceToolkitPage() {
           <div>
             <h2 className="text-2xl font-extrabold">Intentionally outside v0.1</h2>
             <ul className="mt-5 space-y-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-              {exclusions.map((item) => <li key={item}>— {item}</li>)}
+              {exclusions.map((item) => <li key={item}>- {item}</li>)}
             </ul>
           </div>
         </div>

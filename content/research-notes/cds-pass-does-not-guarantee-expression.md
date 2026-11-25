@@ -4,7 +4,7 @@ date: "2026-07-04"
 updated: "2026-08-29"
 status: "Public-redacted case study"
 category: "Design & Validation"
-summary: "Codon choice, protein architecture, experimental context, and measured yield belong to connected—but different—evidence layers."
+summary: "Codon choice, protein architecture, experimental context, and measured yield belong to connected - but different - evidence layers."
 evidenceScope: "Claim-boundary case study; no private outcome disclosed"
 featured: true
 bookSection: "Design and validation"

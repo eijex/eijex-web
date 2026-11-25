@@ -4,7 +4,7 @@ date: "2026-07-04"
 updated: "2026-08-29"
 status: "Engineering note"
 category: "Design & Validation"
-summary: "Two CAI values for the same sequence were both mathematically correct—and still misleading when shown without their references."
+summary: "Two CAI values for the same sequence were both mathematically correct - and still misleading when shown without their references."
 evidenceScope: "Metric-provenance observation"
 featured: true
 bookSection: "Design and validation"
@@ -30,7 +30,7 @@ authority. A useful authority record answers at least four questions:
 - Was it distinct from the generation reference?
 - Was a fallback used?
 
-An initial two-state model—preferred reference or fallback—was still incomplete. It
+An initial two-state model - preferred reference or fallback - was still incomplete. It
 could not represent the valid case where a caller intentionally selects one
 reference for both generation and evaluation. The final relationship therefore
 needed three states: distinct, intentionally the same, and fallback to the generation

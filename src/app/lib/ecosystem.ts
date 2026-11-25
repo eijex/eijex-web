@@ -128,14 +128,14 @@ export const implementationStatus = [
 export const researchTracks = [
   {
     label: "Computational case study",
-    title: "Paper 1 — Reproducible CDS design",
+    title: "Paper 1 - Reproducible CDS design",
     description:
       "A frozen N. benthamiana computational study and reproducibility package. It makes no expression, yield, or wet-lab claim.",
     status: "Computational scope frozen",
   },
   {
     label: "Planning scaffold",
-    title: "Paper 2 — Evidence infrastructure",
+    title: "Paper 2 - Evidence infrastructure",
     description:
       "A research plan for traceable design-to-evidence infrastructure, now recording a partial database implementation checkpoint.",
     status: "Evidence gate not yet complete",

@@ -51,5 +51,5 @@ an advertised workflow can be independently exercised.
 A meaningful comparison should pin the source commit, model-weight identifiers and
 checksums, proxy-host rationale, container or environment lock, command line, random
 state, and every output artifact. Until that package exists, the useful result is the
-execution lesson—not a claim about model quality.
+execution lesson - not a claim about model quality.
 

@@ -125,7 +125,7 @@ export default function Ecosystem() {
           </p>
           <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
             The current connection is a development-stage contract over identifiers,
-            provenance, and checksums—not a completed shared runtime or database.
+            provenance, and checksums - not a completed shared runtime or database.
           </p>
           <Link
             href="/evidence-toolkit"

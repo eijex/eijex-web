@@ -5,7 +5,7 @@ import Nav from "@/app/components/Nav";
 import { CURRENT_APP_VERSION, FACTORFORGE_ENGINE_VERSIONS, FACTORFORGE_DESIGN_WORKFLOWS } from "@/app/lib/site-stats";
 
 export const metadata: Metadata = {
-  title: "Product Version Registry — eijex",
+  title: "Product Version Registry - eijex",
   description: "Public product and component version registry for Eijex software.",
 };
 

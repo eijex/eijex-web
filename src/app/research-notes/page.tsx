@@ -6,7 +6,7 @@ import { getAllResearchNotes } from "@/app/lib/research-notes";
 import { getResearchNoteSections } from "@/app/lib/research-note-sections.mjs";
 
 export const metadata: Metadata = {
-  title: "Research Notes — eijex",
+  title: "Research Notes - eijex",
   description:
     "Engineering decisions, computational observations, incomplete experiments, and lessons from building the Eijex research software stack.",
   alternates: {
@@ -32,7 +32,7 @@ export default function ResearchNotesPage() {
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
             What we learned while building reproducible, evidence-aware bio-design
-            software—including investigations that failed, assumptions that changed, and
+            software - including investigations that failed, assumptions that changed, and
             work that remains incomplete.
           </p>
         </div>

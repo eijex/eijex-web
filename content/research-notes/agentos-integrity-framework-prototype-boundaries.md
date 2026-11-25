@@ -26,8 +26,8 @@ performance would have converted interface scaffolding into evidence.
 
 ## What the integrity checks found
 
-The leakage-audit workflow had the right two-stage shape—a fast candidate filter
-followed by local alignment—but its current data were placeholders rather than
+The leakage-audit workflow had the right two-stage shape - a fast candidate filter
+followed by local alignment - but its current data were placeholders rather than
 the frozen corpus used to train a model. An exact-match result from that fixture
 could say nothing general about memorization.
 

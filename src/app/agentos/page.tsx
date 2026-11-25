@@ -5,12 +5,12 @@ import Nav from "@/app/components/Nav";
 import { publicDataBoundary, publicLinks } from "@/app/lib/ecosystem";
 
 export const metadata: Metadata = {
-  title: "AgentOS | Human-supervised workflow integrity — eijex",
+  title: "AgentOS | Human-supervised workflow integrity - eijex",
   description:
     "Public workflow-control code for policy checks, approval gates, audit trails, and evidence-safe projection across Eijex research software.",
   alternates: { canonical: "/agentos" },
   openGraph: {
-    title: "AgentOS — Human-supervised workflow integrity",
+    title: "AgentOS - Human-supervised workflow integrity",
     description:
       "An open control-plane foundation for explicit boundaries, human approvals, and auditable research workflows.",
     url: "/agentos",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "AgentOS — Human-supervised workflow integrity",
+    title: "AgentOS - Human-supervised workflow integrity",
     description:
       "Public workflow-control code for explicit boundaries, approval gates, and audit trails.",
     images: [],

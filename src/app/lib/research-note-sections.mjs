@@ -1,6 +1,7 @@
 const preferredSections = [
   "Architecture and direction",
   "Design and validation",
+  "Formal verification (Lean 4)",
   "Evidence and governance",
   "Models and comparative evaluation",
   "Reliability and release engineering",

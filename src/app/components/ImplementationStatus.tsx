@@ -27,7 +27,7 @@ export default function ImplementationStatus() {
             Implementation status
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl">
-            What exists today—and what still has to be proven.
+            What exists today - and what still has to be proven.
           </h2>
           <p className="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300">
             Public software availability and database integration are different

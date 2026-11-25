@@ -7,12 +7,12 @@ import ValidationLiveStats from "@/app/components/ValidationLiveStats";
 import { publicDataBoundary, publicLinks } from "@/app/lib/ecosystem";
 
 export const metadata: Metadata = {
-  title: "ValidationHub | Versioned evidence registry — eijex",
+  title: "ValidationHub | Versioned evidence registry - eijex",
   description:
     "A public evidence-registry foundation for canonical identity, append-only lineage, review states, and permissioned research records.",
   alternates: { canonical: "/validationhub" },
   openGraph: {
-    title: "ValidationHub — Versioned evidence, explicit scientific states",
+    title: "ValidationHub - Versioned evidence, explicit scientific states",
     description:
       "Open schemas and registry code for traceable design-to-evidence infrastructure without publishing permissioned records.",
     url: "/validationhub",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "ValidationHub — Versioned evidence registry",
+    title: "ValidationHub - Versioned evidence registry",
     description:
       "Open schemas and registry code for identity, lineage, review, and permissioned evidence boundaries.",
     images: [],

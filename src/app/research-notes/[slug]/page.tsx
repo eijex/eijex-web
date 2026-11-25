@@ -86,7 +86,7 @@ export async function generateMetadata({ params }: NotePageProps): Promise<Metad
   if (!note) return {};
 
   return {
-    title: `${note.title} — Eijex Research Notes`,
+    title: `${note.title} - Eijex Research Notes`,
     description: note.summary,
     alternates: { canonical: `/research-notes/${note.slug}` },
     openGraph: {

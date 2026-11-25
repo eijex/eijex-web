@@ -1,14 +1,14 @@
-// Historical benchmark — archived FactorForge v3.2.0 run, frozen at time of measurement.
+// Historical benchmark - archived FactorForge v3.2.0 run, frozen at time of measurement.
 export const HISTORICAL_MEAN_CAI = "0.94";
 export const HISTORICAL_AA_IDENTITY = "100%";
 export const HISTORICAL_CDS_COUNT = "49,257";
 export const HISTORICAL_CAPTION = "FactorForge v3.2.0 · balanced profile · SGN QLD183 v103 corpus · historical packaged codon reference · scoring_contract v1.1";
 
-// Native reference (unoptimized) — same v3.2.0 run, same corpus, no optimization applied.
+// Native reference (unoptimized) - same v3.2.0 run, same corpus, no optimization applied.
 export const NATIVE_REFERENCE_MEAN_CAI = "0.72";
 export const NATIVE_REFERENCE_CDS_COUNT = HISTORICAL_CDS_COUNT;
 
-// Current software — live application configuration, independent of the historical benchmark above.
+// Current software - live application configuration, independent of the historical benchmark above.
 export const CURRENT_APP_VERSION = "v3.6.8";
 
 export const FACTORFORGE_ENGINE_VERSIONS = [

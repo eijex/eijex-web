@@ -4,7 +4,7 @@ import Nav from "@/app/components/Nav";
 import Footer from "@/app/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Academic Papers & Preprints — eijex",
+  title: "Academic Papers & Preprints - eijex",
   description:
     "Peer-reviewed manuscripts, open-access preprints, and reproducible evidence artifacts from the Eijex bio-design research consortium.",
 };
