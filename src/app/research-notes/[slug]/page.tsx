@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
+import rehypeKatex from "rehype-katex";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import "katex/dist/katex.min.css";
 import Nav from "@/app/components/Nav";
 import Footer from "@/app/components/Footer";
 import { getAllResearchNotes, getResearchNote } from "@/app/lib/research-notes";
@@ -73,12 +76,39 @@ export default async function ResearchNotePage({ params }: NotePageProps) {
               <span>{note.readingMinutes} min read</span>
               <span>{note.evidenceScope}</span>
             </div>
+            {(note.pdfUrl || note.bundleUrl) && (
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                {note.pdfUrl && (
+                  <a
+                    href={note.pdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-xl bg-teal-700 px-4 py-2.5 text-xs font-bold text-white shadow-sm transition hover:bg-teal-600"
+                  >
+                    <span>📄</span>
+                    <span>{note.pdfLabel ?? "Download Technical Note (PDF)"}</span>
+                  </a>
+                )}
+                {note.bundleUrl && (
+                  <a
+                    href={note.bundleUrl}
+                    download
+                    className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-xs font-bold text-slate-800 shadow-sm transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
+                  >
+                    <span>📦</span>
+                    <span>{note.bundleLabel ?? "Download Reproducible Verification Bundle (.zip)"}</span>
+                  </a>
+                )}
+              </div>
+            )}
           </div>
         </header>
 
         <div className="mx-auto max-w-4xl px-6 py-14 sm:py-20">
           <div className="research-note-prose">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{note.content}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>
+              {note.content}
+            </ReactMarkdown>
           </div>
 
           <aside className="mt-16 rounded-3xl border border-amber-200 bg-amber-50 p-6 text-sm leading-relaxed text-amber-950 dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-100 sm:p-8">
@@ -97,4 +127,3 @@ export default async function ResearchNotePage({ params }: NotePageProps) {
     </main>
   );
 }
-

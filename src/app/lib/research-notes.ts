@@ -27,6 +27,10 @@ export type ResearchNote = {
   bookSection: string;
   bookOrder: number;
   readingMinutes: number;
+  pdfUrl?: string;
+  pdfLabel?: string;
+  bundleUrl?: string;
+  bundleLabel?: string;
   content: string;
 };
 
@@ -73,6 +77,17 @@ function parseNote(fileName: string): ResearchNote {
     bookSection: requiredString(data.bookSection, "bookSection", fileName),
     bookOrder,
     readingMinutes: Math.max(1, Math.ceil(content.trim().split(/\s+/).length / 220)),
+    pdfUrl: typeof data.pdfUrl === "string" && data.pdfUrl.trim() ? data.pdfUrl.trim() : undefined,
+    pdfLabel:
+      typeof data.pdfLabel === "string" && data.pdfLabel.trim() ? data.pdfLabel.trim() : undefined,
+    bundleUrl:
+      typeof data.bundleUrl === "string" && data.bundleUrl.trim()
+        ? data.bundleUrl.trim()
+        : undefined,
+    bundleLabel:
+      typeof data.bundleLabel === "string" && data.bundleLabel.trim()
+        ? data.bundleLabel.trim()
+        : undefined,
     content: content.trim(),
   };
 }

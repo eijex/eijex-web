@@ -1,0 +1,55 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
+import { test } from "node:test";
+import React from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import ReactMarkdown from "react-markdown";
+import rehypeKatex from "rehype-katex";
+import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import matter from "gray-matter";
+
+const root = new URL("../", import.meta.url);
+const note = matter(fs.readFileSync(new URL(
+  "content/research-notes/lean4-formal-verification-of-factorforge-dp.md", root,
+), "utf8"));
+const render = (content) => renderToStaticMarkup(React.createElement(ReactMarkdown, {
+  remarkPlugins: [remarkGfm, remarkMath], rehypePlugins: [rehypeKatex],
+}, content));
+
+test("renders inline and display math as KaTeX with accessible MathML", () => {
+  const html = render("Bound $L\\varepsilon$.\n\n$$\n\\tau_p + \\frac{d}{W}(1-\\tau_p)\n$$");
+  assert(html.includes('class="katex"'));
+  assert(html.includes('class="katex-display"'));
+  assert(html.includes("<math"));
+  assert(!html.includes("katex-error"));
+});
+
+test("the released Lean note renders without KaTeX parse errors", () => {
+  const html = render(note.content);
+  assert(html.includes('class="katex"'));
+  assert(!html.includes("katex-error"));
+});
+
+test("every declared research-note download points to an existing local release asset", () => {
+  const directory = new URL("content/research-notes/", root);
+  for (const name of fs.readdirSync(directory).filter((name) => name.endsWith(".md"))) {
+    const { data } = matter(fs.readFileSync(new URL(name, directory), "utf8"));
+    for (const [field, extension] of [["pdfUrl", ".pdf"], ["bundleUrl", ".zip"]]) {
+      if (data[field] === undefined) continue;
+      assert.match(data[field], /^\/research-notes\/[A-Za-z0-9_.-]+$/);
+      assert.equal(path.extname(data[field]), extension);
+      assert(fs.statSync(new URL(`public${data[field]}`, root)).isFile());
+    }
+  }
+});
+
+
+test("all public notes render without KaTeX parse errors", () => {
+  const directory = new URL("content/research-notes/", root);
+  for (const name of fs.readdirSync(directory).filter((name) => name.endsWith(".md"))) {
+    const { content } = matter(fs.readFileSync(new URL(name, directory), "utf8"));
+    assert(!render(content).includes("katex-error"), name);
+  }
+});
