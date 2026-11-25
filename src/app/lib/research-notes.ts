@@ -56,6 +56,8 @@ export type ResearchNote = {
   toc?: ResearchNoteTocItem[];
   pdfUrl?: string;
   pdfLabel?: string;
+  fullPdfUrl?: string;
+  fullPdfLabel?: string;
   bundleUrl?: string;
   bundleLabel?: string;
   content: string;
@@ -130,6 +132,14 @@ function parseNote(fileName: string): ResearchNote {
     pdfUrl: typeof data.pdfUrl === "string" && data.pdfUrl.trim() ? data.pdfUrl.trim() : undefined,
     pdfLabel:
       typeof data.pdfLabel === "string" && data.pdfLabel.trim() ? data.pdfLabel.trim() : undefined,
+    fullPdfUrl:
+      typeof data.fullPdfUrl === "string" && data.fullPdfUrl.trim()
+        ? data.fullPdfUrl.trim()
+        : undefined,
+    fullPdfLabel:
+      typeof data.fullPdfLabel === "string" && data.fullPdfLabel.trim()
+        ? data.fullPdfLabel.trim()
+        : undefined,
     bundleUrl:
       typeof data.bundleUrl === "string" && data.bundleUrl.trim()
         ? data.bundleUrl.trim()
@@ -209,5 +219,53 @@ export function getResearchNoteTranslations(note: ResearchNote): ResearchNoteTra
     const ia = PREFERRED_LANG_ORDER.indexOf(a.lang as (typeof PREFERRED_LANG_ORDER)[number]);
     const ib = PREFERRED_LANG_ORDER.indexOf(b.lang as (typeof PREFERRED_LANG_ORDER)[number]);
     return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+  });
+}
+
+export type LeanFormalModule = {
+  id: string;
+  group: "Locked Spec (Spec/)" | "Kernel Proofs (Proofs/)" | "Witnesses & Audit" | "Kernel Output";
+  path: string;
+  lines: number;
+  code: string;
+};
+
+const LEAN_FORMAL_DIRECTORY = path.join(process.cwd(), "content", "lean4-formal");
+
+const ORDERED_LEAN_MODULES: Array<{
+  rel: string;
+  group: LeanFormalModule["group"];
+}> = [
+  { rel: "Spec/Tropical.lean", group: "Locked Spec (Spec/)" },
+  { rel: "Spec/Automaton.lean", group: "Locked Spec (Spec/)" },
+  { rel: "Spec/GeneticCode.lean", group: "Locked Spec (Spec/)" },
+  { rel: "Spec/ExactDP.lean", group: "Locked Spec (Spec/)" },
+  { rel: "Spec/KineticAndParity.lean", group: "Locked Spec (Spec/)" },
+  { rel: "Spec.lean", group: "Locked Spec (Spec/)" },
+  { rel: "Proofs/Tropical.lean", group: "Kernel Proofs (Proofs/)" },
+  { rel: "Proofs/Automaton.lean", group: "Kernel Proofs (Proofs/)" },
+  { rel: "Proofs/GeneticCode.lean", group: "Kernel Proofs (Proofs/)" },
+  { rel: "Proofs/ExactDP.lean", group: "Kernel Proofs (Proofs/)" },
+  { rel: "Proofs/KineticAndParity.lean", group: "Kernel Proofs (Proofs/)" },
+  { rel: "Witnesses.lean", group: "Witnesses & Audit" },
+  { rel: "Audit.lean", group: "Witnesses & Audit" },
+  { rel: "audit_axioms.txt", group: "Kernel Output" },
+];
+
+export function getLeanFormalModules(): LeanFormalModule[] {
+  if (!fs.existsSync(LEAN_FORMAL_DIRECTORY)) return [];
+  return ORDERED_LEAN_MODULES.flatMap(({ rel, group }) => {
+    const fullPath = path.join(LEAN_FORMAL_DIRECTORY, rel);
+    if (!fs.existsSync(fullPath)) return [];
+    const code = fs.readFileSync(fullPath, "utf8").trimEnd();
+    return [
+      {
+        id: rel.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase(),
+        group,
+        path: rel,
+        lines: code.split(/\r?\n/).length,
+        code,
+      },
+    ];
   });
 }

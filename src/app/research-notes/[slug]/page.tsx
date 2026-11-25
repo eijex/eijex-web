@@ -13,6 +13,7 @@ import LeanBlueprintDiagram from "@/app/components/LeanBlueprintDiagram";
 import LocalizedBlueprintArticle from "@/app/components/LocalizedBlueprintArticle";
 import {
   getAllResearchNotes,
+  getLeanFormalModules,
   getResearchNote,
   getResearchNoteTranslations,
 } from "@/app/lib/research-notes";
@@ -123,6 +124,7 @@ export default async function ResearchNotePage({ params }: NotePageProps) {
 
   const isBlueprint = note.layout === "blueprint";
   const translations = isBlueprint ? getResearchNoteTranslations(note) : [];
+  const fullModules = isBlueprint ? getLeanFormalModules() : [];
 
   return (
     <main className="min-h-screen bg-white dark:bg-slate-950">
@@ -134,7 +136,10 @@ export default async function ResearchNotePage({ params }: NotePageProps) {
           date={note.date}
           readingMinutes={note.readingMinutes}
           pdfUrl={note.pdfUrl}
+          fullPdfUrl={note.fullPdfUrl}
+          fullPdfLabel={note.fullPdfLabel}
           bundleUrl={note.bundleUrl}
+          fullModules={fullModules}
           locales={translations.map((loc) => ({
             lang: loc.lang,
             langLabel: loc.langLabel,

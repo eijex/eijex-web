@@ -41,7 +41,9 @@ featured: true
 bookSection: "Formal verification (Lean 4)"
 bookOrder: 1
 pdfUrl: "/research-notes/FactorForge_Lean4_Formal_Verification_Technical_Note.pdf"
-pdfLabel: "Download Full Technical Monograph v1.0.3 (PDF, 14p)"
+pdfLabel: "Download Summary Monograph v1.0.3 (PDF, 14p)"
+fullPdfUrl: "/research-notes/FactorForge_Lean4_Formal_Verification_Full_Monograph.pdf"
+fullPdfLabel: "Download Full Verification Monograph v1.0.3 (PDF, 50p)"
 bundleUrl: "/research-notes/FactorForge_Lean4_Verification_Package.zip"
 bundleLabel: "Download Reproducible Lean 4 + Oracle Archive (.zip)"
 ---

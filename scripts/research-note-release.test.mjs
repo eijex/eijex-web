@@ -70,7 +70,7 @@ test("every declared research-note download points to an existing local release 
   const directory = new URL("content/research-notes/", root);
   for (const name of fs.readdirSync(directory).filter((name) => name.endsWith(".md"))) {
     const { data } = matter(fs.readFileSync(new URL(name, directory), "utf8"));
-    for (const [field, extension] of [["pdfUrl", ".pdf"], ["bundleUrl", ".zip"]]) {
+    for (const [field, extension] of [["pdfUrl", ".pdf"], ["fullPdfUrl", ".pdf"], ["bundleUrl", ".zip"]]) {
       if (data[field] === undefined) continue;
       assert.match(data[field], /^\/research-notes\/[A-Za-z0-9_.-]+$/);
       assert.equal(path.extname(data[field]), extension);
