@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import EcosystemLink from "./EcosystemLink";
+import NavActiveLink from "./NavActiveLink";
 import { publicLinks } from "@/app/lib/ecosystem";
 
 export default function Nav() {
@@ -15,36 +16,18 @@ export default function Nav() {
         </Link>
         <div className="flex items-center gap-3 sm:gap-4 text-sm text-slate-500 dark:text-slate-400">
           <div className="hidden items-center gap-4 md:flex">
-            <Link href="/about" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-              About
-            </Link>
+            <NavActiveLink href="/about">About</NavActiveLink>
             <EcosystemLink className="hover:text-slate-900 dark:hover:text-white transition-colors">
               Stack
             </EcosystemLink>
-            <Link href="/products" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-              Products
-            </Link>
-            <Link href="/papers" className="hover:text-slate-900 dark:hover:text-white transition-colors font-semibold text-teal-700 dark:text-teal-400">
-              Papers
-            </Link>
-            <Link href="/factorforge" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-              FactorForge
-            </Link>
-            <Link href="/slm" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-              SLM Lab
-            </Link>
-            <Link href="/agentos" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-              AgentOS
-            </Link>
-            <Link href="/validationhub" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-              ValidationHub
-            </Link>
-            <Link href="/evidence-toolkit" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-              Evidence
-            </Link>
-            <Link href="/research-notes" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-              Notes
-            </Link>
+            <NavActiveLink href="/products">Products</NavActiveLink>
+            <NavActiveLink href="/papers">Papers</NavActiveLink>
+            <NavActiveLink href="/factorforge">FactorForge</NavActiveLink>
+            <NavActiveLink href="/slm">SLM Lab</NavActiveLink>
+            <NavActiveLink href="/agentos">AgentOS</NavActiveLink>
+            <NavActiveLink href="/validationhub">ValidationHub</NavActiveLink>
+            <NavActiveLink href="/evidence-toolkit">Evidence</NavActiveLink>
+            <NavActiveLink href="/research-notes">Notes</NavActiveLink>
           </div>
           <a
             href={publicLinks.eijexGitHub}
@@ -59,37 +42,37 @@ export default function Nav() {
               Menu <span aria-hidden="true">▾</span>
             </summary>
             <div className="absolute right-0 top-full z-50 mt-2 w-52 overflow-hidden rounded-xl border border-slate-200 bg-white p-2 shadow-xl dark:border-slate-700 dark:bg-slate-900">
-              <Link href="/about" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
+              <NavActiveLink href="/about" mobile>
                 About Eijex
-              </Link>
+              </NavActiveLink>
               <EcosystemLink className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
                 Stack
               </EcosystemLink>
-              <Link href="/products" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
+              <NavActiveLink href="/products" mobile>
                 Products & versions
-              </Link>
-              <Link href="/papers" className="block rounded-lg px-3 py-2.5 text-sm font-semibold text-teal-700 dark:text-teal-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+              </NavActiveLink>
+              <NavActiveLink href="/papers" mobile>
                 Papers &amp; Preprints
-              </Link>
+              </NavActiveLink>
               <div className="my-1 border-t border-slate-200 dark:border-slate-700" />
-              <Link href="/factorforge" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
+              <NavActiveLink href="/factorforge" mobile>
                 FactorForge
-              </Link>
-              <Link href="/slm" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
+              </NavActiveLink>
+              <NavActiveLink href="/slm" mobile>
                 FactorForge SLM Lab
-              </Link>
-              <Link href="/agentos" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
+              </NavActiveLink>
+              <NavActiveLink href="/agentos" mobile>
                 AgentOS
-              </Link>
-              <Link href="/validationhub" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
+              </NavActiveLink>
+              <NavActiveLink href="/validationhub" mobile>
                 ValidationHub
-              </Link>
-              <Link href="/evidence-toolkit" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
+              </NavActiveLink>
+              <NavActiveLink href="/evidence-toolkit" mobile>
                 Evidence Toolkit
-              </Link>
-              <Link href="/research-notes" className="block rounded-lg px-3 py-2.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
+              </NavActiveLink>
+              <NavActiveLink href="/research-notes" mobile>
                 Research Notes
-              </Link>
+              </NavActiveLink>
               <a
                 href={publicLinks.mcpService}
                 target="_blank"

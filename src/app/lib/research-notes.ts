@@ -14,6 +14,14 @@ export type ResearchNoteStatus =
   | "Superseded"
   | "Public-redacted case study";
 
+export type ResearchNoteLayout = "note" | "blueprint";
+
+export type ResearchNoteTocItem = {
+  id: string;
+  number: string;
+  title: string;
+};
+
 export type ResearchNote = {
   slug: string;
   title: string;
@@ -27,6 +35,10 @@ export type ResearchNote = {
   bookSection: string;
   bookOrder: number;
   readingMinutes: number;
+  layout: ResearchNoteLayout;
+  version?: string;
+  abstract?: string;
+  toc?: ResearchNoteTocItem[];
   pdfUrl?: string;
   pdfLabel?: string;
   bundleUrl?: string;
@@ -50,6 +62,19 @@ function requiredString(value: unknown, field: string, fileName: string): string
   return value.trim();
 }
 
+function parseToc(value: unknown): ResearchNoteTocItem[] | undefined {
+  if (!Array.isArray(value)) return undefined;
+  const items = value
+    .filter((entry): entry is Record<string, unknown> => Boolean(entry) && typeof entry === "object")
+    .map((entry) => ({
+      id: typeof entry.id === "string" ? entry.id.trim() : "",
+      number: typeof entry.number === "string" ? entry.number.trim() : "",
+      title: typeof entry.title === "string" ? entry.title.trim() : "",
+    }))
+    .filter((entry) => entry.id && entry.number && entry.title);
+  return items.length > 0 ? items : undefined;
+}
+
 function parseNote(fileName: string): ResearchNote {
   const slug = fileName.replace(/\.md$/, "");
   const raw = fs.readFileSync(path.join(NOTES_DIRECTORY, fileName), "utf8");
@@ -64,6 +89,8 @@ function parseNote(fileName: string): ResearchNote {
     throw new Error(`Research note ${fileName} has an invalid bookOrder`);
   }
 
+  const layout: ResearchNoteLayout = data.layout === "blueprint" ? "blueprint" : "note";
+
   return {
     slug,
     title: requiredString(data.title, "title", fileName),
@@ -77,6 +104,12 @@ function parseNote(fileName: string): ResearchNote {
     bookSection: requiredString(data.bookSection, "bookSection", fileName),
     bookOrder,
     readingMinutes: Math.max(1, Math.ceil(content.trim().split(/\s+/).length / 220)),
+    layout,
+    version:
+      typeof data.version === "string" && data.version.trim() ? data.version.trim() : undefined,
+    abstract:
+      typeof data.abstract === "string" && data.abstract.trim() ? data.abstract.trim() : undefined,
+    toc: parseToc(data.toc),
     pdfUrl: typeof data.pdfUrl === "string" && data.pdfUrl.trim() ? data.pdfUrl.trim() : undefined,
     pdfLabel:
       typeof data.pdfLabel === "string" && data.pdfLabel.trim() ? data.pdfLabel.trim() : undefined,

@@ -19,11 +19,37 @@
   font-size: 1.75rem;
   font-weight: 800;
   letter-spacing: -0.025em;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .dark .research-note-prose h2 {
   color: white;
+}
+
+.research-note-prose h3 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-teal-800);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+}
+
+.dark .research-note-prose h3 {
+  color: var(--color-teal-300);
+}
+
+.research-note-prose h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-slate-900);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.dark .research-note-prose h4 {
+  color: var(--color-slate-100);
 }
 
 .research-note-prose p,
@@ -85,11 +111,36 @@
   color: var(--color-slate-400);
 }
 
+.research-note-prose .blueprint-callout {
+  margin-top: 1.35rem;
+  margin-bottom: 1.35rem;
+  border-left-width: 4px;
+  border-radius: 0.85rem;
+  padding: 1rem 1.25rem;
+  font-style: normal;
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+.research-note-prose .blueprint-callout > p:first-child {
+  margin-top: 0;
+}
+
+.research-note-prose .blueprint-callout > p:last-child {
+  margin-bottom: 0;
+}
+
+.research-note-prose .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.65rem 0.25rem;
+}
+
 .research-note-prose code {
   border-radius: 0.35rem;
   background: var(--color-slate-100);
   padding: 0.15rem 0.35rem;
-  font-size: 0.9em;
+  font-size: 0.88em;
 }
 
 .dark .research-note-prose code {
@@ -98,27 +149,43 @@
 
 .research-note-prose pre {
   overflow-x: auto;
-  border-radius: 1rem;
+  border-radius: 0.9rem;
+  border: 1px solid var(--color-slate-800);
   background: var(--color-slate-950);
-  padding: 1.25rem;
+  padding: 1.15rem 1.25rem;
   color: var(--color-slate-100);
+  font-size: 0.88rem;
+  line-height: 1.65;
 }
 
 .research-note-prose pre code {
   background: transparent;
   padding: 0;
+  font-size: inherit;
 }
 
 .research-note-prose table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.research-note-prose thead th {
+  background: var(--color-slate-100);
+  color: var(--color-slate-900);
+  font-weight: 700;
+}
+
+.dark .research-note-prose thead th {
+  background: var(--color-slate-900);
+  color: var(--color-slate-100);
 }
 
 .research-note-prose th,
 .research-note-prose td {
   border-bottom: 1px solid var(--color-slate-200);
-  padding: 0.75rem;
+  padding: 0.7rem 0.85rem;
   text-align: left;
   vertical-align: top;
 }

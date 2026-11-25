@@ -26,10 +26,23 @@ test("renders inline and display math as KaTeX with accessible MathML", () => {
   assert(!html.includes("katex-error"));
 });
 
-test("the released Lean note renders without KaTeX parse errors", () => {
+test("the released Lean note uses blueprint layout, display equations, and Lean code listings without KaTeX errors", () => {
+  assert.equal(note.data.layout, "blueprint");
+  assert.equal(typeof note.data.abstract, "string");
+  assert(note.data.abstract.length > 200);
+  assert(Array.isArray(note.data.toc) && note.data.toc.length === 9);
   const html = render(note.content);
   assert(html.includes('class="katex"'));
+  assert(html.includes('class="katex-display"'));
+  assert(html.includes('class="language-lean"'));
   assert(!html.includes("katex-error"));
+});
+
+test("navbar uses route-aware NavActiveLink rather than hardcoded teal highlight on /papers", () => {
+  const navSource = fs.readFileSync(new URL("src/app/components/Nav.tsx", root), "utf8");
+  assert(navSource.includes("NavActiveLink"));
+  assert(navSource.includes('href="/about"'));
+  assert(!navSource.includes('href="/papers" className="hover:text-slate-900 dark:hover:text-white transition-colors font-semibold text-teal-700'));
 });
 
 test("every declared research-note download points to an existing local release asset", () => {
@@ -44,7 +57,6 @@ test("every declared research-note download points to an existing local release 
     }
   }
 });
-
 
 test("all public notes render without KaTeX parse errors", () => {
   const directory = new URL("content/research-notes/", root);
