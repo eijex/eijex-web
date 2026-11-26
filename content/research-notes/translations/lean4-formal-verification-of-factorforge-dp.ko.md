@@ -271,7 +271,7 @@ theorem witness_dpOptimize_sl_end_to_end :
 | `GeneticCode` | `validCodonForAA_destruct` *(보조)* | `P, C, Q` | `ValidCodonForAA`를 길이 3, 엄밀 GC, 센스 아미노산으로 분해 |
 | `GeneticCode` | `translateDNA_cons3` *(보조)* | `P` | 유효 센스 삼염기 접두사의 재귀적 `translateDNA` 보존 |
 | `ExactDP` | `gcConservation` | `P, C, Q` | 타당한 코돈 `gc` 합이 평탄화된 뉴클레오타이드 `seqGC`와 일치 |
-| `ExactDP` | `proteinPreservationAndGC` | `P, C, Q` | `WellFormedMenu` 위의 `ValidPath`가 길이 $3|P|$, `seqGC`, `some P` 보존 |
+| `ExactDP` | `proteinPreservationAndGC` | `P, C, Q` | `WellFormedMenu` 위의 `ValidPath`가 길이 $3\lvert P\rvert$, `seqGC`, `some P` 보존 |
 | `ExactDP` | `dpSoundness` | `P, C, Q` | 모든 유한 `dpEval` 항목이 $(g, s, v)$ 일치 `ValidPath`를 증언 |
 | `ExactDP` | `dpCompleteness` | `P, C, Q` | 모든 `ValidPath` 점수가 $(g, s)$의 `dpEval`에 의해 상계됨 |
 | `ExactDP` | `exactGlobalOptimality` | `P, C, Q` | `dpBestScore`가 모든 `FeasibleCDS`를 상계하고 유한 최적값을 달성 |
@@ -349,7 +349,7 @@ theorem witness_dpOptimize_sl_end_to_end :
 
 | 영역 | 현재 상태 | 정확한 기술적 경계 |
 | --- | --- | --- |
-| **이산 정수 DP 코어 및 64코돈 번역 (`FactorForgeFormal`)** | **Lean 4 검증 완료** | 핵심 정리 20개 + 보조정리 3개, 증거 14개, `#print axioms` 34건(`sorry` 0건), `leanchecker` 검증 완료. 최적성은 제공된 `WellFormedMenu` 기준입니다(61개 센스 코돈 완전성은 Python `AA_TO_CODONS`와 대조 확인). |
+| **이산 정수 DP 코어 및 64코돈 번역 (`FactorForgeFormal`)** | **Lean 4 검증 완료** | 핵심 정리 20개 + 보조정리 3개, 증거 14개, `#print axioms` 34건(`sorry` 0건), `leanchecker` 검증 완료. 최적성은 제공된 `WellFormedMenu` 기준입니다(제공된 후보의 타당성을 증명하며 런타임 메뉴와의 보편적 대응은 미증명). |
 | **표본 Python DP 대응 및 재현 아카이브** | **완료 (유한 스위트)** | `pytest` 28건, 4개 `PYTHONHASHSEED` 실행, 참조-복사본 변이 `8/8` 검출, 229개 파일 매니페스트 무결성 검사(`python verify_all.py`). |
 | **보편적 Python-Lean 정제 및 역포인터 증명** | **미증명 (향후 범위)** | Lean의 `dpOptimize`는 접두사 리스트를 추적하고, 실제 Python은 `(prev_g, prev_s)` 역포인터를 재구성하며 Lean에서 추출된 코드가 아닙니다. |
 | **IEEE-754 `float` 및 `1e-12` 엡실론 오차 한계** | **미증명 (향후 범위)** | 실제 DP는 비추이적 `1e-12` 상태 내 동점 허용 오차로 binary64 `math.log`를 누적합니다(`relaxCand` 선착순, `LeanExactMirrorDP` `PathRank`, 실제 `DPV2Optimizer` 마지막 코돈 비교 등 3가지 동점 규칙 공존). `approxScoreExactness`는 `List Int` 위의 조건부 정리입니다. |

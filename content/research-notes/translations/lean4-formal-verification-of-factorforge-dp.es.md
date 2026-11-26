@@ -271,7 +271,7 @@ Leyenda de axiomas (`lake env lean FactorForgeFormal/Audit.lean`): **`none`** = 
 | `GeneticCode` | `validCodonForAA_destruct` *(lema)* | `P, C, Q` | Descompone `ValidCodonForAA` en 3 bases, GC exacto y AA con sentido |
 | `GeneticCode` | `translateDNA_cons3` *(lema)* | `P` | Prefijo triplete válido preserva la decodificación recursiva `translateDNA` |
 | `ExactDP` | `gcConservation` | `P, C, Q` | La suma de campos `gc` equivale al `seqGC` nucleotídico aplanado |
-| `ExactDP` | `proteinPreservationAndGC` | `P, C, Q` | Todo `ValidPath` sobre `WellFormedMenu` preserva $3|P|$, `seqGC` y `some P` |
+| `ExactDP` | `proteinPreservationAndGC` | `P, C, Q` | Todo `ValidPath` sobre `WellFormedMenu` preserva $3\lvert P\rvert$, `seqGC` y `some P` |
 | `ExactDP` | `dpSoundness` | `P, C, Q` | Toda entrada finita `dpEval` atestigua un `ValidPath` real en $(g, s, v)$ |
 | `ExactDP` | `dpCompleteness` | `P, C, Q` | Todo `ValidPath` está acotado por `dpEval` en $(g, s)$ |
 | `ExactDP` | `exactGlobalOptimality` | `P, C, Q` | `dpBestScore` acota todo `FeasibleCDS` y alcanza todo óptimo finito |
@@ -349,7 +349,7 @@ Este hito demuestra la solidez matemática del **modelo DP entero discreto expl�
 
 | Área de alcance | Estado actual | Límite técnico exacto |
 | --- | --- | --- |
-| **Núcleo DP entero discreto y traducción de 64 codones (`FactorForgeFormal`)** | **Verificado en Lean 4** | 20 teoremas + 3 lemas, 14 testigos, 34 comprobaciones `#print axioms` (`0 sorry`), verificado con `leanchecker`. La optimalidad es relativa a los `WellFormedMenu` provistos (la completitud de 61 codones se verifica frente a `AA_TO_CODONS`). |
+| **Núcleo DP entero discreto y traducción de 64 codones (`FactorForgeFormal`)** | **Verificado en Lean 4** | 20 teoremas + 3 lemas, 14 testigos, 34 comprobaciones `#print axioms` (`0 sorry`), verificado con `leanchecker`. La optimalidad es relativa a los `WellFormedMenu` provistos (validez de las opciones provistas; la correspondencia universal con los menús de ejecución no está demostrada). |
 | **Correspondencia Python muestreada y archivo reproducible** | **Completado (suite finita)** | 28 pruebas `pytest`, 4 ejecuciones `PYTHONHASHSEED`, `8/8` mutantes eliminados y verificación de integridad de 229 archivos (`python verify_all.py`). |
 | **Refinamiento universal Python-a-Lean y punteros atrás** | **No probado (alcance futuro)** | `dpOptimize` en Lean rastrea listas prefijo; el Python operacional reconstruye punteros `(prev_g, prev_s)` mutables y no es código extraído de Lean. |
 | **Cotas de error `float` IEEE-754 y tolerancia `1e-12`** | **No probado (alcance futuro)** | La DP operacional suma flotantes binary64 `math.log` con una tolerancia no transitiva `1e-12` (coexisten 3 políticas de desempate). `approxScoreExactness` es condicional sobre `List Int`. |

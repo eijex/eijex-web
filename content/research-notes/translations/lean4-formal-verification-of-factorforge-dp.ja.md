@@ -271,7 +271,7 @@ theorem witness_dpOptimize_sl_end_to_end :
 | `GeneticCode` | `validCodonForAA_destruct` *(補題)* | `P, C, Q` | `ValidCodonForAA` を長さ3・厳密GC・センスAAへ分解 |
 | `GeneticCode` | `translateDNA_cons3` *(補題)* | `P` | 妥当なセンストリプレット接頭辞の再帰的 `translateDNA` 保存 |
 | `ExactDP` | `gcConservation` | `P, C, Q` | 妥当コドン `gc` の総和が展開後塩基 `seqGC` と一致 |
-| `ExactDP` | `proteinPreservationAndGC` | `P, C, Q` | `WellFormedMenu` 上の `ValidPath` が長さ $3|P|$、`seqGC`、`some P` を保存 |
+| `ExactDP` | `proteinPreservationAndGC` | `P, C, Q` | `WellFormedMenu` 上の `ValidPath` が長さ $3\lvert P\rvert$、`seqGC`、`some P` を保存 |
 | `ExactDP` | `dpSoundness` | `P, C, Q` | すべての有限 `dpEval` セルが一致する `ValidPath` を証言 |
 | `ExactDP` | `dpCompleteness` | `P, C, Q` | すべての `ValidPath` スコアが $(g, s)$ の `dpEval` で上から抑えられる |
 | `ExactDP` | `exactGlobalOptimality` | `P, C, Q` | `dpBestScore` が全 `FeasibleCDS` を上界で抑え有限最適値を達成 |
@@ -349,7 +349,7 @@ theorem witness_dpOptimize_sl_end_to_end :
 
 | 対象領域 | 現在の状態 | 厳密な技術的境界 |
 | --- | --- | --- |
-| **離散整数 DP コアと 64コドン翻訳 (`FactorForgeFormal`)** | **Lean 4 検証済み** | 中核20定理 + 補題3個、証人14個、`#print axioms` 34件（`sorry` 0件）、`leanchecker` 検証済み。最適性は与えられた `WellFormedMenu` に対する相対的性質です（61センスコドンの完全性は Python `AA_TO\_CODONS` と照合）。 |
+| **離散整数 DP コアと 64コドン翻訳 (`FactorForgeFormal`)** | **Lean 4 検証済み** | 中核20定理 + 補題3個、証人14個、`#print axioms` 34件（`sorry` 0件）、`leanchecker` 検証済み。最適性は与えられた `WellFormedMenu` に対する相対的性質です（与えられた候補の妥当性を証明し、実行時メニューとの普遍的対応は未証明）。 |
 | **有限 Python DP 対応と再現アーカイブ** | **完了（有限スイート）** | `pytest` 28件、4種の `PYTHONHASHSEED` 実行、参照コピー変異 `8/8` 検出、229ファイルのマニフェスト整合性検査（`python verify_all.py`）。 |
 | **普遍的 Python-to-Lean 洗練およびバックポインタ証明** | **未証明（将来範囲）** | Lean の `dpOptimize` は接頭辞リストを保持し、実運用 Python は `(prev_g, prev_s)` バックポインタを再構成するため、Lean からのコード抽出物ではありません。 |
 | **IEEE-754 `float` と `1e-12` イプシロン誤差上界** | **未証明（将来範囲）** | 実運用 DP は非推移的な `1e-12` 状態内タイ許容誤差で binary64 `math.log` を累積します（`relaxCand` 先着、`LeanExactMirrorDP` `PathRank`、実運用 `DPV2Optimizer` 最終コドン比較の3方針が併存）。`approxScoreExactness` は `List Int` 上の条件付き定理です。 |

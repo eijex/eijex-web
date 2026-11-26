@@ -271,7 +271,7 @@ Axiom-Legende (`lake env lean FactorForgeFormal/Audit.lean`): **`none`** = null 
 | `GeneticCode` | `validCodonForAA_destruct` *(Lemma)* | `P, C, Q` | Zerlegt `ValidCodonForAA` in 3 Basen, exaktes GC und Sense-Aminosäure |
 | `GeneticCode` | `translateDNA_cons3` *(Lemma)* | `P` | Gültiges Sense-Triplett-Präfix erhält rekursives `translateDNA` |
 | `ExactDP` | `gcConservation` | `P, C, Q` | Summe wohlgeformter `gc`-Felder gleicht ausgeflachtem Nukleotid-`seqGC` |
-| `ExactDP` | `proteinPreservationAndGC` | `P, C, Q` | `ValidPath` über `WellFormedMenu` erhält $3|P|$, `seqGC` und `some P` |
+| `ExactDP` | `proteinPreservationAndGC` | `P, C, Q` | `ValidPath` über `WellFormedMenu` erhält $3\lvert P\rvert$, `seqGC` und `some P` |
 | `ExactDP` | `dpSoundness` | `P, C, Q` | Jeder endliche `dpEval`-Eintrag bezeugt einen echten `ValidPath` |
 | `ExactDP` | `dpCompleteness` | `P, C, Q` | Jeder `ValidPath` wird durch `dpEval` bei $(g, s)$ nach oben beschränkt |
 | `ExactDP` | `exactGlobalOptimality` | `P, C, Q` | `dpBestScore` beschränkt alle `FeasibleCDS` und erreicht jedes endliche Optimum |
@@ -349,7 +349,7 @@ Dieser Meilenstein beweist die mathematische Korrektheit des **explizit spezifiz
 
 | Bereich | Aktueller Status | Exakte technische Grenze |
 | --- | --- | --- |
-| **Diskreter Ganzzahl-DP-Kern & 64-Codon-Translation (`FactorForgeFormal`)** | **In Lean 4 verifiziert** | 20 Kerntheoreme + 3 Lemmata, 14 Zeugen, 34 `#print axioms`-Prüfungen (`0 sorry`), geprüft durch `leanchecker`. Optimalität gilt relativ zu übergebenen `WellFormedMenu`-Menüs (Vollständigkeit über 61 Codons gegen `AA_TO_CODONS` geprüft). |
+| **Diskreter Ganzzahl-DP-Kern & 64-Codon-Translation (`FactorForgeFormal`)** | **In Lean 4 verifiziert** | 20 Kerntheoreme + 3 Lemmata, 14 Zeugen, 34 `#print axioms`-Prüfungen (`0 sorry`), geprüft durch `leanchecker`. Optimalität gilt relativ zu übergebenen `WellFormedMenu`-Menüs (Gültigkeit der übergebenen Optionen; universelle Entsprechung zu Laufzeitmenüs nicht bewiesen). |
 | **Stichproben-Python-Korrespondenz & Archiv** | **Abgeschlossen (endliche Suite)** | 28 `pytest`-Prüfungen, 4 `PYTHONHASHSEED`-Läufe, `8/8` Mutanten erkannt und Integritätsprüfung aller 229 Dateien (`python verify_all.py`). |
 | **Universelle Python-zu-Lean-Verfeinerung & Rückzeiger** | **Nicht bewiesen (Zukunft)** | Lean `dpOptimize` speichert Präfixlisten; produktives Python rekonstruiert veränderliche `(prev_g, prev_s)`-Zeiger und wird nicht aus Lean extrahiert. |
 | **IEEE-754-`float`- & `1e-12`-Epsilon-Schranken** | **Nicht bewiesen (Zukunft)** | Produktives DP summiert binary64-`math.log`-Floats mit nicht-transitiver `1e-12`-Toleranz (3 Tie-Strategien koexistieren). `approxScoreExactness` gilt bedingt über `List Int`. |

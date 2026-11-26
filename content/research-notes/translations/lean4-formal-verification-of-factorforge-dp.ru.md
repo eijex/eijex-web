@@ -271,7 +271,7 @@ theorem witness_dpOptimize_sl_end_to_end :
 | `GeneticCode` | `validCodonForAA_destruct` *(лемма)* | `P, C, Q` | Разложение `ValidCodonForAA` на длину 3, точный GC и смысловую АА |
 | `GeneticCode` | `translateDNA_cons3` *(лемма)* | `P` | Валидный смысловой триплет-префикс сохраняет рекурсивный `translateDNA` |
 | `ExactDP` | `gcConservation` | `P, C, Q` | Сумма полей `gc` равна нуклеотидному `seqGC` |
-| `ExactDP` | `proteinPreservationAndGC` | `P, C, Q` | `ValidPath` над `WellFormedMenu` сохраняет $3|P|$, `seqGC` и `some P` |
+| `ExactDP` | `proteinPreservationAndGC` | `P, C, Q` | `ValidPath` над `WellFormedMenu` сохраняет $3\lvert P\rvert$, `seqGC` и `some P` |
 | `ExactDP` | `dpSoundness` | `P, C, Q` | Каждая конечная ячейка `dpEval` свидетельствует реальный `ValidPath` |
 | `ExactDP` | `dpCompleteness` | `P, C, Q` | Любой `ValidPath` ограничен сверху значением `dpEval` в $(g, s)$ |
 | `ExactDP` | `exactGlobalOptimality` | `P, C, Q` | `dpBestScore` ограничивает все `FeasibleCDS` и достигает конечных оптимумов |
@@ -349,7 +349,7 @@ theorem witness_dpOptimize_sl_end_to_end :
 
 | Область | Текущий статус | Точная техническая граница |
 | --- | --- | --- |
-| **Дискретное целочисленное ядро DP и 64-кодонная трансляция (`FactorForgeFormal`)** | **Верифицировано в Lean 4** | 20 теорем + 3 леммы, 14 свидетельств, 34 проверки `#print axioms` (`0 sorry`), проверено `leanchecker`. Оптимальность доказана относительно переданных `WellFormedMenu` (полнота 61 кодона сверена с `AA_TO_CODONS`). |
+| **Дискретное целочисленное ядро DP и 64-кодонная трансляция (`FactorForgeFormal`)** | **Верифицировано в Lean 4** | 20 теорем + 3 леммы, 14 свидетельств, 34 проверки `#print axioms` (`0 sorry`), проверено `leanchecker`. Оптимальность доказана относительно переданных `WellFormedMenu` (корректность переданных вариантов; универсальное соответствие меню времени выполнения не доказано). |
 | **Выборочное соответствие Python и воспроизводимый архив** | **Завершено (конечный набор)** | 28 проверок `pytest`, 4 прогона `PYTHONHASHSEED`, `8/8` мутантов выявлены и контроль 229 файлов (`python verify_all.py`). |
 | **Универсальное уточнение Python-to-Lean и обратные указатели** | **Не доказано (будущая работа)** | В Lean `dpOptimize` хранит префиксные списки; рабочий Python использует изменяемые `(prev_g, prev_s)` и не извлечён из Lean. |
 | **Оценки погрешности IEEE-754 `float` и порог `1e-12`** | **Не доказано (будущая работа)** | Рабочий DP суммирует binary64 `math.log` с нетранзитивным порогом `1e-12` (сосуществуют 3 политики равенства). `approxScoreExactness` условна над `List Int`. |

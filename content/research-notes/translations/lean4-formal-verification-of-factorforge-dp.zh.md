@@ -271,7 +271,7 @@ theorem witness_dpOptimize_sl_end_to_end :
 | `GeneticCode` | `validCodonForAA_destruct` *(引理)* | `P, C, Q` | 将 `ValidCodonForAA` 分解为 3 碱基、精确 GC 与有义氨基酸 |
 | `GeneticCode` | `translateDNA_cons3` *(引理)* | `P` | 有效有义三联体前缀保持递归 `translateDNA` 解码 |
 | `ExactDP` | `gcConservation` | `P, C, Q` | 良构密码子 `gc` 之和等于展平核苷酸 `seqGC` |
-| `ExactDP` | `proteinPreservationAndGC` | `P, C, Q` | `WellFormedMenu` 上的 `ValidPath` 保持长度 $3|P|$、`seqGC` 与 `some P` |
+| `ExactDP` | `proteinPreservationAndGC` | `P, C, Q` | `WellFormedMenu` 上的 `ValidPath` 保持长度 $3\lvert P\rvert$、`seqGC` 与 `some P` |
 | `ExactDP` | `dpSoundness` | `P, C, Q` | 每个有限 `dpEval` 项均见证一条 $(g, s, v)$ 匹配的真实 `ValidPath` |
 | `ExactDP` | `dpCompleteness` | `P, C, Q` | 每条 `ValidPath` 得分均以 $(g, s)$ 处的 `dpEval` 为上界 |
 | `ExactDP` | `exactGlobalOptimality` | `P, C, Q` | `dpBestScore` 上界约束所有 `FeasibleCDS` 并达到有限最优值 |
@@ -349,7 +349,7 @@ theorem witness_dpOptimize_sl_end_to_end :
 
 | 范围领域 | 当前状态 | 精确技术边界 |
 | --- | --- | --- |
-| **离散整数 DP 核心与 64 密码子翻译 (`FactorForgeFormal`)** | **已在 Lean 4 中验证** | 20 条核心定理 + 3 条辅助引理、14 条见证、34 项 `#print axioms` 检查（`0 sorry`）、`leanchecker` 复核通过。最优性相对于传入的 `WellFormedMenu` 成立（61 个有义密码子的完备性由 Python 的 `AA_TO_CODONS` 核对）。 |
+| **离散整数 DP 核心与 64 密码子翻译 (`FactorForgeFormal`)** | **已在 Lean 4 中验证** | 20 条核心定理 + 3 条辅助引理、14 条见证、34 项 `#print axioms` 检查（`0 sorry`）、`leanchecker` 复核通过。最优性相对于传入的 `WellFormedMenu` 成立（证明所提供选项的有效性，尚未证明与运行时菜单的普遍对应）。 |
 | **采样 Python DP 对应与可复现归档** | **已完成（有限测试集）** | 28 项 `pytest` 检查、4 轮 `PYTHONHASHSEED` 运行、`8/8` 参考副本变异检出与 229 文件清单完整性核验（`python verify_all.py`）。 |
 | **全量 Python-to-Lean 精化与回溯指针证明** | **未证明（未来范围）** | Lean 的 `dpOptimize` 追踪前缀列表；实际 Python 通过可变 `(prev_g, prev_s)` 回溯指针重建序列，且并非从 Lean 提取。 |
 | **IEEE-754 `float` 与 `1e-12` 容差误差界** | **未证明（未来范围）** | 实际 DP 使用非传递的 `1e-12` 状态内平局容差累加 binary64 `math.log` 浮点数（`relaxCand` 先见、`LeanExactMirrorDP` `PathRank` 与实际 `DPV2Optimizer` 末密码子比较三种策略共存）。`approxScoreExactness` 是 `List Int` 上的条件定理。 |

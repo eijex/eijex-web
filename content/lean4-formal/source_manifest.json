@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "lean_toolchain": "leanprover/lean4:v4.36.0",
+  "bundle_sha256": "171513415d0912791a64d243e842c99c371a10305085a4ee270662230523db5e",
+  "files": {
+    "Audit.lean": {
+      "sha256": "965236d6463024bcfcb97bf9429a5d9175e3e44384436548b4188eb96d1eb3b4",
+      "canonical_path": "formal/FactorForgeFormal/Audit.lean",
+      "lines": 48
+    },
+    "audit_axioms.txt": {
+      "sha256": "4927d5e3e9683c25506a8b599efdf15d400e498b59dfa358e54311a3bb1cf703",
+      "canonical_path": null,
+      "lines": 38
+    },
+    "FactorForgeFormal.lean": {
+      "sha256": "b6e97d7b35f6a0e0cbf44d0e812b7723e9ce6ee39d7b3b7e535b5afb40b558f9",
+      "canonical_path": "formal/FactorForgeFormal.lean",
+      "lines": 12
+    },
+    "Proofs/Automaton.lean": {
+      "sha256": "adf385b5cda37fe8c1c708905814a063f47549d2644656bb0ca0cdfce8f7db8a",
+      "canonical_path": "formal/FactorForgeFormal/Proofs/Automaton.lean",
+      "lines": 83
+    },
+    "Proofs/ExactDP.lean": {
+      "sha256": "91a86c4cfa167206b9e7dc41e3402f88a0d5e17daec65c59ebf9a3fdda0b6880",
+      "canonical_path": "formal/FactorForgeFormal/Proofs/ExactDP.lean",
+      "lines": 1225
+    },
+    "Proofs/GeneticCode.lean": {
+      "sha256": "3adc1534e3c4f17ff84c82eae698e3d012340c78ba63ffce00e2aba9cacc8712",
+      "canonical_path": "formal/FactorForgeFormal/Proofs/GeneticCode.lean",
+      "lines": 57
+    },
+    "Proofs/KineticAndParity.lean": {
+      "sha256": "fe25a6d0e4151249c5124b6f3a814664e1dcba35fe2492792d5457a2d079642d",
+      "canonical_path": "formal/FactorForgeFormal/Proofs/KineticAndParity.lean",
+      "lines": 237
+    },
+    "Proofs/Tropical.lean": {
+      "sha256": "b98b54a00e034ecbdafae5681aa3a7a1f8e2ad9c13db636a306f8a97c6a26027",
+      "canonical_path": "formal/FactorForgeFormal/Proofs/Tropical.lean",
+      "lines": 116
+    },
+    "Spec/Automaton.lean": {
+      "sha256": "d77931d4316d8f828c701c543e724a07d890b0fa3a84d47b73f55159d512287f",
+      "canonical_path": "formal/FactorForgeFormal/Spec/Automaton.lean",
+      "lines": 100
+    },
+    "Spec/ExactDP.lean": {
+      "sha256": "49fb19584a583b685fe4e090e3d695baf52e787a0e276387e17502f09a23a696",
+      "canonical_path": "formal/FactorForgeFormal/Spec/ExactDP.lean",
+      "lines": 309
+    },
+    "Spec/GeneticCode.lean": {
+      "sha256": "455481fd6ccf512a97fe4d8c6542726c506df4c8d7cdd2a1e5ef072f7867062e",
+      "canonical_path": "formal/FactorForgeFormal/Spec/GeneticCode.lean",
+      "lines": 84
+    },
+    "Spec/KineticAndParity.lean": {
+      "sha256": "9ca384ebe7c0c129c6e98736371461e2e56a73998edae44871306d5b2f6344b8",
+      "canonical_path": "formal/FactorForgeFormal/Spec/KineticAndParity.lean",
+      "lines": 125
+    },
+    "Spec/Tropical.lean": {
+      "sha256": "6ff1110171e92d27095612aa0825672a67c24838e41f34fafec6905b5f2190cb",
+      "canonical_path": "formal/FactorForgeFormal/Spec/Tropical.lean",
+      "lines": 81
+    },
+    "Spec.lean": {
+      "sha256": "ee8f279081d3e60703209113eb13d5ac1cf36698fab5437fd8b862335ffeb0ab",
+      "canonical_path": "formal/FactorForgeFormal/Spec.lean",
+      "lines": 9
+    },
+    "Witnesses.lean": {
+      "sha256": "99f1151f9d2106772ef182f23956fa5d7a94f39d1f363e5d634e807731e67252",
+      "canonical_path": "formal/FactorForgeFormal/Witnesses.lean",
+      "lines": 263
+    }
+  }
+}

@@ -77,9 +77,10 @@ export default function LocalizedBlueprintArticle({
     readViewFromLocation,
     () => "summary" as const,
   );
-  const [expandAllModules, setExpandAllModules] = useState(false);
+  const [expandAllModules, setExpandAllModules] = useState<boolean | null>(null);
 
   const current = locales.find((item) => item.lang === requestedLang) ?? locales[0];
+  const leanModuleCount = fullModules.filter((m) => m.path.endsWith(".lean")).length;
   const totalLeanLines = fullModules
     .filter((m) => m.path.endsWith(".lean"))
     .reduce((acc, m) => acc + m.lines, 0);
@@ -109,7 +110,7 @@ export default function LocalizedBlueprintArticle({
   const moduleGroups: Array<LeanFormalModule["group"]> = [
     "Locked Spec (Spec/)",
     "Kernel Proofs (Proofs/)",
-    "Witnesses & Audit",
+    "Package Root, Witnesses & Audit",
     "Kernel Output",
   ];
 
@@ -320,7 +321,7 @@ export default function LocalizedBlueprintArticle({
                 Want to inspect all {totalLeanLines.toLocaleString()} lines of Lean 4 specifications &amp; tactic proofs?
               </p>
               <p className="mt-1 text-xs text-slate-600 dark:text-slate-300">
-                Switch to Full Proof mode to browse all 14 modules (Spec/, Proofs/, Witnesses.lean, Audit.lean) and the 34 #print axioms kernel outputs inline, or download the Complete Full Monograph PDF.
+                Switch to Full Proof mode to browse all {leanModuleCount} modules (including FactorForgeFormal.lean, Spec/, Proofs/, Witnesses.lean, Audit.lean) and the 34 #print axioms kernel outputs inline, or download the Complete Full Monograph PDF.
               </p>
             </div>
             <button
@@ -344,7 +345,7 @@ export default function LocalizedBlueprintArticle({
                   Appendices A-D · Complete Kernel Source
                 </span>
                 <h2 className="mt-1 text-2xl font-extrabold tracking-tight text-slate-950 dark:text-white sm:text-3xl">
-                  Full Lean 4.36.0 Verification Modules ({totalLeanLines.toLocaleString()} lines)
+                  Full Lean 4.36.0 Verification Modules ({leanModuleCount} modules, {totalLeanLines.toLocaleString()} lines)
                 </h2>
               </div>
               <button
@@ -352,10 +353,15 @@ export default function LocalizedBlueprintArticle({
                 onClick={() => setExpandAllModules((prev) => !prev)}
                 className="cursor-pointer rounded-xl border border-slate-300 bg-white px-3.5 py-2 text-xs font-bold text-slate-700 shadow-xs transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
               >
-                {expandAllModules ? "Collapse all modules" : "Expand all 14 modules"}
+                {expandAllModules ? "Collapse all modules" : `Expand all ${leanModuleCount} Lean modules and audit output`}
               </button>
             </div>
 
+            <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+              Source characters are preserved from the pinned verification archive. Use the ZIP
+              for the executable Lake project and Python checks. The audit output directly lists
+              20 core theorems and 14 witnesses; the three helper lemmas are present in the proof modules.
+            </p>
             <div className="mt-8 space-y-10">
               {moduleGroups.map((group) => {
                 const groupItems = fullModules.filter((m) => m.group === group);
@@ -370,7 +376,7 @@ export default function LocalizedBlueprintArticle({
                       {groupItems.map((mod, idx) => (
                         <details
                           key={mod.id}
-                          open={expandAllModules || (group === "Locked Spec (Spec/)" && idx === 0)}
+                          open={expandAllModules ?? (group === "Locked Spec (Spec/)" && idx === 0)}
                           className="group overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900/50"
                         >
                           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3.5 text-sm font-bold text-slate-900 hover:bg-slate-50 dark:text-white dark:hover:bg-slate-900">

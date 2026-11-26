@@ -43,7 +43,7 @@ bookOrder: 1
 pdfUrl: "/research-notes/FactorForge_Lean4_Formal_Verification_Technical_Note.pdf"
 pdfLabel: "Download Summary Monograph v1.0.3 (PDF, 14p)"
 fullPdfUrl: "/research-notes/FactorForge_Lean4_Formal_Verification_Full_Monograph.pdf"
-fullPdfLabel: "Download Full Verification Monograph v1.0.3 (PDF, 50p)"
+fullPdfLabel: "Download Full Verification Monograph v1.0.4 (PDF, 51p)"
 bundleUrl: "/research-notes/FactorForge_Lean4_Verification_Package.zip"
 bundleLabel: "Download Reproducible Lean 4 + Oracle Archive (.zip)"
 ---
@@ -264,9 +264,11 @@ theorem witness_dpOptimize_sl_end_to_end :
 
 ## 8. Complete Theorem, Witness, Mutation, and Coverage Catalogs
 
-### 8.1 All 20 Audited Core Theorems + 3 Structural Helper Lemmas (`Audit.lean`)
+### 8.1 Catalog of 20 Core Theorems + 3 Structural Helper Lemmas
 
-Axiom legend from `lake env lean FactorForgeFormal/Audit.lean`: **`none`** = zero axioms; **`P`** = `[propext]`; **`P, Q`** = `[propext, Quot.sound]`; **`P, C, Q`** = `[propext, Classical.choice, Quot.sound]` (zero `sorryAx` and zero custom axioms).
+`Audit.lean` directly prints 20 core theorem declarations and 14 witnesses (34 total). The three helper rows belong to the proof-module catalog; their axiom footprints are separately reproducible with `#print axioms`.
+
+Axiom legend: **`none`** = zero axioms; **`P`** = `[propext]`; **`P, Q`** = `[propext, Quot.sound]`; **`P, C, Q`** = `[propext, Classical.choice, Quot.sound]` (zero `sorryAx` and zero custom axioms).
 
 | Module | Lean Theorem / Lemma Identifier | `#print axioms` | Verified Mathematical Statement |
 | --- | --- | --- | --- |
@@ -281,7 +283,7 @@ Axiom legend from `lake env lean FactorForgeFormal/Audit.lean`: **`none`** = zer
 | `GeneticCode` | `validCodonForAA_destruct` *(helper)* | `P, C, Q` | Decomposes `ValidCodonForAA` into 3 bases, exact GC, and sense AA. |
 | `GeneticCode` | `translateDNA_cons3` *(helper)* | `P` | Sense triplet prefix preserves recursive `translateDNA` decoding. |
 | `ExactDP` | `gcConservation` | `P, C, Q` | Sum of well-formed codon `gc` fields equals flattened nucleotide `seqGC`. |
-| `ExactDP` | `proteinPreservationAndGC` | `P, C, Q` | Valid paths over `WellFormedMenu` preserve length $3|P|$, `seqGC`, and `some P`. |
+| `ExactDP` | `proteinPreservationAndGC` | `P, C, Q` | Valid paths over `WellFormedMenu` preserve length $3\lvert P\rvert$, `seqGC`, and `some P`. |
 | `ExactDP` | `dpSoundness` | `P, C, Q` | Every finite `dpEval` entry witnesses an authentic `ValidPath` at $(g, s, v)$. |
 | `ExactDP` | `dpCompleteness` | `P, C, Q` | Every `ValidPath` score is upper-bounded by `dpEval` at $(g, s)$. |
 | `ExactDP` | `exactGlobalOptimality` | `P, C, Q` | `dpBestScore` upper-bounds all `FeasibleCDS` and attains finite optima. |
@@ -359,7 +361,7 @@ This milestone proves the mathematical soundness of FactorForge's **explicitly s
 
 | Scope Area | Current Status | Exact Technical Boundary |
 | --- | --- | --- |
-| **Discrete integer DP core & 64-codon translation (`FactorForgeFormal`)** | **Verified in Lean 4** | 20 core theorems + 3 helper lemmas, 14 witnesses, 34 `#print axioms` checks (`0 sorry`), `leanchecker` verified. Optimality is relative to supplied `WellFormedMenu` menus (menu soundness; full 61-codon completeness is checked against Python's `AA_TO_CODONS`). |
+| **Discrete integer DP core & 64-codon translation (`FactorForgeFormal`)** | **Verified in Lean 4** | 20 core theorems + 3 helper lemmas, 14 witnesses, 34 `#print axioms` checks (`0 sorry`), `leanchecker` verified. Optimality is relative to supplied `WellFormedMenu` menus (supplied-menu soundness; universal runtime menu correspondence is not proved here). |
 | **Sampled Python DP correspondence & reproducible archive** | **Completed (finite suite)** | 28 `pytest` checks, 4 `PYTHONHASHSEED` runs, `8/8` reference-copy mutant kills, and 229-file manifest integrity checks (`python verify_all.py`). |
 | **Universal Python-to-Lean refinement & backpointer proof** | **Not proved (future scope)** | Lean's `dpOptimize` tracks prefix lists; operational Python reconstructs mutable `(prev_g, prev_s)` backpointers and is not extracted from Lean. |
 | **IEEE-754 `float` & `1e-12` epsilon error bounds** | **Not proved (future scope)** | Operational DP accumulates binary64 `math.log` floats with a non-transitive `1e-12` intra-state tie window (`relaxCand` first-seen, `LeanExactMirrorDP` `PathRank`, and operational `DPV2Optimizer` last-codon tie-breaking follow three distinct tie policies). `approxScoreExactness` is conditional over `List Int`. |

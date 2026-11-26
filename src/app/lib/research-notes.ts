@@ -3,6 +3,7 @@ import "server-only";
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import { loadLeanFormalModules } from "./lean-formal.mjs";
 
 const NOTES_DIRECTORY = path.join(process.cwd(), "content", "research-notes");
 const TRANSLATIONS_DIRECTORY = path.join(NOTES_DIRECTORY, "translations");
@@ -224,7 +225,7 @@ export function getResearchNoteTranslations(note: ResearchNote): ResearchNoteTra
 
 export type LeanFormalModule = {
   id: string;
-  group: "Locked Spec (Spec/)" | "Kernel Proofs (Proofs/)" | "Witnesses & Audit" | "Kernel Output";
+  group: "Locked Spec (Spec/)" | "Kernel Proofs (Proofs/)" | "Package Root, Witnesses & Audit" | "Kernel Output";
   path: string;
   lines: number;
   code: string;
@@ -232,40 +233,6 @@ export type LeanFormalModule = {
 
 const LEAN_FORMAL_DIRECTORY = path.join(process.cwd(), "content", "lean4-formal");
 
-const ORDERED_LEAN_MODULES: Array<{
-  rel: string;
-  group: LeanFormalModule["group"];
-}> = [
-  { rel: "Spec/Tropical.lean", group: "Locked Spec (Spec/)" },
-  { rel: "Spec/Automaton.lean", group: "Locked Spec (Spec/)" },
-  { rel: "Spec/GeneticCode.lean", group: "Locked Spec (Spec/)" },
-  { rel: "Spec/ExactDP.lean", group: "Locked Spec (Spec/)" },
-  { rel: "Spec/KineticAndParity.lean", group: "Locked Spec (Spec/)" },
-  { rel: "Spec.lean", group: "Locked Spec (Spec/)" },
-  { rel: "Proofs/Tropical.lean", group: "Kernel Proofs (Proofs/)" },
-  { rel: "Proofs/Automaton.lean", group: "Kernel Proofs (Proofs/)" },
-  { rel: "Proofs/GeneticCode.lean", group: "Kernel Proofs (Proofs/)" },
-  { rel: "Proofs/ExactDP.lean", group: "Kernel Proofs (Proofs/)" },
-  { rel: "Proofs/KineticAndParity.lean", group: "Kernel Proofs (Proofs/)" },
-  { rel: "Witnesses.lean", group: "Witnesses & Audit" },
-  { rel: "Audit.lean", group: "Witnesses & Audit" },
-  { rel: "audit_axioms.txt", group: "Kernel Output" },
-];
-
 export function getLeanFormalModules(): LeanFormalModule[] {
-  if (!fs.existsSync(LEAN_FORMAL_DIRECTORY)) return [];
-  return ORDERED_LEAN_MODULES.flatMap(({ rel, group }) => {
-    const fullPath = path.join(LEAN_FORMAL_DIRECTORY, rel);
-    if (!fs.existsSync(fullPath)) return [];
-    const code = fs.readFileSync(fullPath, "utf8").trimEnd();
-    return [
-      {
-        id: rel.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase(),
-        group,
-        path: rel,
-        lines: code.split(/\r?\n/).length,
-        code,
-      },
-    ];
-  });
+  return loadLeanFormalModules(LEAN_FORMAL_DIRECTORY) as LeanFormalModule[];
 }
